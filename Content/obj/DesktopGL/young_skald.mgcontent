@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/16308/Projects/Futhark/Content/../assets/young_skald.png</SourceFile>
-  <SourceTime>2023-03-17T11:25:29.4204123-04:00</SourceTime>
-  <DestFile>C:/Users/16308/Projects/Futhark/Content/bin/DesktopGL/young_skald.xnb</DestFile>
-  <DestTime>2023-03-17T11:38:09.8226502-04:00</DestTime>
+  <SourceFile>C:/Users/christopher/Futhark/Content/../assets/young_skald.png</SourceFile>
+  <SourceTime>2023-03-18T09:28:23.1842848-04:00</SourceTime>
+  <DestFile>C:/Users/christopher/Futhark/Content/bin/DesktopGL/young_skald.xnb</DestFile>
+  <DestTime>2023-03-18T22:39:55.5903458-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T12:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

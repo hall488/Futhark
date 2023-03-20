@@ -12,45 +12,64 @@ namespace Futhark
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
         public int Columns { get; set; }
+
         private int currentFrame;
         private int totalFrames;
 
+        private int RowNumber;
+
         private int x;
+
+        private bool play;
  
-        public AnimatedSprite(Texture2D texture, int rows, int columns)
+        public AnimatedSprite(Texture2D texture, int rows, int columns, int rowNumber)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            totalFrames = Rows * Columns;
+            totalFrames = Rows;
+            RowNumber = rowNumber;
+            play = false;
         }
  
         public void Update()
         {
-            
-            if(x > 10) {
-                currentFrame++;
-                if (currentFrame == totalFrames)
-                    currentFrame = 0;
-                x = 0;
+            //currentFrame = stop ? 0 : currentFrame;
+            //x = stop ? 0 : x;
+            if(play) {
+                if(x > 10) {
+                    currentFrame++;
+                    if (currentFrame == totalFrames)
+                        currentFrame = 0;
+                    x = 0;
+                }
+                x++;
             }
-            x++;
         }
  
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch, int x, int y)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
-            int row = currentFrame / Columns;
+            int row = RowNumber;
             int column = currentFrame % Columns;
  
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width*3, height*3);
+            Rectangle destinationRectangle = new Rectangle(x, y, width*8, height*8);
  
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
+        }
+
+        public void playAnimation() {
+            play = true;
+        }
+
+        public void stopAnimation() {
+            currentFrame = 0;
+            x = 0;
+            play = false;
         }
     }
 }

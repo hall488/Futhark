@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "tlX8IUgClDcOVRXZn4k7xLjDbUYAlI+YdqSIoylV754knCHaXzVV0xv6chtRsnDJPQIM+BnGDPP4OkirwF0DRw==",
+  "dgSpecHash": "WIQkIjFOOirA3LZ8NKtA55MXeocJb6mrv66EXiX9AD1a0j3G/Bih2CXe/8Nn4F7Fu02De49LiOoM2caaJB5ngg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\16308\\Projects\\Futhark\\Futhark.csproj",
+  "projectFilePath": "C:\\Users\\christopher\\Futhark\\Futhark.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\16308\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
-    "C:\\Users\\16308\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+    "C:\\Users\\christopher\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\microsoft.win32.systemevents\\4.5.0\\microsoft.win32.systemevents.4.5.0.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\christopher\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512"
   ],
   "logs": []
 }

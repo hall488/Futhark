@@ -4,9 +4,25 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/16308/Projects/Futhark/Content/../assets/young_skald.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/bush_1.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/empty.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/grass_1.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/road_1.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/road_2.png</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/test_back_layer.bmp</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/test_level.bmp</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/test_mid_layer.bmp</File>
+    <File>C:/Users/christopher/Futhark/Content/../assets/young_skald.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>bush_1.png</File>
+    <File>empty.png</File>
+    <File>grass_1.png</File>
+    <File>road_1.png</File>
+    <File>road_2.png</File>
+    <File>test_back_layer.bmp</File>
+    <File>test_level.bmp</File>
+    <File>test_mid_layer.bmp</File>
     <File>young_skald.png</File>
   </DestFiles>
 </SourceFileCollection>

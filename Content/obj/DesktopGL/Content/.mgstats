@@ -1,2 +1,10 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/16308/Projects/Futhark/Content/../assets/young_skald.png","C:/Users/16308/Projects/Futhark/Content/bin/DesktopGL/Content/young_skald.xnb","TextureProcessor","Texture2DContent",813,18517,0.104547
+"C:/Users/christopher/Futhark/Content/../assets/bush_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/bush_1.xnb","TextureProcessor","Texture2DContent",248,1109,0.2723047
+"C:/Users/christopher/Futhark/Content/../assets/empty.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/empty.xnb","TextureProcessor","Texture2DContent",126,1109,0.0038174
+"C:/Users/christopher/Futhark/Content/../assets/grass_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/grass_1.xnb","TextureProcessor","Texture2DContent",177,1109,0.0035112
+"C:/Users/christopher/Futhark/Content/../assets/road_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/road_1.xnb","TextureProcessor","Texture2DContent",162,1109,0.3247598
+"C:/Users/christopher/Futhark/Content/../assets/road_2.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/road_2.xnb","TextureProcessor","Texture2DContent",135,1109,0.0044811
+"C:/Users/christopher/Futhark/Content/../assets/test_back_layer.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_back_layer.xnb","TextureProcessor","Texture2DContent",78,149,0.0221531
+"C:/Users/christopher/Futhark/Content/../assets/test_level.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_level.xnb","TextureProcessor","Texture2DContent",78,149,0.2304156
+"C:/Users/christopher/Futhark/Content/../assets/test_mid_layer.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_mid_layer.xnb","TextureProcessor","Texture2DContent",78,149,0.0054818
+"C:/Users/christopher/Futhark/Content/../assets/young_skald.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/young_skald.xnb","TextureProcessor","Texture2DContent",810,24661,0.0090221

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
+using sysD = System.Drawing;
 
 namespace Futhark
 {
@@ -9,7 +11,13 @@ namespace Futhark
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        private AnimatedSprite animatedSprite;
+        private Tilemap tilemap_back;
+
+        private Tilemap tilemap_mid;
+        private Player player;
+
+        private Game_Constants gConstants;
+
 
         public Futhark_Game()
         {
@@ -30,8 +38,16 @@ namespace Futhark
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            Texture2D texture = Content.Load<Texture2D>("young_skald");
-            animatedSprite = new AnimatedSprite(texture, 4, 3);
+            Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
+            
+            gConstants = new Game_Constants();
+
+            player = new Player(playerTexture, 400, 200);
+            //tile = new Tile(roadTexture);
+            sysD.Bitmap layer_back = new sysD.Bitmap("assets/test_back_layer.bmp");
+            sysD.Bitmap layer_mid = new sysD.Bitmap("assets/test_mid_layer.bmp");
+            tilemap_back = new Tilemap(Content, layer_back, gConstants.tileDict);
+            tilemap_mid = new Tilemap(Content, layer_mid, gConstants.tileDict);
         }
 
         protected override void Update(GameTime gameTime)
@@ -40,7 +56,7 @@ namespace Futhark
                 Exit();
 
             // TODO: Add your update logic here
-            animatedSprite.Update();
+            player.Update();
 
             base.Update(gameTime);
         }
@@ -50,7 +66,12 @@ namespace Futhark
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            animatedSprite.Draw(_spriteBatch, new Vector2(400, 200));
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
+            tilemap_back.Draw(_spriteBatch);
+            tilemap_mid.Draw(_spriteBatch);
+            
+            player.Draw(_spriteBatch);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
