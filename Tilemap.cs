@@ -15,15 +15,19 @@ namespace Futhark {
 
         private Dictionary<string, Texture2D> tileDict;
 
-        Tile[,] tilemap;
+        public Tile[,] tilemap;
 
         const int tileLength = 128;
 
         int width;
         int height;
 
-        public Tilemap(ContentManager content, sysD.Bitmap _bmp, Dictionary<string, string> _tileDict) {
+        bool solid;
+
+        public Tilemap(ContentManager content, sysD.Bitmap _bmp, Dictionary<string, string> _tileDict, bool _solid) {
             bmp = _bmp;
+
+            solid = _solid;
 
             tileDict = new Dictionary<string, Texture2D>();
             
@@ -38,7 +42,7 @@ namespace Futhark {
 
             for(int i=0; i < width; i++) {
                 for(int j=0; j < height; j++) {
-                    tilemap[i,j] = new Tile(bmp.GetPixel(i,j), i, j);
+                    tilemap[i,j] = new Tile(bmp.GetPixel(i,j), i, j, solid, tileLength);
                 }
             }
         }

@@ -1,4 +1,5 @@
 Color [A=255, R=255, G=255, B=255]:               :empty
-Color [A=255, R=0, G=0, B=0]:                     :road_1
+Color [A=255, R=0, G=0, B=0]:                     :boundary
+Color [A=255, R=45, G=45, B=45]:                  :road_1
 Color [A=255, R=0, G=255, B=0]:                   :grass_1
 Color [A=255, R=0, G=120, B=0]:                   :bush_1

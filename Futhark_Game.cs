@@ -57,12 +57,16 @@ namespace Futhark
             
             gConstants = new Game_Constants();
 
-            player = new Player(playerTexture, 400, 200);
+            
             //tile = new Tile(roadTexture);
-            sysD.Bitmap layer_back = new sysD.Bitmap("assets/test_back_layer.bmp");
+            using(sysD.Bitmap layer_back = new sysD.Bitmap("assets/test_back_layer.bmp")) {
+                tilemap_back = new Tilemap(Content, layer_back, gConstants.tileDict, false);
+            }
             sysD.Bitmap layer_mid = new sysD.Bitmap("assets/test_mid_layer.bmp");
-            tilemap_back = new Tilemap(Content, layer_back, gConstants.tileDict);
-            tilemap_mid = new Tilemap(Content, layer_mid, gConstants.tileDict);
+            
+            tilemap_mid = new Tilemap(Content, layer_mid, gConstants.tileDict, true);
+
+            player = new Player(playerTexture, 200, 200, tilemap_mid);
         }
 
         protected override void Update(GameTime gameTime)
