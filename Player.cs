@@ -7,10 +7,13 @@ namespace Futhark {
 
     public class Player {
 
-        int posX;
-        int posY;
+        public int posX;
+        public int posY;
         int velX;
         int velY;
+        public int width = 128;
+        public int height = 192;
+
         Texture2D texture;
 
         AnimatedSprite upAnimation;

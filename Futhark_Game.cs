@@ -18,10 +18,17 @@ namespace Futhark
 
         private Game_Constants gConstants;
 
+        private Camera _camera;
+
+        public static int screenWidth;
+
+        public static int screenHeight;
+
 
         public Futhark_Game()
         {
             _graphics = new GraphicsDeviceManager(this);
+            
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -29,6 +36,12 @@ namespace Futhark
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = 512;  // set this value to the desired width of your window
+            _graphics.PreferredBackBufferHeight = 512;   // set this value to the desired height of your window
+            _graphics.ApplyChanges();
+
+            screenWidth = _graphics.PreferredBackBufferWidth;
+            screenHeight = _graphics.PreferredBackBufferHeight;
 
             base.Initialize();
         }
@@ -36,6 +49,8 @@ namespace Futhark
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _camera = new Camera();
 
             // TODO: use this.Content to load your game content here
             Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
@@ -57,6 +72,7 @@ namespace Futhark
 
             // TODO: Add your update logic here
             player.Update();
+            _camera.Follow(player);
 
             base.Update(gameTime);
         }
@@ -66,7 +82,7 @@ namespace Futhark
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: _camera.Transform);
             tilemap_back.Draw(_spriteBatch);
             tilemap_mid.Draw(_spriteBatch);
             
