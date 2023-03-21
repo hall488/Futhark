@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/home/christopherhall/Futhark/Content/../assets/boundary.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/bush_1.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/empty.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/grass_1.png</File>
@@ -15,6 +16,7 @@
     <File>/home/christopherhall/Futhark/Content/../assets/young_skald.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>boundary.png</File>
     <File>bush_1.png</File>
     <File>empty.png</File>
     <File>grass_1.png</File>

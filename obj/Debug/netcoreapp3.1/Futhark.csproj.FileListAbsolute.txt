@@ -99,3 +99,4 @@ C:/Users/christopher/Futhark/bin/Debug/netcoreapp3.1/Content/test_mid_layer.xnb
 /home/christopherhall/Futhark/obj/Debug/netcoreapp3.1/Futhark.dll
 /home/christopherhall/Futhark/obj/Debug/netcoreapp3.1/Futhark.pdb
 /home/christopherhall/Futhark/obj/Debug/netcoreapp3.1/Futhark.genruntimeconfig.cache
+/home/christopherhall/Futhark/bin/Debug/netcoreapp3.1/Content/boundary.xnb
