@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/christopherhall/Futhark/Futhark.csproj": {}
+    "C:\\Users\\christopher\\Futhark\\Futhark.csproj": {}
   },
   "projects": {
-    "/home/christopherhall/Futhark/Futhark.csproj": {
+    "C:\\Users\\christopher\\Futhark\\Futhark.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/christopherhall/Futhark/Futhark.csproj",
+        "projectUniqueName": "C:\\Users\\christopher\\Futhark\\Futhark.csproj",
         "projectName": "Futhark",
-        "projectPath": "/home/christopherhall/Futhark/Futhark.csproj",
-        "packagesPath": "/home/christopherhall/.nuget/packages/",
-        "outputPath": "/home/christopherhall/Futhark/obj/",
+        "projectPath": "C:\\Users\\christopher\\Futhark\\Futhark.csproj",
+        "packagesPath": "C:\\Users\\christopher\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\christopher\\Futhark\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/christopherhall/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\christopher\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -55,20 +55,20 @@ namespace Futhark
             // TODO: use this.Content to load your game content here
             Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
             
-            gConstants = new Game_Constants();
+            gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1));
 
             
             //tile = new Tile(roadTexture);
             using(sysD.Bitmap layer_back = new sysD.Bitmap("assets/test_back_layer.bmp")) {
-                tilemap_back = new Tilemap(Content, layer_back, gConstants.tileDict, false);
+                tilemap_back = new Tilemap(Content, layer_back, gConstants, false);
             }
             using(sysD.Bitmap layer_mid = new sysD.Bitmap("assets/test_mid_layer.bmp")) {
-                tilemap_mid = new Tilemap(Content, layer_mid, gConstants.tileDict, true);
+                tilemap_mid = new Tilemap(Content, layer_mid, gConstants, true);
             }
             
             
 
-            player = new Player(playerTexture, 200, 200, tilemap_mid);
+            player = new Player(playerTexture, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
         }
 
         protected override void Update(GameTime gameTime)

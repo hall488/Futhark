@@ -23,19 +23,24 @@ namespace Futhark {
         AnimatedSprite rightAnimation;
         AnimatedSprite currentAnimation;
 
+        Rectangle colRectX;
+        Rectangle colRectY;
+
+        Texture2D colRectTexture;
+
         bool[] pressedKeys = {false, false, false, false};
         bool[] previousKeys = {false, false, false, false};
 
         Tilemap activeTiles;
 
-        public Player(Texture2D _texture, int x, int y, Tilemap _activeTiles) {
+        public Player(Texture2D _texture, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             texture = _texture;
             posX = x;
             posY = y;
             activeTiles = _activeTiles;
 
             velX = 0;
-            velY =0;
+            velY = 0;
             
             downAnimation = new AnimatedSprite(texture, 4, 4, 0);
             upAnimation = new AnimatedSprite(texture, 4, 4, 1);
@@ -43,7 +48,8 @@ namespace Futhark {
             leftAnimation = new AnimatedSprite(texture, 4, 4, 3);
             
             
-            
+            colRectTexture = _colRectTexture;
+            colRectTexture.SetData(new[] {new Color(255, 0, 0, 128)});
 
             currentAnimation = downAnimation;
         }
@@ -77,6 +83,7 @@ namespace Futhark {
                 pressedKeys[3] = false;
             }
 
+            
 
             if(velY < 0) {
                 currentAnimation = upAnimation;
@@ -94,29 +101,33 @@ namespace Futhark {
                 currentAnimation.stopAnimation();
             }
 
+            int testPosX = posX + velX*2;
+            int testPosY = (posY+height-width) + velY*2;
+                                             
+                        
+            colRectX = new Rectangle(testPosX, posY+height-width, width, width);
+            colRectY = new Rectangle(posX, testPosY, width, width);
+
             
             int lowerCordX = (int)Math.Round((double)(posX - width)/width, 0);
-            int upperCordX = (int)Math.Round((double)(posX + width)/width, 0);
+            int upperCordX = (int)Math.Round((double)(posX + 2*width)/width, 0);
             //using width here because the sprite height is taller than what the bounding box should be
             //the bounding box is one tile
-            int lowerCordY = (int)Math.Round((double)(posY - width)/width, 0);
-            int upperCordY = (int)Math.Round((double)(posY + width)/width, 0);
+            int lowerCordY = (int)Math.Round((double)((posY+height-width) - width)/width, 0);
+            int upperCordY = (int)Math.Round((double)((posY+height-width) + 2*width)/width, 0);
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
-                    Debug.Write(lowerCordY);
-                    Debug.Write(":");
-                    Debug.WriteLine(upperCordY);
+                    
                     Tile t = activeTiles.tilemap[i, j];
-                    if(t.solid) {
-                        int testPosX = posX + velX*2;
-                        int testPosY = posY + velY*2;
-                                             
-
-                        Rectangle testRect = new Rectangle(testPosX, testPosY, width, width);
-                        
-                        if(testRect.Intersects(t.tileRect)) {
-                            velX = 0;
+                    Console.Write(lowerCordX);
+                    Console.Write(" : ");
+                    Console.WriteLine(upperCordX);
+                    if(t.solid) {                        
+                        if(colRectX.Intersects(t.tileRect)) {
+                            velX = 0;                            
+                        }
+                        if(colRectY.Intersects(t.tileRect)) {
                             velY = 0;
                         }
                     }
@@ -134,7 +145,9 @@ namespace Futhark {
         }
 
         public void Draw(SpriteBatch spriteBatch) {
+            spriteBatch.Draw(colRectTexture, colRectY, Color.White);
             currentAnimation.Draw(spriteBatch, posX, posY);
+
         }
     }
 }

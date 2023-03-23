@@ -12,7 +12,11 @@ namespace Futhark {
 
         public Dictionary<string,string> tileDict;
 
-        public Game_Constants() {
+        public Texture2D tileColTexture;
+
+        public Game_Constants(Texture2D _tileColTexture) {
+            
+            tileColTexture = _tileColTexture;
             tileDict = new Dictionary<string, string>();
 
             string[] txtFile = File.ReadAllLines("assets/tile_dictionary.txt");

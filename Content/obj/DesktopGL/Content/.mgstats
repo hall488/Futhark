@@ -1,11 +1,11 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/christopherhall/Futhark/Content/../assets/boundary.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/boundary.xnb","TextureProcessor","Texture2DContent",522,1109,0.4345212
-"/home/christopherhall/Futhark/Content/../assets/bush_1.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/bush_1.xnb","TextureProcessor","Texture2DContent",248,1109,0.4944378
-"/home/christopherhall/Futhark/Content/../assets/empty.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/empty.xnb","TextureProcessor","Texture2DContent",126,1109,0.0024502
-"/home/christopherhall/Futhark/Content/../assets/grass_1.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/grass_1.xnb","TextureProcessor","Texture2DContent",177,1109,0.0012488
-"/home/christopherhall/Futhark/Content/../assets/road_1.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/road_1.xnb","TextureProcessor","Texture2DContent",162,1109,0.0027171
-"/home/christopherhall/Futhark/Content/../assets/road_2.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/road_2.xnb","TextureProcessor","Texture2DContent",135,1109,0.001407
-"/home/christopherhall/Futhark/Content/../assets/test_back_layer.bmp","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/test_back_layer.xnb","TextureProcessor","Texture2DContent",394,341,0.3104672
-"/home/christopherhall/Futhark/Content/../assets/test_level.bmp","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/test_level.xnb","TextureProcessor","Texture2DContent",78,149,0.0017856
-"/home/christopherhall/Futhark/Content/../assets/test_mid_layer.bmp","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/test_mid_layer.xnb","TextureProcessor","Texture2DContent",394,341,0.0012345
-"/home/christopherhall/Futhark/Content/../assets/young_skald.png","/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/young_skald.xnb","TextureProcessor","Texture2DContent",810,24661,0.0030441
+"C:/Users/christopher/Futhark/Content/../assets/boundary.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/boundary.xnb","TextureProcessor","Texture2DContent",522,1109,0.3433849
+"C:/Users/christopher/Futhark/Content/../assets/bush_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/bush_1.xnb","TextureProcessor","Texture2DContent",248,1109,0.0042601
+"C:/Users/christopher/Futhark/Content/../assets/empty.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/empty.xnb","TextureProcessor","Texture2DContent",126,1109,0.0069872
+"C:/Users/christopher/Futhark/Content/../assets/grass_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/grass_1.xnb","TextureProcessor","Texture2DContent",177,1109,0.016571
+"C:/Users/christopher/Futhark/Content/../assets/road_1.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/road_1.xnb","TextureProcessor","Texture2DContent",162,1109,0.0044936
+"C:/Users/christopher/Futhark/Content/../assets/road_2.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/road_2.xnb","TextureProcessor","Texture2DContent",135,1109,0.0119858
+"C:/Users/christopher/Futhark/Content/../assets/test_back_layer.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_back_layer.xnb","TextureProcessor","Texture2DContent",98,341,0.2246627
+"C:/Users/christopher/Futhark/Content/../assets/test_level.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_level.xnb","TextureProcessor","Texture2DContent",78,149,0.0107788
+"C:/Users/christopher/Futhark/Content/../assets/test_mid_layer.bmp","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/test_mid_layer.xnb","TextureProcessor","Texture2DContent",98,341,0.0048948
+"C:/Users/christopher/Futhark/Content/../assets/young_skald.png","C:/Users/christopher/Futhark/Content/bin/DesktopGL/Content/young_skald.xnb","TextureProcessor","Texture2DContent",810,24661,0.0117857

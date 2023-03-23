@@ -24,14 +24,14 @@ namespace Futhark {
 
         bool solid;
 
-        public Tilemap(ContentManager content, sysD.Bitmap _bmp, Dictionary<string, string> _tileDict, bool _solid) {
+        public Tilemap(ContentManager content, sysD.Bitmap _bmp, Game_Constants gConstants, bool _solid) {
             bmp = _bmp;
 
             solid = _solid;
 
             tileDict = new Dictionary<string, Texture2D>();
             
-            foreach(var (key, value) in _tileDict) {
+            foreach(var (key, value) in gConstants.tileDict) {
                 tileDict.Add(key, content.Load<Texture2D>(value));
             }
 
@@ -42,7 +42,7 @@ namespace Futhark {
 
             for(int i=0; i < width; i++) {
                 for(int j=0; j < height; j++) {
-                    tilemap[i,j] = new Tile(bmp.GetPixel(i,j), i, j, solid, tileLength);
+                    tilemap[i,j] = new Tile(bmp.GetPixel(i,j), i, j, solid, tileLength, gConstants.tileColTexture);
                 }
             }
         }
@@ -53,9 +53,11 @@ namespace Futhark {
 
         public void Draw(SpriteBatch spriteBatch) {
             foreach(var t in tilemap) {
-                Rectangle destinationRectangle = new Rectangle(t.x*tileLength, t.y*tileLength, tileLength, tileLength);
+                Rectangle destinationRectangle = new Rectangle(t.x, t.y, tileLength, tileLength);
 
                 spriteBatch.Draw(tileDict[t.color.ToString()], destinationRectangle, Color.White);
+                //Debug collision rectangles
+                //t.Draw(spriteBatch);
             }
         }
     }
