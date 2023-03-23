@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/home/christopherhall/Futhark/Content/../assets/boundary.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/bush_1.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/empty.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/grass_1.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/road_1.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/road_2.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/test_back_layer.bmp</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/test_level.bmp</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/test_mid_layer.bmp</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/young_skald.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>boundary.png</File>
+    <File>bush_1.png</File>
+    <File>empty.png</File>
+    <File>grass_1.png</File>
+    <File>road_1.png</File>
+    <File>road_2.png</File>
+    <File>test_back_layer.bmp</File>
+    <File>test_level.bmp</File>
+    <File>test_mid_layer.bmp</File>
+    <File>young_skald.png</File>
+  </DestFiles>
+</SourceFileCollection>
