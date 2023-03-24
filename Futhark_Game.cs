@@ -55,6 +55,11 @@ namespace Futhark
 
             // TODO: use this.Content to load your game content here
             Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
+            Texture2D[] aettsTextures = new Texture2D[4];
+            aettsTextures[0] = Content.Load<Texture2D>("Aetts");
+            aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
+            aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
+            aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
             gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1));
 
@@ -69,7 +74,9 @@ namespace Futhark
             tilemap_back = new Tilemap(Content, GetColorBMP(back_layer), gConstants, false);                           
             
 
-            player = new Player(playerTexture, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
+            player = new Player(playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
+
+            
         }
 
         protected override void Update(GameTime gameTime)
@@ -90,10 +97,13 @@ namespace Futhark
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: _camera.Transform);
+
+            //back layer
             tilemap_back.Draw(_spriteBatch);
-            tilemap_mid.Draw(_spriteBatch);
-            
+            //mid_layer
+            tilemap_mid.Draw(_spriteBatch);            
             player.Draw(_spriteBatch);
+            //over_layer
             _spriteBatch.End();
 
             base.Draw(gameTime);

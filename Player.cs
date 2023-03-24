@@ -33,8 +33,13 @@ namespace Futhark {
 
         Tilemap activeTiles;
 
-        public Player(Texture2D _texture, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
+        Runestone runestone;
+
+        public Player(Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             texture = _texture;
+
+            runestone = new Runestone(_aettsTextures);
+
             posX = x;
             posY = y;
             activeTiles = _activeTiles;
@@ -57,6 +62,8 @@ namespace Futhark {
         public void Update() {
 
             var keyboardState = Keyboard.GetState();
+
+            runestone.Update(keyboardState);
 
             if(keyboardState.IsKeyDown(Keys.W)) {
                 pressedKeys[0] = true;
@@ -118,9 +125,9 @@ namespace Futhark {
                 for(int j = lowerCordY; j < upperCordY; j++) {
                     
                     Tile t = activeTiles.tilemap[i, j];
-                    Console.Write(lowerCordX);
-                    Console.Write(" : ");
-                    Console.WriteLine(upperCordX);
+                    // Console.Write(lowerCordX);
+                    // Console.Write(" : ");
+                    // Console.WriteLine(upperCordX);
                     if(t.solid) {                        
                         if(colRectX.Intersects(t.tileRect)) {
                             velX = 0;                            
