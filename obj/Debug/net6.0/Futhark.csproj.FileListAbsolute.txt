@@ -137,3 +137,5 @@ C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Hagal_Aett.xnb
 C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tyr_Aett.xnb
 C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\MonoGame.Extended.dll
 C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\16308\Futhark\bin\Debug\net6.0\MonoGame.Extended.dll
+C:\Users\16308\Futhark\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
-using MonoGame.Extended.Serialization;
+using MES = MonoGame.Extended.Serialization;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -15,7 +15,7 @@ namespace Futhark {
     
     public class Game_Constants {
 
-        public Dictionary<Color,string> tileDict;
+        public Dictionary<string,string> tileDict;
 
         public Dictionary<Keys, bool> keysDict;
 
@@ -28,7 +28,8 @@ namespace Futhark {
 
             string jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
 
-            Dictionary<Color, string> tileDict = JsonConvert.DeserializeObject<Dictionary<Color, string>>(jsonFile, new ColorJsonConverter());
+            tileDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
+            
             
             
             // foreach(string line in txtFile) {

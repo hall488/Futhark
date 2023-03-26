@@ -1,7 +1,7 @@
 {
-    "#FFFFFFFF":"empty",
-    "#000000FF":"boundary",
-    "#737373FF":"road_1",
-    "#00FF00FF":"grass_1",
-    "#007800FF":"bush_1"
+    "#ffffffff":"empty",
+    "#000000ff":"boundary",
+    "#737373ff":"road_1",
+    "#00ff00ff":"grass_1",
+    "#007800ff":"bush_1"
 }
