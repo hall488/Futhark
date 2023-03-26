@@ -4,20 +4,20 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/16308/Futhark/Content/../assets/Aetts.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/boundary.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/bush_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/empty.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Frey_Aett.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/grass_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Hagal_Aett.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/road_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/road_2.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/test_back_layer.bmp</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/test_level.bmp</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/test_mid_layer.bmp</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tyr_Aett.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/young_skald.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Aetts.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/boundary.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/bush_1.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/empty.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Frey_Aett.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/grass_1.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Hagal_Aett.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/road_1.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/road_2.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/test_back_layer.bmp</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/test_level.bmp</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/test_mid_layer.bmp</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tyr_Aett.png</File>
+    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/young_skald.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Aetts.png</File>

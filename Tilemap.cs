@@ -12,7 +12,7 @@ namespace Futhark {
 
         Color[,] bmp;
 
-        private Dictionary<string, Texture2D> tileDict;
+        private Dictionary<Color, Texture2D> tileDict;
 
         public Tile[,] tilemap;
 
@@ -28,7 +28,7 @@ namespace Futhark {
 
             solid = _solid;
 
-            tileDict = new Dictionary<string, Texture2D>();
+            tileDict = new Dictionary<Color, Texture2D>();
             
             foreach(var (key, value) in gConstants.tileDict) {
                 tileDict.Add(key, content.Load<Texture2D>(value));
@@ -54,7 +54,7 @@ namespace Futhark {
             foreach(var t in tilemap) {
                 Rectangle destinationRectangle = new Rectangle(t.x, t.y, tileLength, tileLength);
 
-                spriteBatch.Draw(tileDict[t.color.ToString()], destinationRectangle, Color.White);
+                spriteBatch.Draw(tileDict[t.color], destinationRectangle, Color.White);
                 //Debug collision rectangles
                 //t.Draw(spriteBatch);
             }
