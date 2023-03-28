@@ -74,7 +74,7 @@ namespace Futhark
             tilemap_back = new Tilemap(Content, GetColorBMP(back_layer), gConstants, false);                           
             
 
-            player = new Player(playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
+            player = new Player(gConstants.pressedKeys, playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
 
             
         }

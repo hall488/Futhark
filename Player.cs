@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
+using System.Collections.Generic;
 
 namespace Futhark {
 
@@ -35,10 +36,10 @@ namespace Futhark {
 
         Runestone runestone;
 
-        public Player(Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
+        public Player(Dictionary<string, (Keys, bool)> _pressedKeys, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             texture = _texture;
 
-            runestone = new Runestone(_aettsTextures);
+            runestone = new Runestone(_aettsTextures, _pressedKeys);
 
             posX = x;
             posY = y;
