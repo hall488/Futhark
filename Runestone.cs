@@ -12,68 +12,113 @@ namespace Futhark {
 
         Texture2D[] aettsTextures;
         int aettType = 0;
-        private Dictionary<string, (Keys, bool)> pressedRunes;
+        private Dictionary<string, (Keys, bool)> castKeyStates;
+        private Dictionary<string, (Keys, bool)> runeKeyStates;
 
-        List<Keys> prevPressed;
+        List<Keys> runesPrev;
+        List<Keys> castsPrev;
 
-        List<Keys> pressedKeys;
+        List<Keys> runesPressed;
+        List<Keys> castsPressed;
 
         List<string> spellOrder;
 
-        public Runestone(Texture2D[] _aettsTextures, Dictionary<string, (Keys, bool)> _pressedRunes) {
+        bool castActive = false;
+
+        public Runestone(Texture2D[] _aettsTextures, Dictionary<string, (Keys, bool)> _castKeyStates, Dictionary<string, (Keys, bool)> _runeKeyStates) {
 
             aettsTextures = _aettsTextures;
-            pressedRunes = _pressedRunes;
+            castKeyStates = _castKeyStates;
+            runeKeyStates = _runeKeyStates;
             spellOrder = new List<string>();
-            pressedKeys = new List<Keys>();
-            prevPressed = new List<Keys>();
+            runesPressed = new List<Keys>();
+            castsPressed = new List<Keys>();
+            runesPrev = new List<Keys>();
+            castsPrev = new List<Keys>();
         }
 
         public void Update(KeyboardState keyboardState) {   
-            
-            foreach((var key, var val) in pressedRunes) {
-                if(keyboardState.IsKeyDown(val.Item1)) {
-                    pressedKeys.Add(val.Item1);
-                }
-            }            
 
-            foreach(var k in pressedKeys) {
-                foreach((var key, var val) in pressedRunes) {
+            foreach((var key, var val) in castKeyStates) {
+                if(keyboardState.IsKeyDown(val.Item1)) {
+                    castsPressed.Add(val.Item1);
+                }
+            }   
+
+            singleDictKeyTouch(castKeyStates, castsPressed, castsPrev);
+
+            castsPrev = new List<Keys>(castsPressed);
+            castsPressed.Clear();
+            
+            foreach((var key, var val) in runeKeyStates) {
+                if(keyboardState.IsKeyDown(val.Item1)) {
+                    runesPressed.Add(val.Item1);
+                }
+            } 
+
+            singleDictKeyTouch(runeKeyStates, runesPressed, runesPrev);            
+            
+            runesPrev = new List<Keys>(runesPressed);
+            runesPressed.Clear();
+
+            
+            if(castActive) {
+                foreach((var key , var val) in runeKeyStates) {
+                    if(val.Item2) {
+                        spellOrder.Add(key);
+                    }
+                }
+            }
+
+            if(castKeyStates["Cast"].Item2) {
+                if(castActive) {
+                    //Console.WriteLine("End Cast");
+                    castActive = false;
+                    spellOrder.Clear();
+                } else {
+                    //Console.WriteLine("Begin Cast");
+                    castActive = true;
+                }
+            }
+
+            foreach((var a, var b) in runeKeyStates) {
+                Console.Write("{0}: {1}, ", a, b);
+                
+            }
+            Console.WriteLine();
+            
+            // foreach(var i in spellOrder) {
+            //     Console.Write(i);
+            //     Console.Write(", ");
+            // }
+            // Console.WriteLine();
+
+        }
+
+        public void Draw() {
+
+        }
+
+        private void singleDictKeyTouch(Dictionary<string, (Keys, bool)> dictPressed, List<Keys> pressedKeys, List<Keys> prevPressed) {           
+
+            foreach(var k in pressedKeys) {                
+                foreach((var key, var val) in dictPressed) {
                     if(k == val.Item1 && val.Item2 == false && !prevPressed.Contains(k)) {
                         //Have to set whole tuple again because it isnt mutable
-                        pressedRunes[key] = (val.Item1, true);
+                        dictPressed[key] = (val.Item1, true);
                     } else {
-                        pressedRunes[key] = (val.Item1, false);
+                        dictPressed[key] = (val.Item1, false);
                     }
                 }
             }
 
             foreach(var k in prevPressed) {
                 if(!pressedKeys.Contains(k)) {
-                    foreach((var key, var val) in pressedRunes) {
-                        pressedRunes[key] = (val.Item1, false);
+                    foreach((var key, var val) in dictPressed) {
+                        dictPressed[key] = (val.Item1, false);
                     }
                 }
             }
-
-            prevPressed = new List<Keys>(pressedKeys);
-            pressedKeys.Clear();
-
-            foreach((var key , var val) in pressedRunes) {
-                if(val.Item2) {
-                    spellOrder.Add(key);
-                }
-            }
-            
-            foreach(var i in spellOrder) {
-                Console.Write(i);
-                Console.Write(", ");
-            }
-            Console.WriteLine();
-
-        }
-
-        public void Draw() {
 
         }
     }

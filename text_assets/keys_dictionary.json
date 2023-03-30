@@ -1,11 +1,15 @@
 {
-    "Start Cast":32,
-    "Rune 1":49,
-    "Rune 2":50,
-    "Rune 3":51,
-    "Rune 4":52,
-    "Rune 5":53,
-    "Rune 6":54,
-    "Rune 7":55,
-    "Rune 8":56
+    "Cast Keys":{
+        "Cast": 32
+    },
+    "Rune Keys":{
+        "Rune 1":49,
+        "Rune 2":50,
+        "Rune 3":51,
+        "Rune 4":52,
+        "Rune 5":53,
+        "Rune 6":54,
+        "Rune 7":55,
+        "Rune 8":56
+    }
 }

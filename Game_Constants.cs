@@ -17,17 +17,20 @@ namespace Futhark {
 
         public Dictionary<string,string> tileDict;
 
-        public Dictionary<string, int> keysDict;
+        public Dictionary<string, Dictionary<string, int>> keysDict;
 
-        public Dictionary<string,(Keys, bool)> pressedKeys;
+        public Dictionary<string,(Keys, bool)> runeKeys;
+
+        public Dictionary<string,(Keys, bool)> castKeys;
 
         public Texture2D tileColTexture;
 
         public Game_Constants(Texture2D _tileColTexture) {
             
             tileColTexture = _tileColTexture;
-            keysDict = new Dictionary<string, int>();
-            pressedKeys = new Dictionary<string, (Keys, bool)>();
+            keysDict = new Dictionary<string, Dictionary<string, int>>();
+            runeKeys = new Dictionary<string, (Keys, bool)>();
+            castKeys = new Dictionary<string, (Keys, bool)>();
 
             string jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
 
@@ -35,10 +38,18 @@ namespace Futhark {
 
             jsonFile = File.ReadAllText("text_assets/keys_dictionary.json");
             
-            keysDict = JsonConvert.DeserializeObject<Dictionary<string, int>>(jsonFile);
+            keysDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, int>>>(jsonFile);
 
             foreach((var key, var val) in keysDict) {
-                pressedKeys.Add(key, ((Keys)val, false));
+                if(key == "Cast Keys") {
+                    foreach((var subKey, var subVal) in val) {
+                        castKeys.Add(subKey, ((Keys)subVal, false));
+                    }
+                } else if(key == "Rune Keys") {
+                    foreach((var subKey, var subVal) in val) {
+                        runeKeys.Add(subKey, ((Keys)subVal, false));
+                    }
+                }
             }
             
             
