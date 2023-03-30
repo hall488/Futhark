@@ -33,7 +33,7 @@ namespace Futhark {
 
             tileDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
 
-            jsonFile = File.ReadAllText("text_assets/key_dictionary.json");
+            jsonFile = File.ReadAllText("text_assets/keys_dictionary.json");
             
             keysDict = JsonConvert.DeserializeObject<Dictionary<string, int>>(jsonFile);
 
