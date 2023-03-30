@@ -56,6 +56,12 @@ namespace Futhark {
                 }
             } 
 
+            foreach(var t in runesPressed) {
+                Console.Write("{0}, ", t);
+            }
+
+            Console.WriteLine();
+
             singleDictKeyTouch(runeKeyStates, runesPressed, runesPrev);            
             
             runesPrev = new List<Keys>(runesPressed);
@@ -82,10 +88,10 @@ namespace Futhark {
             }
 
             foreach((var a, var b) in runeKeyStates) {
-                Console.Write("{0}: {1}, ", a, b);
+                //Console.Write("{0}: {1}, ", a, b);
                 
             }
-            Console.WriteLine();
+            //Console.WriteLine();
             
             // foreach(var i in spellOrder) {
             //     Console.Write(i);
@@ -112,11 +118,9 @@ namespace Futhark {
                 }
             }
 
-            foreach(var k in prevPressed) {
-                if(!pressedKeys.Contains(k)) {
-                    foreach((var key, var val) in dictPressed) {
-                        dictPressed[key] = (val.Item1, false);
-                    }
+            foreach((var key, var val) in dictPressed) {
+                if(prevPressed.Contains(val.Item1)) {
+                    dictPressed[key] = (val.Item1, false);
                 }
             }
 
