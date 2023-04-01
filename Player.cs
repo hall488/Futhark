@@ -153,7 +153,7 @@ namespace Futhark {
         public void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(colRectTexture, colRectY, Color.White);
             currentAnimation.Draw(spriteBatch, posX, posY);
-
+            runestone.Draw(spriteBatch, posX, posY);
         }
     }
 }

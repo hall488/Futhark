@@ -23,7 +23,7 @@ namespace Futhark {
 
         public Dictionary<string,(Keys, bool)> castKeys;
 
-        public Dictionary<string, string[]> spellDict;
+        public Dictionary<string, string> spellDict;
 
         public Texture2D tileColTexture;
 
@@ -33,7 +33,7 @@ namespace Futhark {
             keysDict = new Dictionary<string, Dictionary<string, int>>();
             runeKeys = new Dictionary<string, (Keys, bool)>();
             castKeys = new Dictionary<string, (Keys, bool)>();
-            spellDict = new Dictionary<string, string[]>();
+            spellDict = new Dictionary<string, string>();
 
             string jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
 
@@ -45,7 +45,7 @@ namespace Futhark {
 
             jsonFile = File.ReadAllText("text_assets/spells_dictionary.json");
 
-            spellDict = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(jsonFile);
+            spellDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
 
             foreach((var key, var val) in keysDict) {
                 if(key == "Cast Keys") {

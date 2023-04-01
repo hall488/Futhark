@@ -37,8 +37,8 @@ namespace Futhark
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _graphics.PreferredBackBufferWidth = 512;  // set this value to the desired width of your window
-            _graphics.PreferredBackBufferHeight = 512;   // set this value to the desired height of your window
+            _graphics.PreferredBackBufferWidth = 1024;  // set this value to the desired width of your window
+            _graphics.PreferredBackBufferHeight = 1024;   // set this value to the desired height of your window
             _graphics.ApplyChanges();
 
             screenWidth = _graphics.PreferredBackBufferWidth;
