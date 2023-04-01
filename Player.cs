@@ -36,10 +36,10 @@ namespace Futhark {
 
         Runestone runestone;
 
-        public Player(Dictionary<string, (Keys, bool)> _castKeys, Dictionary<string, (Keys, bool)> _runeKeys, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
+        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             texture = _texture;
 
-            runestone = new Runestone(_aettsTextures, _castKeys, _runeKeys);
+            runestone = new Runestone(_aettsTextures, gConstants);
 
             posX = x;
             posY = y;

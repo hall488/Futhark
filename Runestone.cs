@@ -14,6 +14,7 @@ namespace Futhark {
         int aettType = 0;
         private Dictionary<string, (Keys, bool)> castKeyStates;
         private Dictionary<string, (Keys, bool)> runeKeyStates;
+        private Dictionary<string, string[]> spellDict;
 
         List<Keys> runesPrev;
         List<Keys> castsPrev;
@@ -25,11 +26,12 @@ namespace Futhark {
 
         bool castActive = false;
 
-        public Runestone(Texture2D[] _aettsTextures, Dictionary<string, (Keys, bool)> _castKeyStates, Dictionary<string, (Keys, bool)> _runeKeyStates) {
+        public Runestone(Texture2D[] _aettsTextures, Game_Constants gConstants) {
 
             aettsTextures = _aettsTextures;
-            castKeyStates = _castKeyStates;
-            runeKeyStates = _runeKeyStates;
+            castKeyStates = gConstants.castKeys;
+            runeKeyStates = gConstants.runeKeys;
+            spellDict = gConstants.spellDict;
             spellOrder = new List<string>();
             runesPressed = new List<Keys>();
             castsPressed = new List<Keys>();
@@ -56,11 +58,11 @@ namespace Futhark {
                 }
             } 
 
-            foreach(var t in runesPressed) {
-                Console.Write("{0}, ", t);
-            }
+            // foreach(var t in runesPressed) {
+            //     Console.Write("{0}, ", t);
+            // }
 
-            Console.WriteLine();
+            // Console.WriteLine();
 
             singleDictKeyTouch(runeKeyStates, runesPressed, runesPrev);            
             
@@ -78,26 +80,30 @@ namespace Futhark {
 
             if(castKeyStates["Cast"].Item2) {
                 if(castActive) {
-                    //Console.WriteLine("End Cast");
+                    Console.WriteLine("End Cast");
                     castActive = false;
-                    spellOrder.Clear();
+                    var spell = String.Join(", ", spellOrder.ToArray());
+                    if(spell != null) {
+                        castSpell(spell);
+                    }
                 } else {
-                    //Console.WriteLine("Begin Cast");
+                    Console.WriteLine("Begin Cast");
                     castActive = true;
                 }
             }
 
-            foreach((var a, var b) in runeKeyStates) {
-                //Console.Write("{0}: {1}, ", a, b);
+
+            // foreach((var a, var b) in runeKeyStates) {
+            //     Console.Write("{0}: {1}, ", a, b);
                 
-            }
-            //Console.WriteLine();
-            
-            // foreach(var i in spellOrder) {
-            //     Console.Write(i);
-            //     Console.Write(", ");
             // }
             // Console.WriteLine();
+            
+            foreach(var i in spellOrder) {
+                Console.Write(i);
+                Console.Write(", ");
+            }
+            Console.WriteLine();
 
         }
 
@@ -109,21 +115,30 @@ namespace Futhark {
 
             foreach(var k in pressedKeys) {                
                 foreach((var key, var val) in dictPressed) {
-                    if(k == val.Item1 && val.Item2 == false && !prevPressed.Contains(k)) {
-                        //Have to set whole tuple again because it isnt mutable
-                        dictPressed[key] = (val.Item1, true);
-                    } else {
-                        dictPressed[key] = (val.Item1, false);
+                    if(k == val.Item1) {
+                        if(val.Item2 == false && !prevPressed.Contains(k)) {
+                            //Have to set whole tuple again because it isnt mutable
+                            dictPressed[key] = (val.Item1, true);
+                            //Console.WriteLine("{0} with key {1} has been set to true", key, val.Item1);
+                        } else if(val.Item2 == true){
+                            dictPressed[key] = (val.Item1, false);
+                            //Console.WriteLine("{0} with key {1} has been set to false1", key, val.Item1);
+                        }
                     }
                 }
             }
 
             foreach((var key, var val) in dictPressed) {
-                if(prevPressed.Contains(val.Item1)) {
+                if(prevPressed.Contains(val.Item1) && val.Item2 == true) {
                     dictPressed[key] = (val.Item1, false);
+                    //Console.WriteLine("{0} with key {1} has been set to false2", key, val.Item1);
                 }
             }
 
+        }
+
+        private void castSpell(string spell) {
+            
         }
     }
 }
