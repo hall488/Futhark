@@ -81,6 +81,12 @@ namespace Futhark {
 
             // Console.WriteLine();
 
+            // foreach(var t in runesPrev) {
+            //     Console.Write("{0}, ", t);
+            // }
+
+            // Console.WriteLine();
+
             singleDictKeyTouch(runeKeyStates, runesPressed, runesPrev);            
             
             runesPrev = new List<Keys>(runesPressed);
@@ -129,17 +135,17 @@ namespace Futhark {
 
             if(castKeyStates["Cast"].Item2) {
                 if(castActive) {
-                    Console.WriteLine("End Cast");
+                    //Console.WriteLine("End Cast");
                     castActive = false;
                     var spell = String.Join(", ", spellOrder.ToArray());
                     if(spellDict.ContainsKey(spell)) {
-                        Console.WriteLine(spellDict[spell]);
+                        //Console.WriteLine(spellDict[spell]);
                     } else {
-                        Console.WriteLine("Invalid spell!");
+                        //Console.WriteLine("Invalid spell!");
                     }
                     spellOrder.Clear();
                 } else {
-                    Console.WriteLine("Begin Cast");
+                    //Console.WriteLine("Begin Cast");
                     castActive = true;
                     aettType = 0;                    
                 }
@@ -152,11 +158,11 @@ namespace Futhark {
             // }
             // Console.WriteLine();
             
-            foreach(var i in spellOrder) {
-                Console.Write(i);
-                Console.Write(", ");
-            }
-            Console.WriteLine();
+            // foreach(var i in spellOrder) {
+            //     Console.Write(i);
+            //     Console.Write(", ");
+            // }
+            // Console.WriteLine();
 
         }
 
@@ -170,7 +176,7 @@ namespace Futhark {
             }
 
             Rectangle sourceRectangle = new Rectangle(width * runePos, height * tempCol, width, height);
-            Rectangle destinationRectangle = new Rectangle(315 + playerX, 350 + playerY, width*4, height*4);
+            Rectangle destinationRectangle = new Rectangle(150 + playerX, 150 + playerY, width*4, height*4);
             
             if(castActive)
                 spriteBatch.Draw(aettsTextures[aettType], destinationRectangle, sourceRectangle, Color.White);
@@ -194,17 +200,19 @@ namespace Futhark {
             // }
 
             foreach(var k in prevPressed) {                
-                foreach((var key, var val) in dictPressed) {
-                    if(k == val.Item1) {
-                        if(val.Item2 == false && !prevPressed.Contains(k)) {
-                            //Have to set whole tuple again because it isnt mutable
+                if(!pressedKeys.Contains(k)) {
+                    foreach((var key, var val) in dictPressed) {
+                        if(k == val.Item1) {
                             dictPressed[key] = (val.Item1, true);
-                            //Console.WriteLine("{0} with key {1} has been set to true", key, val.Item1);
-                        } else if(val.Item2 == true){
-                            dictPressed[key] = (val.Item1, false);
-                            //Console.WriteLine("{0} with key {1} has been set to false1", key, val.Item1);
+                            Console.WriteLine("{0} : true", val.Item1);
                         }
-                    }
+                    }                    
+                }
+            }
+
+            foreach((var key, var val) in dictPressed) {
+                if(!prevPressed.Contains(val.Item1)) {
+                    dictPressed[key] = (val.Item1, false);
                 }
             }
 
