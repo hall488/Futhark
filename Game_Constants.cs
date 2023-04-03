@@ -27,8 +27,17 @@ namespace Futhark {
 
         public Texture2D tileColTexture;
 
-        public Game_Constants(Texture2D _tileColTexture) {
+        public Dictionary<string, Texture2D> spellTextures;
+
+        public int screenWidth;
+
+        public int screenHeight;
+
+        public Game_Constants(Texture2D _tileColTexture, Dictionary<string, Texture2D> spellTextures, int screenWidth, int screenHeight) {
             
+            this.spellTextures = spellTextures;
+            this.screenWidth = screenWidth;
+            this.screenHeight = screenHeight;
             tileColTexture = _tileColTexture;
             keysDict = new Dictionary<string, Dictionary<string, int>>();
             runeKeys = new Dictionary<string, (Keys, bool)>();

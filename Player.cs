@@ -11,8 +11,9 @@ namespace Futhark {
 
         public int posX;
         public int posY;
-        int velX;
-        int velY;
+        double unitX;
+        double unitY;
+        public int vel;
         public int width = 128;
         public int height = 192;
 
@@ -36,17 +37,20 @@ namespace Futhark {
 
         Runestone runestone;
 
+
         public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             texture = _texture;
 
-            runestone = new Runestone(_aettsTextures, gConstants);
+            
 
             posX = x;
             posY = y;
             activeTiles = _activeTiles;
 
-            velX = 0;
-            velY = 0;
+            unitX = 0;
+            unitY = 0;
+
+            vel = 3;
             
             downAnimation = new AnimatedSprite(texture, 4, 4, 0);
             upAnimation = new AnimatedSprite(texture, 4, 4, 1);
@@ -58,61 +62,76 @@ namespace Futhark {
             colRectTexture.SetData(new[] {new Color(255, 0, 0, 128)});
 
             currentAnimation = downAnimation;
+
+            runestone = new Runestone(this, _aettsTextures, gConstants);
         }
 
         public void Update() {
 
             var keyboardState = Keyboard.GetState();
+            var mouseState = Mouse.GetState();
 
-            runestone.Update(keyboardState);
+            runestone.Update(keyboardState, mouseState);
 
             if(keyboardState.IsKeyDown(Keys.W)) {
                 pressedKeys[0] = true;
-                velY -= 1;
+                unitY -= 1;
             } else {
                 pressedKeys[0] = false;
             }
             if(keyboardState.IsKeyDown(Keys.A)) {
                 pressedKeys[1] = true;
-                velX -= 1;
+                unitX -= 1;
             } else {
                 pressedKeys[1] = false;
             }
             if(keyboardState.IsKeyDown(Keys.S)) {
                 pressedKeys[2] = true;
-                velY += 1;
+                unitY += 1;
             } else {
                 pressedKeys[2] = false;
             }
             if(keyboardState.IsKeyDown(Keys.D)) {
                 pressedKeys[3] = true;
-                velX += 1;
+                unitX += 1;
             } else {
                 pressedKeys[3] = false;
             }            
 
-            if(velY < 0) {
+            if(unitY < 0) {
                 currentAnimation = upAnimation;
                 currentAnimation.playAnimation();
-            } else if (velY > 0) {
+            } else if (unitY > 0) {
                 currentAnimation = downAnimation;
                 currentAnimation.playAnimation();
-            } else if (velX > 0) {
+            } else if (unitX > 0) {
                 currentAnimation = rightAnimation;
                 currentAnimation.playAnimation();
-            } else if (velX < 0) {
+            } else if (unitX < 0) {
                 currentAnimation = leftAnimation;
                 currentAnimation.playAnimation();
             } else {
                 currentAnimation.stopAnimation();
             }
 
-            int testPosX = posX + velX*2;
-            int testPosY = (posY+height-width) + velY*2;
+            
+
+            if(!(unitX == 0 && unitY == 0)) {
+
+                double mag = Math.Sqrt(unitX*unitX + unitY*unitY);
+
+                unitX = unitX / mag;
+                unitY = unitY / mag;
+
+            }
+            
+
+            int testPosX = posX + (int)(unitX*vel);
+            int testPosY = (posY+height-width) + (int)(unitY*vel);
                                              
                         
-            colRectX = new Rectangle(testPosX, posY+height-width, width, width);
-            colRectY = new Rectangle(posX, testPosY, width, width);
+            colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
+            colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
 
             
             int lowerCordX = (int)Math.Round((double)(posX - width)/width, 0);
@@ -131,21 +150,21 @@ namespace Futhark {
                     // Console.WriteLine(upperCordX);
                     if(t.solid) {                        
                         if(colRectX.Intersects(t.tileRect)) {
-                            velX = 0;                            
+                            unitX = 0;                            
                         }
                         if(colRectY.Intersects(t.tileRect)) {
-                            velY = 0;
+                            unitY = 0;
                         }
                     }
                 }
             }
 
-            posX += velX*2;
-            posY += velY*2;
+            posX += (int)(unitX*vel);
+            posY += (int)(unitY*vel);
 
             pressedKeys.CopyTo(previousKeys, 0);
-            velX = 0;
-            velY = 0;
+            unitX = 0;
+            unitY = 0;
             
             currentAnimation.Update();
         }

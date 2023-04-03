@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
+using System.Collections.Generic;
 //using sysD = System.Drawing; //only works on windows
 
 
@@ -54,14 +55,17 @@ namespace Futhark
             _camera = new Camera();
 
             // TODO: use this.Content to load your game content here
+            Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
+
             Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
+            spellTextures.Add("fireball", Content.Load<Texture2D>("fireball"));
             Texture2D[] aettsTextures = new Texture2D[4];
             aettsTextures[0] = Content.Load<Texture2D>("Aetts");
             aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
             aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
             aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
-            gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1));
+            gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1), spellTextures, screenWidth, screenHeight);
 
 
             Texture2D mid_layer = Content.Load<Texture2D>("test_mid_layer");

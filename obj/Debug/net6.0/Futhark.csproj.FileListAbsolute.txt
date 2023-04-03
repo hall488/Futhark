@@ -243,3 +243,4 @@ C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\refint\Futhark.dll
 C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.pdb
 C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.genruntimeconfig.cache
 C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\ref\Futhark.dll
+C:\Users\16308\Futhark\bin\Debug\net6.0\Content\fireball.xnb
