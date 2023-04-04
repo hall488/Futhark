@@ -33,8 +33,11 @@ namespace Futhark {
 
         public int screenHeight;
 
-        public Game_Constants(Texture2D _tileColTexture, Dictionary<string, Texture2D> spellTextures, int screenWidth, int screenHeight) {
+        public Camera camera;
+
+        public Game_Constants(Texture2D _tileColTexture, Dictionary<string, Texture2D> spellTextures, Camera camera, int screenWidth, int screenHeight) {
             
+            this.camera = camera;
             this.spellTextures = spellTextures;
             this.screenWidth = screenWidth;
             this.screenHeight = screenHeight;

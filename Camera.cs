@@ -25,5 +25,11 @@ namespace Futhark
 
       Transform = position * offset;
     }
+
+    public Vector2 ScreenToWorldSpace(in Vector2 point)
+        {
+            Matrix invertedMatrix = Matrix.Invert(Transform);
+            return Vector2.Transform(point, invertedMatrix);
+        }
   }
 }

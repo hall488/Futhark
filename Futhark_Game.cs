@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
+using System;
 using System.Collections.Generic;
 //using sysD = System.Drawing; //only works on windows
 
@@ -65,7 +66,7 @@ namespace Futhark
             aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
             aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
-            gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1), spellTextures, screenWidth, screenHeight);
+            gConstants = new Game_Constants(new Texture2D(GraphicsDevice, 1, 1), spellTextures, _camera, screenWidth, screenHeight);
 
 
             Texture2D mid_layer = Content.Load<Texture2D>("test_mid_layer");
@@ -92,6 +93,8 @@ namespace Futhark
             player.Update();
             _camera.Follow(player);
 
+            
+
             base.Update(gameTime);
         }
 
@@ -112,6 +115,8 @@ namespace Futhark
 
             base.Draw(gameTime);
         }
+
+        
 
         public Color[,] GetColorBMP(Texture2D a) {
             Color[] D1 = new Color[a.Width * a.Height];

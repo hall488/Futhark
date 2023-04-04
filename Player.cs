@@ -37,11 +37,23 @@ namespace Futhark {
 
         Runestone runestone;
 
+        private Dictionary<string, Texture2D> spellTextures;
+
+        public List<string> spellQueue;
+        List<Fireball> fireballs;
+
+        Camera camera;
+
 
         public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
+            
+            camera = gConstants.camera;
+            
             texture = _texture;
 
-            
+            spellTextures = gConstants.spellTextures;
+
+            spellQueue = new List<string>();
 
             posX = x;
             posY = y;
@@ -56,7 +68,8 @@ namespace Futhark {
             upAnimation = new AnimatedSprite(texture, 4, 4, 1);
             rightAnimation = new AnimatedSprite(texture, 4, 4, 2);
             leftAnimation = new AnimatedSprite(texture, 4, 4, 3);
-            
+
+                       
             
             colRectTexture = _colRectTexture;
             colRectTexture.SetData(new[] {new Color(255, 0, 0, 128)});
@@ -64,14 +77,45 @@ namespace Futhark {
             currentAnimation = downAnimation;
 
             runestone = new Runestone(this, _aettsTextures, gConstants);
+
+            fireballs = new List<Fireball>(); 
         }
 
         public void Update() {
 
             var keyboardState = Keyboard.GetState();
             var mouseState = Mouse.GetState();
+            var mousePos = camera.ScreenToWorldSpace(new Vector2(mouseState.Position.X, mouseState.Position.Y));
+            mousePos = new Vector2(mousePos.X - posX, mousePos.Y - posY);
+
+            var mouseUnit = new Vector2(0,0);
+
+            
+
+            if(!(mousePos.X == 0 && mousePos.Y == 0)) {
+
+                double mag = Math.Sqrt(mousePos.X*mousePos.X + mousePos.Y*mousePos.Y);
+
+                mouseUnit.X = (float)(mousePos.X / mag);
+                mouseUnit.Y = (float)(mousePos.Y / mag);
+
+            }
 
             runestone.Update(keyboardState, mouseState);
+
+            List<Fireball> fireballToRemove = new List<Fireball>();
+
+            foreach(var f in fireballs) {
+                if(f.Update(activeTiles)) {
+                    fireballToRemove.Add(f);
+                }
+            }
+
+            foreach(var f in fireballToRemove) {
+                fireballs.Remove(f);
+            }
+
+            fireballToRemove.Clear();
 
             if(keyboardState.IsKeyDown(Keys.W)) {
                 pressedKeys[0] = true;
@@ -127,19 +171,22 @@ namespace Futhark {
             
 
             int testPosX = posX + (int)(unitX*vel);
-            int testPosY = (posY+height-width) + (int)(unitY*vel);
+            int testPosY = posY + (int)(unitY*vel);
                                              
                         
-            colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
-            colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
+            //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
+            //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
+
+            colRectX = new Rectangle(testPosX - width / 2 + 10, posY + height/2 - width + 20, width-20, width-20);
+            colRectY = new Rectangle(posX - width / 2 + 10, testPosY + height/2 - width + 20, width-20, width-20);
 
             
             int lowerCordX = (int)Math.Round((double)(posX - width)/width, 0);
             int upperCordX = (int)Math.Round((double)(posX + 2*width)/width, 0);
             //using width here because the sprite height is taller than what the bounding box should be
             //the bounding box is one tile
-            int lowerCordY = (int)Math.Round((double)((posY+height-width) - width)/width, 0);
-            int upperCordY = (int)Math.Round((double)((posY+height-width) + 2*width)/width, 0);
+            int lowerCordY = (int)Math.Round((double)((posY+height/2-width) - width)/width, 0);
+            int upperCordY = (int)Math.Round((double)((posY+height/2-width) + 2*width)/width, 0);
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
@@ -167,12 +214,21 @@ namespace Futhark {
             unitY = 0;
             
             currentAnimation.Update();
+
+            if(spellQueue.Count != 0 && spellQueue[0] == "Fireball") {
+                fireballs.Add(new Fireball(posX, posY, 5, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
+                spellQueue.RemoveAt(0);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(colRectTexture, colRectY, Color.White);
-            currentAnimation.Draw(spriteBatch, posX, posY);
+            currentAnimation.Draw(spriteBatch, posX, posY, 0f);
             runestone.Draw(spriteBatch, posX, posY);
+
+            foreach(var f in fireballs) {
+                f.Draw(spriteBatch);
+            }
         }
     }
 }

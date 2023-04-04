@@ -19,7 +19,7 @@ namespace Futhark {
 
         private Dictionary<string, string[]> keyToRune;
 
-        private Dictionary<string, Texture2D> spellTextures;
+        
 
         List<Keys> runesPrev;
         List<Keys> castsPrev;
@@ -34,15 +34,18 @@ namespace Futhark {
         int width = 64;
         int height = 64;
 
-        List<Fireball> fireballs;
+       
 
         Player player;
 
         int screenWidth;
         int screenHeight;
 
+        Camera camera;
+
         public Runestone(Player player, Texture2D[] _aettsTextures, Game_Constants gConstants) {
 
+            this.camera = gConstants.camera;
             this.player = player;
             this.screenWidth = gConstants.screenWidth;
             this.screenHeight = gConstants.screenHeight;
@@ -51,14 +54,14 @@ namespace Futhark {
             runeKeyStates = gConstants.runeKeys;
             spellDict = gConstants.spellDict;
             keyToRune = new Dictionary<string, string[]>();
-            spellTextures = gConstants.spellTextures;
+            
             spellOrder = new List<string>();
             runesPressed = new List<Keys>();
             castsPressed = new List<Keys>();
             runesPrev = new List<Keys>();
             castsPrev = new List<Keys>();
             
-            fireballs = new List<Fireball>();
+            
 
             keyToRune.Add("Rune 1", new String[] {"Fehu", "Hagalaz", "Tiwaz"});
             keyToRune.Add("Rune 2", new String[] {"Uruz", "Nauthiz", "Berkana"});
@@ -73,7 +76,8 @@ namespace Futhark {
 
         public void Update(KeyboardState keyboardState, MouseState mouseState) {   
 
-            Console.WriteLine("X{0} Y{1}", mouseState.X, mouseState.Y);
+            
+
 
             foreach((var key, var val) in castKeyStates) {
                 if(keyboardState.IsKeyDown(val.Item1)) {
@@ -168,10 +172,8 @@ namespace Futhark {
                     castActive = false;
                     var spell = String.Join(", ", spellOrder.ToArray());
                     if(spellDict.ContainsKey(spell)) {
-                        Console.WriteLine(spellDict[spell]);
-                        if(spellDict[spell] == "Fireball") {
-                            //fireballs.Add(new Fireball(player.posX, player.posY, 5, ));
-                        }
+                        Console.WriteLine(spellDict[spell]);                        
+                        player.spellQueue.Add(spellDict[spell]);
                     } else {
                         Console.WriteLine("Invalid spell!");
                     }
@@ -212,6 +214,8 @@ namespace Futhark {
             
             if(castActive)
                 spriteBatch.Draw(aettsTextures[aettType], destinationRectangle, sourceRectangle, Color.White);
+
+            
         }
 
         private void singleDictKeyTouch(Dictionary<string, (Keys, bool)> dictPressed, List<Keys> pressedKeys, List<Keys> prevPressed) {           

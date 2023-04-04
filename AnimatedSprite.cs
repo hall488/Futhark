@@ -48,7 +48,7 @@ namespace Futhark
             }
         }
  
-        public void Draw(SpriteBatch spriteBatch, int x, int y)
+        public void Draw(SpriteBatch spriteBatch, int x, int y, float rot)
         {
             int width = Texture.Width / Columns;
             int height = Texture.Height / Rows;
@@ -58,8 +58,9 @@ namespace Futhark
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle(x, y, width*8, height*8);
  
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+            //spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw (Texture, destinationRectangle, sourceRectangle, Color.White, rot, new Vector2(width / 2, height / 2), SpriteEffects.None, 0f);
+           
         }
 
         public void playAnimation() {
