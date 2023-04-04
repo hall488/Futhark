@@ -7,10 +7,12 @@ using System.Collections.Generic;
 
 namespace Futhark {
 
-    public class Player {
+    public class Player : IyDraw {
 
         public int posX;
         public int posY;
+
+        int IyDraw.yPosition() => posY;
         double unitX;
         double unitY;
         public int vel;
@@ -24,6 +26,8 @@ namespace Futhark {
         AnimatedSprite leftAnimation;
         AnimatedSprite rightAnimation;
         AnimatedSprite currentAnimation;
+
+        AnimatedSprite IyDraw.animation() => currentAnimation;
 
         Rectangle colRectX;
         Rectangle colRectY;
@@ -44,9 +48,13 @@ namespace Futhark {
 
         Camera camera;
 
+        List<IyDraw> drawQueue;
+
 
         public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             
+            drawQueue = new List<IyDraw>();
+
             camera = gConstants.camera;
             
             texture = _texture;
@@ -90,7 +98,7 @@ namespace Futhark {
 
             var mouseUnit = new Vector2(0,0);
 
-            
+            drawQueue.Add(this);
 
             if(!(mousePos.X == 0 && mousePos.Y == 0)) {
 
@@ -106,6 +114,7 @@ namespace Futhark {
             List<Fireball> fireballToRemove = new List<Fireball>();
 
             foreach(var f in fireballs) {
+
                 if(f.Update(activeTiles)) {
                     fireballToRemove.Add(f);
                 }
@@ -219,16 +228,25 @@ namespace Futhark {
                 fireballs.Add(new Fireball(posX, posY, 5, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
                 spellQueue.RemoveAt(0);
             }
+
+            
         }
 
         public void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(colRectTexture, colRectY, Color.White);
+            drawQueue.Add(this);
+            foreach(var f in fireballs) {
+                drawQueue.Add(f);
+            }
+
+            drawQueue.Sort()
+
             currentAnimation.Draw(spriteBatch, posX, posY, 0f);
+
+            
             runestone.Draw(spriteBatch, posX, posY);
 
-            foreach(var f in fireballs) {
-                f.Draw(spriteBatch);
-            }
+            
         }
     }
 }

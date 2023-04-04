@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Futhark {
 
-    public class Projectile { 
+    public class Projectile : IyDraw{ 
 
         protected int posX;
         protected int posY;
@@ -26,8 +26,11 @@ namespace Futhark {
 
         protected int tWidth = 128;
 
-        public Projectile() {
+        int IyDraw.yPosition() => posY;
+        AnimatedSprite IyDraw.animation() => animation;
 
+        public Projectile() {
+            
         }
 
         public virtual bool Update(Tilemap activeTiles) {
