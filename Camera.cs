@@ -13,9 +13,14 @@ namespace Futhark
 
     public void Follow(Player target)
     {
+      var posX = (int)target.posX;
+      var posY = (int)target.posY;
+
       var position = Matrix.CreateTranslation(
-        -target.posX - (target.width / 2),
-        -target.posY - (target.height / 2),
+        // -posX - (target.width / 2),
+        //-posY - (target.height / 2),
+        -posX,
+        -posY,
         0);
 
       var offset = Matrix.CreateTranslation(

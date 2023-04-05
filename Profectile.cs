@@ -9,8 +9,8 @@ namespace Futhark {
 
     public class Projectile : IyDraw{ 
 
-        protected int posX;
-        protected int posY;
+        protected double posX;
+        protected double posY;
         protected int vel;
         protected double unitX;
         protected double unitY;
@@ -26,8 +26,17 @@ namespace Futhark {
 
         protected int tWidth = 128;
 
-        int IyDraw.yPosition() => posY;
+        double IyDraw.yPosition() => posY;
+        double IyDraw.xPosition() => posX;
+        float IyDraw.rotation() => rot;
         AnimatedSprite IyDraw.animation() => animation;
+
+        public int CompareTo(IyDraw other)
+        {
+            // implement your custom comparison here...
+
+            return posY.CompareTo(other.yPosition()); // e.g.
+        }
 
         public Projectile() {
             
@@ -36,9 +45,9 @@ namespace Futhark {
         public virtual bool Update(Tilemap activeTiles) {
             //Console.WriteLine("{0},{1},{2},{3}", unitX, unitY, posX, posY);
 
-            posX += (int)(unitX*vel);
-            posY += (int)(unitY*vel);
-            colRect = new Rectangle(posX - width / 2, posY + height/2, width, height);
+            posX += (unitX*vel);
+            posY += (unitY*vel);
+            colRect = new Rectangle((int)posX - width / 2, (int)posY + height/2, width, height);
 
             int lowerCordX = (int)Math.Round((double)(posX - tWidth)/tWidth, 0);
             int upperCordX = (int)Math.Round((double)(posX + 2*tWidth)/tWidth, 0);
@@ -46,6 +55,12 @@ namespace Futhark {
             //the bounding box is one tile
             int lowerCordY = (int)Math.Round((double)(posY - tWidth)/tWidth, 0);
             int upperCordY = (int)Math.Round((double)(posY + 2*tWidth)/tWidth, 0);
+
+            lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
+            lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
+            upperCordX = upperCordX > activeTiles.tilemap.GetLength(1) ? activeTiles.tilemap.GetLength(1) : upperCordX;
+            upperCordY = upperCordY > activeTiles.tilemap.GetLength(0) ? activeTiles.tilemap.GetLength(0) : upperCordY;
+            
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
@@ -68,6 +83,9 @@ namespace Futhark {
         public virtual void Draw(SpriteBatch spriteBatch) {
 
         }
+
+        
     }
+    
     
 }

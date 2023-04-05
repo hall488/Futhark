@@ -18,19 +18,19 @@ namespace Futhark
 
         private int RowNumber;
 
-        private int x;
+        public int x;
 
         private bool play;
  
-        public AnimatedSprite(Texture2D texture, int rows, int columns, int rowNumber)
+        public AnimatedSprite(Texture2D texture, int rows, int columns, int rowNumber, bool play)
         {
             Texture = texture;
             Rows = rows;
             Columns = columns;
             currentFrame = 0;
-            totalFrames = Rows;
+            totalFrames = columns;
             RowNumber = rowNumber;
-            play = false;
+            this.play = play;
         }
  
         public void Update()

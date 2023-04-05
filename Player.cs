@@ -3,16 +3,22 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Futhark {
 
     public class Player : IyDraw {
 
-        public int posX;
-        public int posY;
+        public double posX;
+        public double posY;
 
-        int IyDraw.yPosition() => posY;
+        public int rot;
+
+        double IyDraw.yPosition() => posY;
+        double IyDraw.xPosition() => posX;
+
+        float IyDraw.rotation() => rot;
         double unitX;
         double unitY;
         public int vel;
@@ -50,6 +56,13 @@ namespace Futhark {
 
         List<IyDraw> drawQueue;
 
+        public int CompareTo(IyDraw other)
+        {
+            // implement your custom comparison here...
+
+            return posY.CompareTo(other.yPosition()); // e.g.
+        }
+
 
         public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
             
@@ -65,6 +78,7 @@ namespace Futhark {
 
             posX = x;
             posY = y;
+            rot = 0;
             activeTiles = _activeTiles;
 
             unitX = 0;
@@ -72,10 +86,10 @@ namespace Futhark {
 
             vel = 3;
             
-            downAnimation = new AnimatedSprite(texture, 4, 4, 0);
-            upAnimation = new AnimatedSprite(texture, 4, 4, 1);
-            rightAnimation = new AnimatedSprite(texture, 4, 4, 2);
-            leftAnimation = new AnimatedSprite(texture, 4, 4, 3);
+            downAnimation = new AnimatedSprite(texture, 4, 4, 0, false);
+            upAnimation = new AnimatedSprite(texture, 4, 4, 1, false);
+            rightAnimation = new AnimatedSprite(texture, 4, 4, 2, false);
+            leftAnimation = new AnimatedSprite(texture, 4, 4, 3, false);
 
                        
             
@@ -94,11 +108,10 @@ namespace Futhark {
             var keyboardState = Keyboard.GetState();
             var mouseState = Mouse.GetState();
             var mousePos = camera.ScreenToWorldSpace(new Vector2(mouseState.Position.X, mouseState.Position.Y));
-            mousePos = new Vector2(mousePos.X - posX, mousePos.Y - posY);
+            mousePos = new Vector2(mousePos.X - (int)posX, mousePos.Y - (int)posY);
 
             var mouseUnit = new Vector2(0,0);
 
-            drawQueue.Add(this);
 
             if(!(mousePos.X == 0 && mousePos.Y == 0)) {
 
@@ -179,15 +192,15 @@ namespace Futhark {
             }
             
 
-            int testPosX = posX + (int)(unitX*vel);
-            int testPosY = posY + (int)(unitY*vel);
+            double testPosX = posX + (unitX*vel);
+            double testPosY = posY + (unitY*vel);
                                              
                         
             //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
             //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
 
-            colRectX = new Rectangle(testPosX - width / 2 + 10, posY + height/2 - width + 20, width-20, width-20);
-            colRectY = new Rectangle(posX - width / 2 + 10, testPosY + height/2 - width + 20, width-20, width-20);
+            colRectX = new Rectangle((int)testPosX - width / 2 + 10, (int)posY + height/2 - width + 20, width-20, width-20);
+            colRectY = new Rectangle((int)posX - width / 2 + 10, (int)testPosY + height/2 - width + 20, width-20, width-20);
 
             
             int lowerCordX = (int)Math.Round((double)(posX - width)/width, 0);
@@ -196,6 +209,11 @@ namespace Futhark {
             //the bounding box is one tile
             int lowerCordY = (int)Math.Round((double)((posY+height/2-width) - width)/width, 0);
             int upperCordY = (int)Math.Round((double)((posY+height/2-width) + 2*width)/width, 0);
+
+            lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
+            lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
+            upperCordX = upperCordX > activeTiles.tilemap.GetLength(1) ? activeTiles.tilemap.GetLength(1) : upperCordX;
+            upperCordY = upperCordY > activeTiles.tilemap.GetLength(0) ? activeTiles.tilemap.GetLength(0) : upperCordY;
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
@@ -215,8 +233,8 @@ namespace Futhark {
                 }
             }
 
-            posX += (int)(unitX*vel);
-            posY += (int)(unitY*vel);
+            posX += (unitX*vel);
+            posY += (unitY*vel);
 
             pressedKeys.CopyTo(previousKeys, 0);
             unitX = 0;
@@ -224,8 +242,9 @@ namespace Futhark {
             
             currentAnimation.Update();
 
+
             if(spellQueue.Count != 0 && spellQueue[0] == "Fireball") {
-                fireballs.Add(new Fireball(posX, posY, 5, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
+                fireballs.Add(new Fireball((int)posX, (int)posY, 1, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
                 spellQueue.RemoveAt(0);
             }
 
@@ -234,17 +253,24 @@ namespace Futhark {
 
         public void Draw(SpriteBatch spriteBatch) {
             spriteBatch.Draw(colRectTexture, colRectY, Color.White);
+
             drawQueue.Add(this);
             foreach(var f in fireballs) {
                 drawQueue.Add(f);
             }
 
-            drawQueue.Sort()
+            drawQueue.Sort();
 
-            currentAnimation.Draw(spriteBatch, posX, posY, 0f);
+            foreach(var e in drawQueue) {
+                e.animation().Draw(spriteBatch, (int)e.xPosition(), (int)e.yPosition(), e.rotation());
+            }
+
+            drawQueue.Clear();
+
+            //currentAnimation.Draw(spriteBatch, posX, posY, 0f);
 
             
-            runestone.Draw(spriteBatch, posX, posY);
+            runestone.Draw(spriteBatch, (int)posX, (int)posY);
 
             
         }

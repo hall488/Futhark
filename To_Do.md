@@ -1,4 +1,4 @@
 -add Enemies
 -add Doors/Buildings
--add Y coordinate drawing order (sprite sort mode)
 -selection square on mouse hover
+-mana bar
