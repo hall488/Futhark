@@ -542,19 +542,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\christopher\\.nuget\\packages\\": {}
+    "/home/christopherhall/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\christopher\\Projects\\Futhark\\Futhark.csproj",
+      "projectUniqueName": "/home/christopherhall/Futhark/Futhark.csproj",
       "projectName": "Futhark",
-      "projectPath": "C:\\Users\\christopher\\Projects\\Futhark\\Futhark.csproj",
-      "packagesPath": "C:\\Users\\christopher\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\christopher\\Projects\\Futhark\\obj\\",
+      "projectPath": "/home/christopherhall/Futhark/Futhark.csproj",
+      "packagesPath": "/home/christopherhall/.nuget/packages/",
+      "outputPath": "/home/christopherhall/Futhark/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\christopher\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/christopherhall/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -618,30 +618,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.407/RuntimeIdentifierGraph.json"
       }
     }
   }
