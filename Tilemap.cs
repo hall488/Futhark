@@ -52,7 +52,7 @@ namespace Futhark {
 
         public void Draw(SpriteBatch spriteBatch) {
             foreach(var t in tilemap) {
-                Rectangle destinationRectangle = new Rectangle(t.x, t.y, tileLength, tileLength);
+                Rectangle destinationRectangle = new Rectangle(t.x, t.y, tileDict[ColorHelper.ToHex(t.color)].Width*8, tileDict[ColorHelper.ToHex(t.color)].Height*8);
 
                 spriteBatch.Draw(tileDict[ColorHelper.ToHex(t.color)], destinationRectangle, Color.White);
                 //Debug collision rectangles

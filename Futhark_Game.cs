@@ -17,6 +17,7 @@ namespace Futhark
         private Tilemap tilemap_back;
 
         private Tilemap tilemap_mid;
+        private Tilemap tilemap_buildings;
         private Player player;
 
         private Game_Constants gConstants;
@@ -73,12 +74,15 @@ namespace Futhark
 
             Texture2D mid_layer = Content.Load<Texture2D>("test_mid_layer");
             Texture2D back_layer = Content.Load<Texture2D>("test_back_layer");
+            Texture2D building_layer = Content.Load<Texture2D>("building_layer");
 
             
 
             tilemap_mid = new Tilemap(Content, GetColorBMP(mid_layer), gConstants, true);
 
-            tilemap_back = new Tilemap(Content, GetColorBMP(back_layer), gConstants, false);                           
+            tilemap_back = new Tilemap(Content, GetColorBMP(back_layer), gConstants, false);      
+
+            tilemap_buildings = new Tilemap(Content, GetColorBMP(building_layer), gConstants, false);
             
 
             player = new Player(gConstants, playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(GraphicsDevice, 1, 1));
@@ -113,6 +117,7 @@ namespace Futhark
             tilemap_mid.Draw(_spriteBatch);            
             player.Draw(_spriteBatch);
             //over_layer
+            tilemap_buildings.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);

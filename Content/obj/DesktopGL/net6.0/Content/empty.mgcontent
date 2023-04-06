@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/christopherhall/Futhark/Content/../assets/empty.png</SourceFile>
-  <SourceTime>2023-03-23T16:17:48.4748963+00:00</SourceTime>
-  <DestFile>/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/empty.xnb</DestFile>
-  <DestTime>2023-04-04T17:42:09.4806175+00:00</DestTime>
+  <SourceFile>C:/Users/christopher/Projects/Futhark/Content/../assets/empty.png</SourceFile>
+  <SourceTime>2023-03-23T20:50:16.0947298-04:00</SourceTime>
+  <DestFile>C:/Users/christopher/Projects/Futhark/Content/bin/DesktopGL/Content/empty.xnb</DestFile>
+  <DestTime>2023-04-05T20:46:41.5976191-04:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2022-07-26T11:44:56+00:00</ImporterTime>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2022-07-26T11:44:56+00:00</ProcessorTime>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
