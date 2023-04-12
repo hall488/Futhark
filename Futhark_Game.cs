@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
@@ -13,31 +14,40 @@ namespace Futhark
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
         private Menu mainMenu;
-
         private LevelManager levelManager;
-
-       
-
+        private LevelEditor levelEditor;
         public static int screenWidth;
-
         public static int screenHeight;
+        ContentManager mainMenuContent;
+        ContentManager levelManagerContent;
+        ContentManager levelEditorContent;
 
-        enum gameStates {
+        public enum gameStates {
             mainMenu,
-            levelManager
+            levelManager,
+            levelEditor
         }
 
         int gameState = 0;
         int prevGameState = 0;
+
+        
         
 
         public Futhark_Game()
         {
             graphics = new GraphicsDeviceManager(this);
+
+            mainMenuContent = new ContentManager(Content.ServiceProvider);
+            levelManagerContent = new ContentManager(Content.ServiceProvider);
+            levelEditorContent = new ContentManager(Content.ServiceProvider);
             
             Content.RootDirectory = "Content";
+            mainMenuContent.RootDirectory = "Content";
+            levelManagerContent.RootDirectory = "Content";
+            levelEditorContent.RootDirectory = "Content";
+
             IsMouseVisible = true;
         }
 
@@ -61,8 +71,9 @@ namespace Futhark
 
             Texture2D buttonTexture = new Texture2D(GraphicsDevice, 1, 1);
 
-            mainMenu = new Menu(Content, spriteBatch, graphics, GraphicsDevice);
-            levelManager = new LevelManager(Content, spriteBatch, graphics, GraphicsDevice);
+            mainMenu = new Menu(mainMenuContent, spriteBatch, graphics, GraphicsDevice);
+            levelManager = new LevelManager(levelManagerContent, spriteBatch, graphics, GraphicsDevice);
+            levelEditor = new LevelEditor(levelEditorContent, spriteBatch, graphics, GraphicsDevice);
 
 
             switch(gameState) {
@@ -72,35 +83,18 @@ namespace Futhark
                     case (int) gameStates.levelManager:
                         levelManager.LoadContent();
                         break;
+                    case (int) gameStates.levelEditor:
+                        levelEditor.LoadContent();
+                        break;
                         
                 }
         }
-
-        void LoadGameContent()
-        {
-            
-
-          
-
-            
-        }
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            if(gameState != prevGameState) {
-                switch(gameState) {
-                    case (int) gameStates.mainMenu:
-                        mainMenu.LoadContent();
-                        break;
-                    case (int) gameStates.levelManager:
-                        levelManager.LoadContent();
-                        break;
-                        
-                }
-            }
+            
 
 
             // TODO: Add your update logic here
@@ -109,10 +103,43 @@ namespace Futhark
                     gameState = mainMenu.Update();
                     break;
                 case (int) gameStates.levelManager:
-                    levelManager.Update();
+                    gameState = levelManager.Update();
                     break;
-            }            
+                case (int) gameStates.levelEditor:
+                    gameState = levelEditor.Update();
+                    break;
+                
+            }       
 
+            if(gameState != prevGameState) {
+                switch(prevGameState) {
+                    case (int) gameStates.mainMenu:
+                        mainMenuContent.Unload();
+                        break;
+                    case (int) gameStates.levelManager:
+                        levelManagerContent.Unload();
+                        break;
+                    case (int) gameStates.levelEditor:
+                        levelEditorContent.Unload();
+                        break;
+
+                }
+
+                switch(gameState) {
+                    case (int) gameStates.mainMenu:
+                        mainMenu.LoadContent();
+                        break;
+                    case (int) gameStates.levelManager:
+                        levelManager.LoadContent();
+                        break;
+                    case (int) gameStates.levelEditor:
+                        levelEditor.LoadContent();
+                        break;
+                        
+                }
+            }     
+
+            prevGameState = gameState;
             base.Update(gameTime);
         }
 
@@ -129,9 +156,12 @@ namespace Futhark
                 case (int) gameStates.levelManager:
                     levelManager.Draw();
                     break;
+                case (int) gameStates.levelEditor:
+                    levelEditor.Draw();
+                    break;
             }            
 
-            prevGameState = gameState;
+            
             base.Draw(gameTime);
         }
 

@@ -69,9 +69,13 @@ namespace Futhark {
             player = new Player(gConstants, playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(graphicsDevice, 1, 1));
         }
 
-        public void Update() {
+        public int Update() {
+            KeyboardState keyboardState = Keyboard.GetState();
+            if(keyboardState.IsKeyDown(Keys.M))
+                return (int) Futhark_Game.gameStates.mainMenu;
             player.Update();
             _camera.Follow(player);
+            return (int) Futhark_Game.gameStates.levelManager;
         }
 
         public void Draw() {

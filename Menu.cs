@@ -47,7 +47,9 @@ namespace Futhark {
                     int hIncrement = 0;
                     foreach(var i in val) {
                         Texture2D texture = Content.Load<Texture2D>(i);
-                        buttons.Add(i, (texture, new Rectangle(Futhark_Game.screenWidth / 2, Futhark_Game.screenHeight / 2 + hIncrement, texture.Width*4, texture.Height*4)));
+                        buttons.Add(i, (texture, new Rectangle(Futhark_Game.screenWidth / 2 - texture.Width * 2, 
+                                                               Futhark_Game.screenHeight / 2 - texture.Height * 2 + hIncrement, 
+                                                               texture.Width*4, texture.Height*4)));
                         hIncrement += texture.Height*6;
                     }
                 }
@@ -58,10 +60,12 @@ namespace Futhark {
             var mouseState = Mouse.GetState();
 
             if(buttons["mainMenu_SG_Button"].Item2.Contains(mouseState.Position) && mouseState.LeftButton == ButtonState.Pressed) {
-                return 1;
+                return (int) Futhark_Game.gameStates.levelManager;
+            } else if(buttons["mainMenu_LE_Button"].Item2.Contains(mouseState.Position) && mouseState.LeftButton == ButtonState.Pressed) {
+                return (int) Futhark_Game.gameStates.levelEditor;
             }
             else {
-                return 0;
+                return (int) Futhark_Game.gameStates.mainMenu;
             }
         }
 
@@ -72,7 +76,7 @@ namespace Futhark {
                                                         null, Color.White, 0, new Vector2(titleImage.Width / 2, titleImage.Height / 2), SpriteEffects.None, 0f);
             
             foreach((var key, var val) in buttons) {
-                spriteBatch.Draw (val.Item1, val.Item2, null, Color.White, 0, new Vector2(val.Item1.Width / 2, val.Item1.Height / 2), SpriteEffects.None, 0f);
+                spriteBatch.Draw (val.Item1, val.Item2, null, Color.White, 0, Vector2.Zero, SpriteEffects.None, 0f);
             }
             spriteBatch.End();
         }
