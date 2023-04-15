@@ -39,6 +39,10 @@ namespace Futhark {
 
         List<(Texture2D, Rectangle)> placedItems;
 
+        Camera_LE camera;
+
+        Texture2D grid;
+
 
         public LevelEditor(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
             this.Content = Content;
@@ -51,11 +55,16 @@ namespace Futhark {
         }
 
         public void LoadContent() {
+
+            camera = new Camera_LE(graphicsDevice.Viewport);
+
             overlay = new Dictionary<string, (Texture2D, Rectangle)>();
             items = new List<Item>();
             placedItems = new List<(Texture2D, Rectangle)>();
             string jsonFile = File.ReadAllText("text_assets/Level_Editor_Assets.json");
-            Dictionary<string, string[]> tempDict = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(jsonFile);            
+            Dictionary<string, string[]> tempDict = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(jsonFile);   
+
+            grid = Content.Load<Texture2D>("grid_pattern");      
 
             foreach((var key, var val) in tempDict) {                
                 if(key == "border") {
@@ -101,6 +110,8 @@ namespace Futhark {
         }
 
         public int Update() {
+            camera.UpdateCamera(graphicsDevice.Viewport);
+
             KeyboardState keyboardState = Keyboard.GetState();
             MouseState mouseState = Mouse.GetState();
 
@@ -118,10 +129,19 @@ namespace Futhark {
                 sideMousePosition = Point.Zero;
             }
 
+            
+            
+
             if(mainRect.Contains(mouseState.Position)) {
                 activePanel = mainPanel;
                 mainMousePosition.X = mouseState.Position.X;
                 mainMousePosition.Y = mouseState.Position.Y;
+
+                //wtf is this magic, math is cool
+                var vector = mainMousePosition.ToVector2();
+                var transVector = Vector2.Transform(vector, Matrix.Invert(camera.Transform));
+                mainMousePosition = transVector.ToPoint();
+
             } else {
                 mainMousePosition = Point.Zero;
             }
@@ -162,9 +182,13 @@ namespace Futhark {
                 }
             }
 
+            var gridMousePos = new Point();
+            gridMousePos.X = (int)Math.Round(mainMousePosition.X / 8d / grid.Width, 0) * 8 * grid.Width;
+            gridMousePos.Y = (int)Math.Round(mainMousePosition.Y  / 8d / grid.Height, 0) * 8 * grid.Height;
+
 
             if(activePanel == mainPanel && activeItem != null && InputUtil.SingleMouseClick()) {
-                placedItems.Add(new (activeItem.itemTexture, new Rectangle(mainMousePosition.X, mainMousePosition.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8)));
+                placedItems.Add(new (activeItem.itemTexture, new Rectangle(gridMousePos.X, gridMousePos.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8)));
                 Console.WriteLine(placedItems.ToString());
             }
 
@@ -200,13 +224,25 @@ namespace Futhark {
 
             graphicsDevice.Clear(Color.LightGray);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
-            if(activeItem != null && activePanel == mainPanel) {
-                spriteBatch.Draw(activeItem.itemTexture, new Rectangle(mainMousePosition.X, mainMousePosition.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), Color.White);
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: camera.Transform);
+            
+            for(int i = 0; i < 16; i++) {
+                for(int j =0; j < 16; j++) {
+                    var rect = new Rectangle(i*grid.Width*8, j*grid.Height*8, grid.Width*8, grid.Height*8);
+                    spriteBatch.Draw(grid, rect, Color.White);
+                }
             }
 
             foreach(var val in placedItems) {
                 spriteBatch.Draw(val.Item1, val.Item2, Color.White);
+            }
+
+            var gridMousePos = new Point();
+            gridMousePos.X = (int)Math.Round(mainMousePosition.X / 8d / grid.Width, 0) * 8 * grid.Width;
+            gridMousePos.Y = (int)Math.Round(mainMousePosition.Y  / 8d / grid.Height, 0) * 8 * grid.Height;
+
+            if(activeItem != null && activePanel == mainPanel) {
+                spriteBatch.Draw(activeItem.itemTexture, new Rectangle(gridMousePos.X, gridMousePos.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), Color.White);
             }
             
 
@@ -225,6 +261,7 @@ namespace Futhark {
             spriteBatch.Draw(sidePanel, sideRect, Color.White);
 
             spriteBatch.Draw(mainPanel, mainRect, Color.White);
+            
 
             spriteBatch.End();
         }
