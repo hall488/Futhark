@@ -155,7 +155,7 @@
           }
         }
       },
-      "SixLabors.ImageSharp/3.0.0": {
+      "SixLabors.ImageSharp/3.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/SixLabors.ImageSharp.dll": {
@@ -366,10 +366,10 @@
         "sixlabors.fonts.nuspec"
       ]
     },
-    "SixLabors.ImageSharp/3.0.0": {
-      "sha512": "ETEHRfUAn/rExqdmj2GDayPkW9zr3BruO9S4WF9ULpWmdydewIjoJqinbQc+o4DsM3X0wGZPyJLlj6N3uxV/aw==",
+    "SixLabors.ImageSharp/3.0.1": {
+      "sha512": "o0v/J6SJwp3RFrzR29beGx0cK7xcMRgOyIuw8ZNLQyNnBhiyL/vIQKn7cfycthcWUPG3XezUjFwBWzkcUUDFbg==",
       "type": "package",
-      "path": "sixlabors.imagesharp/3.0.0",
+      "path": "sixlabors.imagesharp/3.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -378,7 +378,7 @@
         "lib/net6.0/SixLabors.ImageSharp.dll",
         "lib/net6.0/SixLabors.ImageSharp.xml",
         "sixlabors.imagesharp.128.png",
-        "sixlabors.imagesharp.3.0.0.nupkg.sha512",
+        "sixlabors.imagesharp.3.0.1.nupkg.sha512",
         "sixlabors.imagesharp.nuspec"
       ]
     },
@@ -536,7 +536,7 @@
       "MonoGame.Extended >= 3.8.0",
       "MonoGame.Framework.DesktopGL >= 3.8.1.303",
       "Newtonsoft.Json >= 13.0.3",
-      "SixLabors.ImageSharp >= 3.0.0",
+      "SixLabors.ImageSharp >= 3.0.1",
       "SixLabors.ImageSharp.Drawing >= 1.0.0-beta15",
       "SkiaSharp >= 2.88.3"
     ]
@@ -606,7 +606,7 @@
           },
           "SixLabors.ImageSharp": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.0.1, )"
           },
           "SixLabors.ImageSharp.Drawing": {
             "target": "Package",

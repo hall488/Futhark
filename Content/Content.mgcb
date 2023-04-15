@@ -49,6 +49,18 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Level Editor/objects_container.png;objects_container.png
 
+#begin ../assets/Level Editor/save_button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Level Editor/save_button.png;save_button.png
+
 #begin ../assets/Main Menu/mainMenu_LE_Button.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -39,7 +39,7 @@ namespace Futhark {
 
         public void setRectangles(int x, int y, Texture2D cTexture, Rectangle cRect){
             borderRect = new Rectangle( cRect.Width / cTexture.Width * (4+(2+borderTexture.Width)*x),
-                                            cRect.Height / cTexture.Height * (11+(2+borderTexture.Height)*y),
+                                            cRect.Height / cTexture.Height * (18+(2+borderTexture.Height)*y),
                                             cRect.Width / cTexture.Width * borderTexture.Width,
                                             cRect.Height / cTexture.Height * borderTexture.Height);
                 

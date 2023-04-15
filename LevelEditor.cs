@@ -10,12 +10,19 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
+using System.Linq;
+using SI = SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Formats;
 
 namespace Futhark {
 
     public class LevelEditor { 
 
         private ContentManager Content;
+        
+        
 
         private SpriteBatch spriteBatch;
 
@@ -37,11 +44,16 @@ namespace Futhark {
 
         RenderTarget2D activePanel;
 
-        List<(Texture2D, Rectangle)> placedItems;
+        List<(Texture2D, Rectangle, string)> placedItems;
 
         Camera_LE camera;
 
         Texture2D grid;
+
+        Point minSelect;
+        Point maxSelect;
+
+        bool selectPass;
 
 
         public LevelEditor(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
@@ -51,6 +63,10 @@ namespace Futhark {
             this.graphicsDevice = graphicsDevice;
 
             activeItem = null;
+            selectPass = false;
+
+            minSelect = new Point();
+            maxSelect = new Point();
 
         }
 
@@ -60,7 +76,7 @@ namespace Futhark {
 
             overlay = new Dictionary<string, (Texture2D, Rectangle)>();
             items = new List<Item>();
-            placedItems = new List<(Texture2D, Rectangle)>();
+            placedItems = new List<(Texture2D, Rectangle, string)>();
             string jsonFile = File.ReadAllText("text_assets/Level_Editor_Assets.json");
             Dictionary<string, string[]> tempDict = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(jsonFile);   
 
@@ -77,15 +93,23 @@ namespace Futhark {
                                                             Futhark_Game.screenHeight * texture.Width / texture.Height, 
                                                             Futhark_Game.screenHeight)));
                     
+                } else if (key == "buttons") {
+                    Texture2D texture = Content.Load<Texture2D>(val[0]);
+                    Texture2D cTexture = overlay["container"].Item1;
+                    Rectangle cRect = overlay["container"].Item2;
+                    overlay.Add(val[0], (texture, new Rectangle(   2 * cRect.Width / cTexture.Width,
+                                                                2 * cRect.Height / cTexture.Height,
+                                                                8 * cRect.Width / cTexture.Width,
+                                                                4 * cRect.Height / cTexture.Height)));
                 } else if(key == "objects") {
                     foreach(var i in val) {
                         Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new Item(key, texture, overlay["border"].Item1));
+                        items.Add(new Item(i, texture, overlay["border"].Item1));
                     }
                 } else if(key == "tiles") {
                     foreach(var i in val) {
                         Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new Item(key, texture, overlay["border"].Item1));
+                        items.Add(new Item(i, texture, overlay["border"].Item1));
                     }
                 }
             }
@@ -106,6 +130,8 @@ namespace Futhark {
 
             sideRect = new Rectangle(Futhark_Game.screenWidth - sidePanel.Width, 0, sidePanel.Width, sidePanel.Height);
             mainRect = new Rectangle(0, 0, Futhark_Game.screenWidth - sideRect.Width, Futhark_Game.screenHeight);
+
+            
            
         }
 
@@ -164,32 +190,74 @@ namespace Futhark {
                 itemCount += 1;
             }
 
-           
-
-            foreach(var val in items) {
-                if(val.borderRect.Contains(sideMousePosition)) {
-                    if(InputUtil.SingleMouseClick()) {
-                        if(val.highlight == Color.White) {
-                            items.ForEach(i => {i.highlight = Color.White;});
-                            val.highlight = Color.Green;
-                            activeItem = val;
-                        }
-                        else {
-                            val.highlight = Color.White;
-                            activeItem = null;
+            if(activePanel == sidePanel) {
+                foreach(var val in items) {
+                    if(val.borderRect.Contains(sideMousePosition)) {
+                        if(InputUtil.SingleLeftClick()) {
+                            if(val.highlight == Color.White) {
+                                items.ForEach(i => {i.highlight = Color.White;});
+                                val.highlight = Color.Green;
+                                activeItem = val;
+                            }
+                            else {
+                                val.highlight = Color.White;
+                                activeItem = null;
+                            }
                         }
                     }
                 }
+
+                if(overlay["save_button"].Item2.Contains(sideMousePosition) && InputUtil.SingleLeftClick()) {
+                    SaveLevelToBMP(placedItems);
+                }
             }
 
+           
+
+            
+
             var gridMousePos = new Point();
-            gridMousePos.X = (int)Math.Round(mainMousePosition.X / 8d / grid.Width, 0) * 8 * grid.Width;
-            gridMousePos.Y = (int)Math.Round(mainMousePosition.Y  / 8d / grid.Height, 0) * 8 * grid.Height;
+            gridMousePos.X = (int)Math.Round((mainMousePosition.X - grid.Width * 4) / 8d / grid.Width, 0) * 8 * grid.Width;
+            gridMousePos.Y = (int)Math.Round((mainMousePosition.Y - grid.Height * 4)  / 8d / grid.Height, 0) * 8 * grid.Height;
 
 
-            if(activePanel == mainPanel && activeItem != null && InputUtil.SingleMouseClick()) {
-                placedItems.Add(new (activeItem.itemTexture, new Rectangle(gridMousePos.X, gridMousePos.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8)));
-                Console.WriteLine(placedItems.ToString());
+            if(activePanel == mainPanel) {
+                if(activeItem != null) {
+                    if(InputUtil.SingleLeftClick()) {
+                        minSelect = gridMousePos;
+                        selectPass = true;
+                    }
+
+                    if(selectPass && mouseState.LeftButton == ButtonState.Released) {
+                        maxSelect = gridMousePos;
+                        selectPass = false;
+
+                        for(int i = minSelect.X; i <= maxSelect.X; i = i + 8*grid.Width) {
+                            for(int j = minSelect.Y; j <= maxSelect.Y; j = j + 8*grid.Height) {
+                                placedItems.Add(new (activeItem.itemTexture, new Rectangle(i, j, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), activeItem.identifier));
+                            }
+                        }
+                        
+                    }
+                } else {
+                    var ToBeRemoved = new List<(Texture2D, Rectangle, string)>();
+
+                    if(InputUtil.SingleRightClick()) {
+                        foreach(var val in placedItems) {
+                            if(val.Item2.Contains(gridMousePos)) {
+                                ToBeRemoved.Add(val);
+                            }
+                        }
+                    }
+                    ToBeRemoved.Reverse();
+                    foreach(var i in ToBeRemoved) {
+                        placedItems.Remove(i);
+                        break;
+                    }
+
+                    ToBeRemoved.Clear();
+                }
+                
             }
 
             
@@ -210,7 +278,9 @@ namespace Futhark {
                 val.Draw(spriteBatch);
             }
 
-            spriteBatch.Draw(overlay["container"].Item1, overlay["container"].Item2, Color.White);
+            foreach((var key, var val) in overlay){
+                spriteBatch.Draw(val.Item1, val.Item2, Color.White);
+            }
 
             spriteBatch.End();
 
@@ -238,8 +308,8 @@ namespace Futhark {
             }
 
             var gridMousePos = new Point();
-            gridMousePos.X = (int)Math.Round(mainMousePosition.X / 8d / grid.Width, 0) * 8 * grid.Width;
-            gridMousePos.Y = (int)Math.Round(mainMousePosition.Y  / 8d / grid.Height, 0) * 8 * grid.Height;
+            gridMousePos.X = (int)Math.Round((mainMousePosition.X - grid.Width * 4) / 8d / grid.Width, 0) * 8 * grid.Width;
+            gridMousePos.Y = (int)Math.Round((mainMousePosition.Y - grid.Height * 4)  / 8d / grid.Height, 0) * 8 * grid.Height;
 
             if(activeItem != null && activePanel == mainPanel) {
                 spriteBatch.Draw(activeItem.itemTexture, new Rectangle(gridMousePos.X, gridMousePos.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), Color.White);
@@ -264,6 +334,32 @@ namespace Futhark {
             
 
             spriteBatch.End();
+        }
+
+        private void SaveLevelToBMP(List<(Texture2D, Rectangle, string)> level) {
+
+            //items.ForEach(i => {i.highlight = Color.White;});
+
+            string jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
+
+            Dictionary<string, string> tileDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
+            
+            
+            using (SI.Image<Rgba32> image = new SI.Image<Rgba32>(16,16)) {
+                foreach(var val in level) {
+                    int i = val.Item2.X / 8 / val.Item1.Width;
+                    int j = val.Item2.Y / 8 / val.Item1.Height;
+
+                    Console.WriteLine("{0}, {0}", i, j);
+
+                    var refs = tileDict.FirstOrDefault(x => x.Value == val.Item3).Key;
+                    var color = ColorHelper.FromHex(refs);
+
+                    image[i,j] = new Rgba32(color.R, color.G, color.B, color.A);
+                }
+
+                SI.ImageExtensions.SaveAsBmp(image, "testFile.Bmp");
+            }
         }
     }
 }

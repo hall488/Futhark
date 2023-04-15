@@ -9,20 +9,24 @@ namespace Futhark {
 
     public class InputUtil{ 
 
-        static ButtonState currentButtonState;
-        static ButtonState previousButtonState; 
+        static MouseState currentButtonState;
+        static MouseState previousButtonState; 
 
         public InputUtil() {
-            currentButtonState = Mouse.GetState().LeftButton;            
+            currentButtonState = Mouse.GetState();            
         }
 
-        public static ButtonState GetButtonState() {
+        public static MouseState GetButtonState() {
             previousButtonState = currentButtonState;
-            currentButtonState = Mouse.GetState().LeftButton;
+            currentButtonState = Mouse.GetState();
             return currentButtonState;
         }
-        public static bool SingleMouseClick() {
-            return currentButtonState == ButtonState.Pressed && previousButtonState != ButtonState.Pressed;
+        public static bool SingleLeftClick() {
+            return currentButtonState.LeftButton == ButtonState.Pressed && previousButtonState.LeftButton != ButtonState.Pressed;
+        }
+
+        public static bool SingleRightClick() {
+            return currentButtonState.RightButton == ButtonState.Pressed && previousButtonState.RightButton != ButtonState.Pressed;
         }
            
 

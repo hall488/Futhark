@@ -1,6 +1,7 @@
 {
     "border" : ["object_border"],
     "container": ["objects_container"],
+    "buttons" : ["save_button"],
     "objects": ["cave_1", "door_1"],
     "tiles": ["boundary", "bush_1", "empty", "grass_1", "road_1", "road_2"]
 }
