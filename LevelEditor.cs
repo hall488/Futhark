@@ -5,16 +5,11 @@ using Microsoft.Xna.Framework.Content;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
-using MES = MonoGame.Extended.Serialization;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
 using SI = SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Formats;
 
 namespace Futhark {
 
