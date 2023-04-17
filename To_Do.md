@@ -2,3 +2,11 @@
 -add Doors/Buildings
 -selection square on mouse hover
 -mana bar
+
+-new sidePanel class : from panel
+-new mainPanel class : from panel
+-take out solid property of tiles
+    -new 2d matrix of tiles class
+    -has collision box
+    -has layers for 2d depth
+-apply new use of tiles and matrices to place function

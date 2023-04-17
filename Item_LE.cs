@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Futhark {
 
-    public class Item{ 
+    public class Item_LE{ 
 
         public Rectangle borderRect;
         public Rectangle itemRect;
@@ -21,7 +21,7 @@ namespace Futhark {
         public Color highlight;
 
 
-        public Item(string identifier, Texture2D itemTexture, Texture2D borderTexture) {
+        public Item_LE(string identifier, Texture2D itemTexture, Texture2D borderTexture) {
             this.identifier = identifier;
             this.itemTexture = itemTexture;
             this.borderTexture = borderTexture;

@@ -15,7 +15,7 @@ namespace Futhark {
 
     public class LevelEditor { 
 
-        private ContentManager Content;
+        private ContentManager content;
         
         
 
@@ -25,17 +25,13 @@ namespace Futhark {
 
         private GraphicsDevice graphicsDevice;
 
-        Dictionary<string, (Texture2D, Rectangle)> overlay;
-        List<Item> items;
+        List<Overlay_Object> overlayObjects;
+        List<LE_Item> items;
 
-        RenderTarget2D sidePanel;
-        Rectangle sideRect;
-        RenderTarget2D mainPanel;
-        Rectangle mainRect;
 
         Point sideMousePosition;
         Point mainMousePosition;
-        Item activeItem;
+        LE_Item activeItem;
 
         RenderTarget2D activePanel;
 
@@ -50,9 +46,15 @@ namespace Futhark {
 
         bool selectPass;
 
+        Container_LE container;
 
-        public LevelEditor(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
-            this.Content = Content;
+        MainPanel mainPanel;
+
+        SidePanel sidePanel;
+
+
+        public LevelEditor(ContentManager content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
+            this.content = content;
             this.spriteBatch = spriteBatch;
             this.graphics = graphics;
             this.graphicsDevice = graphicsDevice;
@@ -69,62 +71,39 @@ namespace Futhark {
 
             camera = new Camera_LE(graphicsDevice.Viewport);
 
-            overlay = new Dictionary<string, (Texture2D, Rectangle)>();
-            items = new List<Item>();
+            overlayObjects = new List<Overlay_Object>();
+            items = new List<LE_Item>();
             placedItems = new List<(Texture2D, Rectangle, string)>();
-            string jsonFile = File.ReadAllText("text_assets/Level_Editor_Assets.json");
-            Dictionary<string, string[]> tempDict = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(jsonFile);   
+            
 
-            grid = Content.Load<Texture2D>("grid_pattern");      
 
-            foreach((var key, var val) in tempDict) {                
-                if(key == "border") {
-                    Texture2D texture = Content.Load<Texture2D>(val[0]);
-                    overlay.Add(key, (texture, Rectangle.Empty));
-                } else if(key == "container") {
-                    Texture2D texture = Content.Load<Texture2D>(val[0]);
-                    overlay.Add(key, (texture, new Rectangle(0, 
-                                                            0, 
-                                                            Futhark_Game.screenHeight * texture.Width / texture.Height, 
-                                                            Futhark_Game.screenHeight)));
-                    
-                } else if (key == "buttons") {
-                    Texture2D texture = Content.Load<Texture2D>(val[0]);
-                    Texture2D cTexture = overlay["container"].Item1;
-                    Rectangle cRect = overlay["container"].Item2;
-                    overlay.Add(val[0], (texture, new Rectangle(   2 * cRect.Width / cTexture.Width,
-                                                                2 * cRect.Height / cTexture.Height,
-                                                                8 * cRect.Width / cTexture.Width,
-                                                                4 * cRect.Height / cTexture.Height)));
-                } else if(key == "objects") {
-                    foreach(var i in val) {
-                        Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new Item(i, texture, overlay["border"].Item1));
-                    }
-                } else if(key == "tiles") {
-                    foreach(var i in val) {
-                        Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new Item(i, texture, overlay["border"].Item1));
-                    }
-                }
-            }
+            grid = content.Load<Texture2D>("grid_pattern");
 
-            sidePanel = new RenderTarget2D(this.graphicsDevice,
-                                                overlay["container"].Item2.Width,
+            
+
+            
+            
+
+            RenderTarget2D sideRT = new RenderTarget2D(this.graphicsDevice,
+                                                55 * 8,
                                                 graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
                                                 DepthFormat.Depth24);
 
-            mainPanel = new RenderTarget2D(this.graphicsDevice,
-                                                this.graphicsDevice.PresentationParameters.BackBufferWidth - overlay["container"].Item2.Width,
+            RenderTarget2D mainRT = new RenderTarget2D(this.graphicsDevice,
+                                                this.graphicsDevice.PresentationParameters.BackBufferWidth - 55 * 8,
                                                 graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
                                                 DepthFormat.Depth24);
 
-            sideRect = new Rectangle(Futhark_Game.screenWidth - sidePanel.Width, 0, sidePanel.Width, sidePanel.Height);
-            mainRect = new Rectangle(0, 0, Futhark_Game.screenWidth - sideRect.Width, Futhark_Game.screenHeight);
+            Rectangle sideRect = new Rectangle(Futhark_Game.screenWidth - sideRT.Width, 0, sideRT.Width, sideRT.Height);
+            Rectangle mainRect = new Rectangle(0, 0, Futhark_Game.screenWidth - sideRect.Width, Futhark_Game.screenHeight);
+
+            
+            sidePanel = new SidePanel(sideRT, sideRect, content);
+            mainPanel = new MainPanel(mainRT, mainRect, content, camera);
 
             
            
@@ -142,30 +121,17 @@ namespace Futhark {
             if(keyboardState.IsKeyDown(Keys.M))
                 return (int) Futhark_Game.gameStates.mainMenu;
 
-            if(sideRect.Contains(mouseState.Position)) {
-                activePanel = sidePanel;
-                sideMousePosition.X = mouseState.Position.X - sideRect.X;
-                sideMousePosition.Y = mouseState.Position.Y - sideRect.Y;
-            } else {
-                sideMousePosition = Point.Zero;
-            }
+            
 
             
             
 
-            if(mainRect.Contains(mouseState.Position)) {
-                activePanel = mainPanel;
-                mainMousePosition.X = mouseState.Position.X;
-                mainMousePosition.Y = mouseState.Position.Y;
+            
 
                 //wtf is this magic, math is cool
-                var vector = mainMousePosition.ToVector2();
-                var transVector = Vector2.Transform(vector, Matrix.Invert(camera.Transform));
-                mainMousePosition = transVector.ToPoint();
+                
 
-            } else {
-                mainMousePosition = Point.Zero;
-            }
+            
 
 
             int itemCount = 0; 
