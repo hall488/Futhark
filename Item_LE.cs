@@ -37,11 +37,11 @@ namespace Futhark {
             spriteBatch.Draw(itemTexture, itemRect, null, highlight, 0, new Vector2(itemTexture.Width / 2, itemTexture.Height / 2), SpriteEffects.None, 0f);
         }
 
-        public void setRectangles(int x, int y, Texture2D cTexture, Rectangle cRect){
-            borderRect = new Rectangle( cRect.Width / cTexture.Width * (4+(2+borderTexture.Width)*x),
-                                            cRect.Height / cTexture.Height * (18+(2+borderTexture.Height)*y),
-                                            cRect.Width / cTexture.Width * borderTexture.Width,
-                                            cRect.Height / cTexture.Height * borderTexture.Height);
+        public void setRectangles(int x, int y, int ratio){
+            borderRect = new Rectangle( ratio * (4+(2+borderTexture.Width)*x),
+                                            ratio * (18+(2+borderTexture.Height)*y),
+                                            ratio * borderTexture.Width,
+                                            ratio * borderTexture.Height);
                 
 
                 

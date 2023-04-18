@@ -37,7 +37,7 @@ namespace Futhark {
                 if(key == "objects") {
                     foreach(var i in val) {
                         Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new LE_Item(i, texture, overlay["border"].Item1));
+                        items.Add(new LE_Item(i, texture.Width / overlay["border"].Item1.Width));
                     }
                 } else if(key == "tiles") {
                     foreach(var i in val) {

@@ -4,8 +4,6 @@
     "#737373ff":"road_1",
     "#00ff00ff":"grass_1",
     "#007800ff":"bush_1",
-    "#ff0000ff":"cave_1",
     "#ff9b9bff":"empty",
-    "#ff6400ff":"door_1",
     "#ff6a00ff":"empty" 
 }
