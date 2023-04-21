@@ -4,10 +4,10 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/border_LE.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/container_LE.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/grid_pattern.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/object_border.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/objects_container.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/save_button.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/save_LE.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_LE_Button.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_SG_Button.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/titleImage.png</File>
@@ -31,10 +31,10 @@
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/road_2.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>border_LE.png</File>
+    <File>container_LE.png</File>
     <File>grid_pattern.png</File>
-    <File>object_border.png</File>
-    <File>objects_container.png</File>
-    <File>save_button.png</File>
+    <File>save_LE.png</File>
     <File>mainMenu_LE_Button.png</File>
     <File>mainMenu_SG_Button.png</File>
     <File>titleImage.png</File>

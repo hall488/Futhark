@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Futhark {
@@ -16,42 +17,61 @@ namespace Futhark {
 
         SaveButton_LE saveButton;
 
+        public Item_LE activeItem;
 
 
-        public Container_LE(Dictionary<string, Texture2D> textureDict) {   
+
+        public Container_LE(Dictionary<string, Texture2D> assetsDict, Dictionary<string, Texture2D> textureDict) {   
             //See assets_LE.json for file names    
-            this.texture = textureDict["container_LE"];
+            this.texture = assetsDict["container_LE"];
             this.rect = new Rectangle(  0, 
                                         0, 
                                         Futhark_Game.screenHeight * texture.Width / texture.Height, 
                                         Futhark_Game.screenHeight);
 
-            Texture2D borderTexture = textureDict["border_LE"];
+            int ratio = rect.Width / texture.Width;
 
-            saveButton = new SaveButton_LE(textureDict["save_LE"]);             
-                
-                    
-                    
-                
-                items.Add(new Item_LE(_type, _texture, borderTexture));
-                if(key == "objects") {
-                    foreach(var i in val) {
-                        Texture2D texture = Content.Load<Texture2D>(i);
-                        items.Add(new LE_Item(i, texture.Width / overlay["border"].Item1.Width));
-                    }
-                } else if(key == "tiles") {
-                    foreach(var i in val) {
-                        
-                    }
-                }
-        }
+            Texture2D borderTexture = assetsDict["border_LE"];
 
-        public void Update() {
+            saveButton = new SaveButton_LE(assetsDict["save_LE"], ratio);   
 
-        }
+            items = new List<Item_LE>();
 
-        public void Draw() {
+            int itemCount = 0;             
             
+            foreach((var key, var val) in textureDict) {
+                var x = itemCount % 2 == 0 ? 0 : 1;
+                var y = itemCount / 2;
+
+                items.Add(new Item_LE("tile", val, borderTexture, x, y, ratio));
+                
+                itemCount += 1;
+            }
+                
+                    
+            Console.WriteLine("t{0}",items.Count());
+                
+                
+        }
+
+        public void Update(Point mousePos) {
+            saveButton.Update(mousePos);
+            foreach(var i in items) {
+                if(i.Update(mousePos)) {
+                    items.ForEach(i => {i.highlight = Color.White;});
+                    i.highlight = Color.Green;
+                    break;
+                }
+
+                items.ForEach(i => {if(i.highlight == Color.Green) activeItem = i;});
+            }
+        }
+
+        public void Draw(SpriteBatch spriteBatch) {
+            spriteBatch.Draw(texture, rect, Color.White);
+            saveButton.Draw(spriteBatch);
+            foreach(var i in items)
+                i.Draw(spriteBatch);
         }
            
 

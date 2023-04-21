@@ -13,6 +13,30 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin ../assets/Level Editor/border_LE.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Level Editor/border_LE.png;border_LE.png
+
+#begin ../assets/Level Editor/container_LE.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Level Editor/container_LE.png;container_LE.png
+
 #begin ../assets/Level Editor/grid_pattern.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -25,7 +49,7 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Level Editor/grid_pattern.png;grid_pattern.png
 
-#begin ../assets/Level Editor/object_border.png
+#begin ../assets/Level Editor/save_LE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,31 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/object_border.png;object_border.png
-
-#begin ../assets/Level Editor/objects_container.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/objects_container.png;objects_container.png
-
-#begin ../assets/Level Editor/save_button.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/save_button.png;save_button.png
+/build:../assets/Level Editor/save_LE.png;save_LE.png
 
 #begin ../assets/Main Menu/mainMenu_LE_Button.png
 /importer:TextureImporter

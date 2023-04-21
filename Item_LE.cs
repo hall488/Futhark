@@ -21,14 +21,30 @@ namespace Futhark {
         public Color highlight;
 
 
-        public Item_LE(string identifier, Texture2D itemTexture, Texture2D borderTexture) {
+        public Item_LE(string identifier, Texture2D itemTexture, Texture2D borderTexture, int x, int y, int ratio) {
             this.identifier = identifier;
             this.itemTexture = itemTexture;
             this.borderTexture = borderTexture;
             this.highlight = Color.White;
+
+            if(borderTexture != null) setRectangles(x, y, ratio);
         }
 
-        public void Update() {
+        public bool Update(Point mousePos) {
+            if(borderRect.Contains(mousePos)) {
+                if(InputUtil.SingleLeftClick()) {
+                    if(highlight == Color.White) {
+                        return true;
+                    }
+                    else {
+                        highlight = Color.White;
+                        return false;
+                    }
+                }
+            }
+
+            return false;
+                
         }
 
         public void Draw(SpriteBatch spriteBatch) {
@@ -38,7 +54,7 @@ namespace Futhark {
         }
 
         public void setRectangles(int x, int y, int ratio){
-            borderRect = new Rectangle( ratio * (4+(2+borderTexture.Width)*x),
+            borderRect = new Rectangle(     ratio * (4+(2+borderTexture.Width)*x),
                                             ratio * (18+(2+borderTexture.Height)*y),
                                             ratio * borderTexture.Width,
                                             ratio * borderTexture.Height);
@@ -50,6 +66,10 @@ namespace Futhark {
                                             borderRect.Y + 2*borderRect.Height / borderTexture.Height + (int)(borderRect.Height / borderTexture.Height * 16) / 2,
                                             (int)(borderRect.Width / borderTexture.Width *  itemTexture.Width / scale * 16),
                                             (int)(borderRect.Height / borderTexture.Height * itemTexture.Height / scale * 16));
+        }
+
+        public void placeItem(Rectangle rect) {
+            this.itemRect = rect;
         }
 
            

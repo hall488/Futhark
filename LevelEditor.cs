@@ -25,26 +25,20 @@ namespace Futhark {
 
         private GraphicsDevice graphicsDevice;
 
-        List<Overlay_Object> overlayObjects;
-        List<LE_Item> items;
+
 
 
         Point sideMousePosition;
         Point mainMousePosition;
-        LE_Item activeItem;
+        Item_LE activeItem;
 
-        RenderTarget2D activePanel;
+        Panel activePanel;
 
         List<(Texture2D, Rectangle, string)> placedItems;
 
         Camera_LE camera;
 
-        Texture2D grid;
-
-        Point minSelect;
-        Point maxSelect;
-
-        bool selectPass;
+        
 
         Container_LE container;
 
@@ -59,11 +53,7 @@ namespace Futhark {
             this.graphics = graphics;
             this.graphicsDevice = graphicsDevice;
 
-            activeItem = null;
-            selectPass = false;
-
-            minSelect = new Point();
-            maxSelect = new Point();
+            
 
         }
 
@@ -71,28 +61,27 @@ namespace Futhark {
 
             camera = new Camera_LE(graphicsDevice.Viewport);
 
-            overlayObjects = new List<Overlay_Object>();
-            items = new List<LE_Item>();
-            placedItems = new List<(Texture2D, Rectangle, string)>();
             
 
 
-            grid = content.Load<Texture2D>("grid_pattern");
-
             
+
+            Texture2D containerTexture = content.Load<Texture2D>("Container_LE");
+
+            int ratio = graphicsDevice.PresentationParameters.BackBufferHeight / containerTexture.Height;
 
             
             
 
             RenderTarget2D sideRT = new RenderTarget2D(this.graphicsDevice,
-                                                55 * 8,
+                                                55 * ratio,
                                                 graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
                                                 DepthFormat.Depth24);
 
             RenderTarget2D mainRT = new RenderTarget2D(this.graphicsDevice,
-                                                this.graphicsDevice.PresentationParameters.BackBufferWidth - 55 * 8,
+                                                this.graphicsDevice.PresentationParameters.BackBufferWidth - 55 * ratio,
                                                 graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
@@ -119,106 +108,16 @@ namespace Futhark {
 
             
             if(keyboardState.IsKeyDown(Keys.M))
-                return (int) Futhark_Game.gameStates.mainMenu;
-
+                return (int) Futhark_Game.gameStates.mainMenu;   
             
 
-            
-            
-
-            
-
-                //wtf is this magic, math is cool
-                
-
-            
-
-
-            int itemCount = 0; 
-
-            
-            
-            foreach(var val in items) {
-                var x = itemCount % 2 == 0 ? 0 : 1;
-                var y = itemCount / 2;
-                var bTexture = overlay["border"].Item1;
-                var cTexture = overlay["container"].Item1;
-                var cRect = overlay["container"].Item2;
-
-                val.setRectangles(x, y, cTexture, cRect);
-
-                //Console.WriteLine("{0}, {1}, {2}", key, iRectangle.Width, iRectangle.Height);
-                itemCount += 1;
+            if(sidePanel.rect.Contains(mouseState.Position)) {
+                sidePanel.Update(mouseState);
             }
 
-            if(activePanel == sidePanel) {
-                foreach(var val in items) {
-                    if(val.borderRect.Contains(sideMousePosition)) {
-                        if(InputUtil.SingleLeftClick()) {
-                            if(val.highlight == Color.White) {
-                                items.ForEach(i => {i.highlight = Color.White;});
-                                val.highlight = Color.Green;
-                                activeItem = val;
-                            }
-                            else {
-                                val.highlight = Color.White;
-                                activeItem = null;
-                            }
-                        }
-                    }
-                }
-
-                if(overlay["save_button"].Item2.Contains(sideMousePosition) && InputUtil.SingleLeftClick()) {
-                    SaveLevelToBMP(placedItems);
-                }
-            }
-
-           
-
-            
-
-            var gridMousePos = new Point();
-            gridMousePos.X = (int)Math.Round((mainMousePosition.X - grid.Width * 4) / 8d / grid.Width, 0) * 8 * grid.Width;
-            gridMousePos.Y = (int)Math.Round((mainMousePosition.Y - grid.Height * 4)  / 8d / grid.Height, 0) * 8 * grid.Height;
-
-
-            if(activePanel == mainPanel) {
-                if(activeItem != null) {
-                    if(InputUtil.SingleLeftClick()) {
-                        minSelect = gridMousePos;
-                        selectPass = true;
-                    }
-
-                    if(selectPass && mouseState.LeftButton == ButtonState.Released) {
-                        maxSelect = gridMousePos;
-                        selectPass = false;
-
-                        for(int i = minSelect.X; i <= maxSelect.X; i = i + 8*grid.Width) {
-                            for(int j = minSelect.Y; j <= maxSelect.Y; j = j + 8*grid.Height) {
-                                placedItems.Add(new (activeItem.itemTexture, new Rectangle(i, j, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), activeItem.identifier));
-                            }
-                        }
-                        
-                    }
-                } else {
-                    var ToBeRemoved = new List<(Texture2D, Rectangle, string)>();
-
-                    if(InputUtil.SingleRightClick()) {
-                        foreach(var val in placedItems) {
-                            if(val.Item2.Contains(gridMousePos)) {
-                                ToBeRemoved.Add(val);
-                            }
-                        }
-                    }
-                    ToBeRemoved.Reverse();
-                    foreach(var i in ToBeRemoved) {
-                        placedItems.Remove(i);
-                        break;
-                    }
-
-                    ToBeRemoved.Clear();
-                }
-                
+            if(mainPanel.rect.Contains(mouseState.Position)) {
+                mainPanel.Update(mouseState);
+                mainPanel.SetActiveItem(sidePanel.getActiveItem());
             }
 
             
@@ -227,71 +126,20 @@ namespace Futhark {
             return (int) Futhark_Game.gameStates.levelEditor;
         }
 
-        public void DrawSidePanel(RenderTarget2D renderTarget) {
-            graphicsDevice.SetRenderTarget(renderTarget);
-            graphicsDevice.DepthStencilState = new DepthStencilState() {DepthBufferEnable = true};
+        
 
-            graphicsDevice.Clear(Color.LightGray);
-
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);  
-            
-            foreach(var val in items) {
-                val.Draw(spriteBatch);
-            }
-
-            foreach((var key, var val) in overlay){
-                spriteBatch.Draw(val.Item1, val.Item2, Color.White);
-            }
-
-            spriteBatch.End();
-
-            graphicsDevice.SetRenderTarget(null);
-
-        }
-
-        public void DrawMainPanel(RenderTarget2D renderTarget) {
-            graphicsDevice.SetRenderTarget(renderTarget);
-            graphicsDevice.DepthStencilState = new DepthStencilState() {DepthBufferEnable = true};
-
-            graphicsDevice.Clear(Color.LightGray);
-
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: camera.Transform);
-            
-            for(int i = 0; i < 16; i++) {
-                for(int j =0; j < 16; j++) {
-                    var rect = new Rectangle(i*grid.Width*8, j*grid.Height*8, grid.Width*8, grid.Height*8);
-                    spriteBatch.Draw(grid, rect, Color.White);
-                }
-            }
-
-            foreach(var val in placedItems) {
-                spriteBatch.Draw(val.Item1, val.Item2, Color.White);
-            }
-
-            var gridMousePos = new Point();
-            gridMousePos.X = (int)Math.Round((mainMousePosition.X - grid.Width * 4) / 8d / grid.Width, 0) * 8 * grid.Width;
-            gridMousePos.Y = (int)Math.Round((mainMousePosition.Y - grid.Height * 4)  / 8d / grid.Height, 0) * 8 * grid.Height;
-
-            if(activeItem != null && activePanel == mainPanel) {
-                spriteBatch.Draw(activeItem.itemTexture, new Rectangle(gridMousePos.X, gridMousePos.Y, activeItem.itemTexture.Width*8, activeItem.itemTexture.Height*8), Color.White);
-            }
-            
-
-            spriteBatch.End();
-
-            graphicsDevice.SetRenderTarget(null);
-        }
+        
 
         public void Draw() {
             
-            DrawSidePanel(sidePanel);
-            DrawMainPanel(mainPanel);
+            sidePanel.DrawSidePanel(spriteBatch, graphicsDevice);
+            mainPanel.DrawMainPanel(spriteBatch, graphicsDevice);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             
-            spriteBatch.Draw(sidePanel, sideRect, Color.White);
+            spriteBatch.Draw(sidePanel.renderTarget, sidePanel.rect, Color.White);
 
-            spriteBatch.Draw(mainPanel, mainRect, Color.White);
+            spriteBatch.Draw(mainPanel.renderTarget, mainPanel.rect, Color.White);
             
 
             spriteBatch.End();

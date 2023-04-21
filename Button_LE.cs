@@ -10,17 +10,24 @@ namespace Futhark {
     public class Button_LE{ 
 
         protected Texture2D texture;
+        protected Rectangle rect;
 
-        public Button_LE(Texture2D texture) {       
+        public Button_LE(Texture2D texture, int ratio) {       
             this.texture = texture;  
         }
 
-        public virtual void Update() {
-
+        public virtual void Update(Point mousePos) {
+            if(rect.Contains(mousePos) && InputUtil.SingleLeftClick()) {
+                    OnClick();
+                }
         }
 
-        public virtual void Draw () {
-            
+        public virtual void Draw (SpriteBatch spriteBatch) {
+            spriteBatch.Draw(texture, rect, Color.White);
+        }
+
+        public virtual void OnClick(){
+
         }
 
         

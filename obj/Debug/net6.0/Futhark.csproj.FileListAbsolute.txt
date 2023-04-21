@@ -220,3 +220,6 @@ C:\Users\16308\Futhark\bin\Debug\net6.0\Content\objects_container.xnb
 C:\Users\16308\Futhark\bin\Debug\net6.0\Content\object_border.xnb
 C:\Users\16308\Futhark\bin\Debug\net6.0\Content\grid_pattern.xnb
 C:\Users\16308\Futhark\bin\Debug\net6.0\Content\save_button.xnb
+C:\Users\16308\Futhark\bin\Debug\net6.0\Content\border_LE.xnb
+C:\Users\16308\Futhark\bin\Debug\net6.0\Content\container_LE.xnb
+C:\Users\16308\Futhark\bin\Debug\net6.0\Content\save_LE.xnb

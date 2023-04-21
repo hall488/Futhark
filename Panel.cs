@@ -10,8 +10,8 @@ namespace Futhark {
 
     public class Panel{ 
 
-        protected RenderTarget2D renderTarget;
-        protected Rectangle rect;
+        public RenderTarget2D renderTarget;
+        public Rectangle rect;
         protected Point mousePos;
         protected bool activePanel;
 
@@ -32,7 +32,7 @@ namespace Futhark {
             }
         }
 
-        public virtual void Draw () {
+        public virtual void Draw (SpriteBatch spriteBatch) {
             
         }
 
