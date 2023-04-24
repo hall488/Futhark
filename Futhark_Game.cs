@@ -4,7 +4,12 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
 using System;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using SI = SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 //using sysD = System.Drawing; //only works on windows
 
 
@@ -88,6 +93,10 @@ namespace Futhark
                         break;
                         
                 }
+
+            //test code ##$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+            
+            //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         }
         protected override void Update(GameTime gameTime)
         {
@@ -95,7 +104,7 @@ namespace Futhark
                 Exit();
 
             
-
+            
 
             // TODO: Add your update logic here
             switch(gameState) {

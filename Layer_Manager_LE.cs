@@ -39,7 +39,7 @@ namespace Futhark {
                 ground.AddPlaced(item);
             else if(item.identifier == "onground")
                 onground.AddPlaced(item);
-            else if(item.identifier == "overground");
+            else if(item.identifier == "overground")
                 overground.AddPlaced(item);
                 
                 
@@ -49,6 +49,8 @@ namespace Futhark {
             foreach(var i in items)
                 AddSingleItem(i);
         }
+
+        public void Save
 
         
     }
