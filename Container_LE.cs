@@ -28,8 +28,8 @@ namespace Futhark {
             this.texture = assetsDict["container_LE"];
             this.rect = new Rectangle(  0, 
                                         0, 
-                                        Futhark_Game.screenHeight * texture.Width / texture.Height, 
-                                        Futhark_Game.screenHeight);
+                                        SidePanel.screenSize.Width, 
+                                        SidePanel.screenSize.Height);
 
             int ratio = rect.Width / texture.Width;
 
@@ -67,17 +67,25 @@ namespace Futhark {
 
         public Item_LE Update(Point mousePos) {
             saveButton.Update(mousePos);
-            foreach(var i in items) {
+
+            bool passActive = true;
+
+            foreach(var i in items) {                
+
                 if(i.Update(mousePos)) {
                     items.ForEach(i => {i.highlight = Color.White;});
                     i.highlight = Color.Green;
-                    break;
-                }
+                    activeItem = i;
+                }   
 
-                items.ForEach(i => {if(i.highlight == Color.Green) activeItem = i;});
+                if(i.highlight == Color.Green)
+                    passActive = false;                
             }
 
+            if(passActive) activeItem = null;
+
             return activeItem;
+
         }
 
         public void Draw(SpriteBatch spriteBatch) {

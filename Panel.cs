@@ -12,13 +12,16 @@ namespace Futhark {
 
         public RenderTarget2D renderTarget;
         public Rectangle rect;
+        public static Rectangle screenSize;
+
         protected Point mousePos;
         protected bool activePanel;
 
 
         public Panel(RenderTarget2D renderTarget, Rectangle rect, ContentManager content) {  
             this.renderTarget = renderTarget;
-            this.rect = rect;         
+            this.rect = rect;       
+            screenSize = rect;  
         }
 
         public virtual void Update(MouseState mouseState) {

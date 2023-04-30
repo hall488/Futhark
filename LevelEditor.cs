@@ -87,8 +87,8 @@ namespace Futhark {
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
                                                 DepthFormat.Depth24);
 
-            Rectangle sideRect = new Rectangle(Futhark_Game.screenWidth - sideRT.Width, 0, sideRT.Width, sideRT.Height);
-            Rectangle mainRect = new Rectangle(0, 0, Futhark_Game.screenWidth - sideRect.Width, Futhark_Game.screenHeight);
+            Rectangle sideRect = new Rectangle(graphicsDevice.PresentationParameters.BackBufferWidth - sideRT.Width, 0, sideRT.Width, sideRT.Height);
+            Rectangle mainRect = new Rectangle(0, 0, graphicsDevice.PresentationParameters.BackBufferWidth - sideRect.Width, graphicsDevice.PresentationParameters.BackBufferHeight);
 
             
             sidePanel = new SidePanel(sideRT, sideRect, content);

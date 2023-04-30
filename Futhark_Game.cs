@@ -61,11 +61,16 @@ namespace Futhark
             // TODO: Add your initialization logic here
             //_graphics.PreferredBackBufferWidth = 700;  // set this value to the desired width of your window
             //_graphics.PreferredBackBufferHeight = 700;   // set this value to the desired height of your window
+            
+            
+            graphics.IsFullScreen = true;
+
             graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+
             screenWidth = graphics.PreferredBackBufferWidth;
             screenHeight = graphics.PreferredBackBufferHeight;
-            graphics.IsFullScreen = true;
+
             graphics.ApplyChanges();
 
             base.Initialize();

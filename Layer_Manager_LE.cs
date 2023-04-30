@@ -61,7 +61,7 @@ namespace Futhark {
         }
 
         public void AddTile(Tile tile) {
-            onground.AddToLayer(tileDict[tile.hexcode], tile.pos);
+            ground.AddToLayer(tileDict[tile.hexcode], tile.pos);
         }
 
         public void SaveMap() {

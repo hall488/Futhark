@@ -19,6 +19,8 @@ namespace Futhark {
 
         private Item_LE activeItem;
 
+        
+
         public SidePanel(RenderTarget2D renderTarget, Rectangle rect, ContentManager content) : base(renderTarget, rect, content) {
 
             string jsonFile = File.ReadAllText("text_assets/assets_LE.json");
