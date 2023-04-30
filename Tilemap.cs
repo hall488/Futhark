@@ -41,7 +41,7 @@ namespace Futhark {
 
             for(int i=0; i < width; i++) {
                 for(int j=0; j < height; j++) {
-                    tilemap[i,j] = new Tile(bmp[i,j], i, j, solid, tileLength, gConstants.tileColTexture);
+                    tilemap[i,j] = new Tile(ColorHelper.ToHex(bmp[i,j]), new Point(i, j));
                 }
             }
         }
@@ -52,9 +52,10 @@ namespace Futhark {
 
         public void Draw(SpriteBatch spriteBatch) {
             foreach(var t in tilemap) {
-                Rectangle destinationRectangle = new Rectangle(t.x, t.y, tileDict[ColorHelper.ToHex(t.color)].Width*8, tileDict[ColorHelper.ToHex(t.color)].Height*8);
+                Texture2D texture = tileDict[t.hexcode];
+                Rectangle destinationRectangle = new Rectangle(t.x, t.y, texture.Width*8, texture.Height*8);
 
-                spriteBatch.Draw(tileDict[ColorHelper.ToHex(t.color)], destinationRectangle, Color.White);
+                spriteBatch.Draw(texture, destinationRectangle, Color.White);
                 //Debug collision rectangles
                 //t.Draw(spriteBatch);
             }

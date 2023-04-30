@@ -1,59 +1,30 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/16308/Futhark/Content/../assets/Level Editor/border_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/border_LE.xnb","TextureProcessor","Texture2DContent",156,1685,0.129704
-"C:/Users/16308/Futhark/Content/../assets/Level Editor/container_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/container_LE.xnb","TextureProcessor","Texture2DContent",256,23845,0.0039964
-"C:/Users/16308/Futhark/Content/../assets/Level Editor/grid_pattern.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/grid_pattern.xnb","TextureProcessor","Texture2DContent",151,1109,0.164298
-"C:/Users/16308/Futhark/Content/../assets/Level Editor/save_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/save_LE.xnb","TextureProcessor","Texture2DContent",167,769,0.0017025
-"C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_LE_Button.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/mainMenu_LE_Button.xnb","TextureProcessor","Texture2DContent",330,16469,0.1017226
-"C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_SG_Button.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/mainMenu_SG_Button.xnb","TextureProcessor","Texture2DContent",349,16469,0.0036618
-"C:/Users/16308/Futhark/Content/../assets/Main Menu/titleImage.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/titleImage.xnb","TextureProcessor","Texture2DContent",1226,65621,0.005202
-"C:/Users/16308/Futhark/Content/../assets/Maps/building_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/building_layer.xnb","TextureProcessor","Texture2DContent",282,1109,0.0066129
-"C:/Users/16308/Futhark/Content/../assets/Maps/test_back_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_back_layer.xnb","TextureProcessor","Texture2DContent",194,1109,0.0014293
-"C:/Users/16308/Futhark/Content/../assets/Maps/test_level.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_level.xnb","TextureProcessor","Texture2DContent",78,149,0.0013549
-"C:/Users/16308/Futhark/Content/../assets/Maps/test_mid_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_mid_layer.xnb","TextureProcessor","Texture2DContent",906,1109,0.0013937
-"C:/Users/16308/Futhark/Content/../assets/Objects/cave_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1.xnb","TextureProcessor","Texture2DContent",1105,15445,0.104954
-"C:/Users/16308/Futhark/Content/../assets/Objects/door_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/door_1.xnb","TextureProcessor","Texture2DContent",645,2133,0.0033378
-"C:/Users/16308/Futhark/Content/../assets/Objects/test.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test.xnb","TextureProcessor","Texture2DContent",1532,15445,0.1007344
-"C:/Users/16308/Futhark/Content/../assets/Overlay/Aetts.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/Aetts.xnb","TextureProcessor","Texture2DContent",2060,82005,0.0071888
-"C:/Users/16308/Futhark/Content/../assets/Overlay/Frey_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/Frey_Aett.xnb","TextureProcessor","Texture2DContent",4142,163925,0.0051923
-"C:/Users/16308/Futhark/Content/../assets/Overlay/Hagal_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/Hagal_Aett.xnb","TextureProcessor","Texture2DContent",4820,163925,0.0087482
-"C:/Users/16308/Futhark/Content/../assets/Overlay/Tyr_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/Tyr_Aett.xnb","TextureProcessor","Texture2DContent",3806,163925,0.0079642
-"C:/Users/16308/Futhark/Content/../assets/Sprites/fireball.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/fireball.xnb","TextureProcessor","Texture2DContent",239,1237,0.0018679
-"C:/Users/16308/Futhark/Content/../assets/Sprites/young_skald.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/young_skald.xnb","TextureProcessor","Texture2DContent",810,24661,0.0021303
-"C:/Users/16308/Futhark/Content/../assets/Tiles/boundary.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/boundary.xnb","TextureProcessor","Texture2DContent",522,1109,0.0016182
-"C:/Users/16308/Futhark/Content/../assets/Tiles/bush_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/bush_1.xnb","TextureProcessor","Texture2DContent",248,1109,0.0015478
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_1.xnb","TextureProcessor","Texture2DContent",77,1109,0.003338
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_10.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_10.xnb","TextureProcessor","Texture2DContent",193,1109,0.0016034
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_11.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_11.xnb","TextureProcessor","Texture2DContent",228,1109,0.0014549
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_12.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_12.xnb","TextureProcessor","Texture2DContent",210,1109,0.00178
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_13.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_13.xnb","TextureProcessor","Texture2DContent",91,1109,0.0019779
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_14.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_14.xnb","TextureProcessor","Texture2DContent",228,1109,0.0020998
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_15.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_15.xnb","TextureProcessor","Texture2DContent",210,1109,0.0018839
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_16.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_16.xnb","TextureProcessor","Texture2DContent",77,1109,0.0014934
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_2.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_2.xnb","TextureProcessor","Texture2DContent",189,1109,0.001946
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_3.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_3.xnb","TextureProcessor","Texture2DContent",184,1109,0.0020546
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_4.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_4.xnb","TextureProcessor","Texture2DContent",183,1109,0.0019062
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_5.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_5.xnb","TextureProcessor","Texture2DContent",77,1109,0.0021628
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_6.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_6.xnb","TextureProcessor","Texture2DContent",198,1109,0.0024489
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_7.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_7.xnb","TextureProcessor","Texture2DContent",193,1109,0.0020694
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_8.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_8.xnb","TextureProcessor","Texture2DContent",91,1109,0.0018818
-"C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_9.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/cave_1_9.xnb","TextureProcessor","Texture2DContent",198,1109,0.0014468
-"C:/Users/16308/Futhark/Content/../assets/Tiles/empty.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/empty.xnb","TextureProcessor","Texture2DContent",126,1109,0.0022138
-"C:/Users/16308/Futhark/Content/../assets/Tiles/grass_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/grass_1.xnb","TextureProcessor","Texture2DContent",177,1109,0.0017679
-"C:/Users/16308/Futhark/Content/../assets/Tiles/road_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/road_1.xnb","TextureProcessor","Texture2DContent",162,1109,0.0019878
-"C:/Users/16308/Futhark/Content/../assets/Tiles/road_2.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/road_2.xnb","TextureProcessor","Texture2DContent",135,1109,0.0015064
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_1.xnb","TextureProcessor","Texture2DContent",517,1109,0.0030393
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_10.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_10.xnb","TextureProcessor","Texture2DContent",382,1109,0.0040962
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_11.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_11.xnb","TextureProcessor","Texture2DContent",363,1109,0.0016568
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_12.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_12.xnb","TextureProcessor","Texture2DContent",412,1109,0.0021472
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_13.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_13.xnb","TextureProcessor","Texture2DContent",362,1109,0.0025764
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_14.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_14.xnb","TextureProcessor","Texture2DContent",362,1109,0.0018439
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_15.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_15.xnb","TextureProcessor","Texture2DContent",437,1109,0.0014595
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_16.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_16.xnb","TextureProcessor","Texture2DContent",177,1109,0.0021677
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_2.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_2.xnb","TextureProcessor","Texture2DContent",494,1109,0.0020105
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_3.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_3.xnb","TextureProcessor","Texture2DContent",482,1109,0.001339
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_4.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_4.xnb","TextureProcessor","Texture2DContent",446,1109,0.0018879
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_5.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_5.xnb","TextureProcessor","Texture2DContent",489,1109,0.0021195
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_6.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_6.xnb","TextureProcessor","Texture2DContent",466,1109,0.0013329
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_7.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_7.xnb","TextureProcessor","Texture2DContent",566,1109,0.0017231
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_8.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_8.xnb","TextureProcessor","Texture2DContent",392,1109,0.0014956
-"C:/Users/16308/Futhark/Content/../assets/Tiles/test_9.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/test_9.xnb","TextureProcessor","Texture2DContent",505,1109,0.0013373
+"C:/Users/16308/Futhark/Content/../assets/Level Editor/border_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Level Editor/border_LE.xnb","TextureProcessor","Texture2DContent",156,1685,0.1037102
+"C:/Users/16308/Futhark/Content/../assets/Level Editor/container_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Level Editor/container_LE.xnb","TextureProcessor","Texture2DContent",256,23845,0.0033298
+"C:/Users/16308/Futhark/Content/../assets/Level Editor/grid_pattern.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Level Editor/grid_pattern.xnb","TextureProcessor","Texture2DContent",151,1109,0.0012196
+"C:/Users/16308/Futhark/Content/../assets/Level Editor/save_LE.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Level Editor/save_LE.xnb","TextureProcessor","Texture2DContent",167,769,0.0017044
+"C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_LE_Button.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Main Menu/mainMenu_LE_Button.xnb","TextureProcessor","Texture2DContent",330,16469,0.0052057
+"C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_SG_Button.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Main Menu/mainMenu_SG_Button.xnb","TextureProcessor","Texture2DContent",349,16469,0.0021176
+"C:/Users/16308/Futhark/Content/../assets/Main Menu/titleImage.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Main Menu/titleImage.xnb","TextureProcessor","Texture2DContent",1226,65621,0.0034428
+"C:/Users/16308/Futhark/Content/../assets/Maps/building_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Maps/building_layer.xnb","TextureProcessor","Texture2DContent",282,1109,0.0065013
+"C:/Users/16308/Futhark/Content/../assets/Maps/test_back_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Maps/test_back_layer.xnb","TextureProcessor","Texture2DContent",194,1109,0.001826
+"C:/Users/16308/Futhark/Content/../assets/Maps/test_level.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Maps/test_level.xnb","TextureProcessor","Texture2DContent",78,149,0.0014298
+"C:/Users/16308/Futhark/Content/../assets/Maps/test_mid_layer.bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Maps/test_mid_layer.xnb","TextureProcessor","Texture2DContent",906,1109,0.0013355
+"C:/Users/16308/Futhark/Content/../assets/Objects/cave_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Objects/cave_1.xnb","TextureProcessor","Texture2DContent",1105,15445,0.0046756
+"C:/Users/16308/Futhark/Content/../assets/Objects/door_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Objects/door_1.xnb","TextureProcessor","Texture2DContent",645,2133,0.0017282
+"C:/Users/16308/Futhark/Content/../assets/Objects/test.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Objects/test.xnb","TextureProcessor","Texture2DContent",1532,15445,0.0020926
+"C:/Users/16308/Futhark/Content/../assets/Overlay/Aetts.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Overlay/Aetts.xnb","TextureProcessor","Texture2DContent",2060,82005,0.0031638
+"C:/Users/16308/Futhark/Content/../assets/Overlay/Frey_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Overlay/Frey_Aett.xnb","TextureProcessor","Texture2DContent",4142,163925,0.0061727
+"C:/Users/16308/Futhark/Content/../assets/Overlay/Hagal_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Overlay/Hagal_Aett.xnb","TextureProcessor","Texture2DContent",4820,163925,0.005002
+"C:/Users/16308/Futhark/Content/../assets/Overlay/Tyr_Aett.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Overlay/Tyr_Aett.xnb","TextureProcessor","Texture2DContent",3806,163925,0.0058452
+"C:/Users/16308/Futhark/Content/../assets/Sprites/fireball.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Sprites/fireball.xnb","TextureProcessor","Texture2DContent",239,1237,0.001191
+"C:/Users/16308/Futhark/Content/../assets/Sprites/young_skald.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Sprites/young_skald.xnb","TextureProcessor","Texture2DContent",810,24661,0.0018731
+"C:/Users/16308/Futhark/Content/../assets/Structures/Cave_1/image.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Structures/Cave_1/image.xnb","TextureProcessor","Texture2DContent",1105,15445,0.0017652
+"C:/Users/16308/Futhark/Content/../assets/Structures/test_ground.Bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Structures/test_ground.xnb","TextureProcessor","Texture2DContent",102,145,0.0010901
+"C:/Users/16308/Futhark/Content/../assets/Structures/test_overground.Bmp","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Structures/test_overground.xnb","TextureProcessor","Texture2DContent",102,145,0.0042475
+"C:/Users/16308/Futhark/Content/../assets/Tiles/boundary.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/boundary.xnb","TextureProcessor","Texture2DContent",522,1109,0.0015785
+"C:/Users/16308/Futhark/Content/../assets/Tiles/bush_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/bush_1.xnb","TextureProcessor","Texture2DContent",248,1109,0.0013047
+"C:/Users/16308/Futhark/Content/../assets/Tiles/empty.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/empty.xnb","TextureProcessor","Texture2DContent",126,1109,0.0011676
+"C:/Users/16308/Futhark/Content/../assets/Tiles/grass_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/grass_1.xnb","TextureProcessor","Texture2DContent",177,1109,0.0010082
+"C:/Users/16308/Futhark/Content/../assets/Tiles/road_1.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/road_1.xnb","TextureProcessor","Texture2DContent",162,1109,0.0013889
+"C:/Users/16308/Futhark/Content/../assets/Tiles/road_2.png","C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tiles/road_2.xnb","TextureProcessor","Texture2DContent",135,1109,0.0011768

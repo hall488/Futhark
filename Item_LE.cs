@@ -16,16 +16,23 @@ namespace Futhark {
 
         public Texture2D itemTexture;
 
-        public string identifier;
+        public string category;
+
+        public string fileName;
+
+        public string hexcode;
 
         public Color highlight;
 
 
-        public Item_LE(string identifier, Texture2D itemTexture, Texture2D borderTexture, int x, int y, int ratio) {
-            this.identifier = identifier;
+        public Item_LE(string category, Texture2D itemTexture, Texture2D borderTexture, int x, int y, int ratio, string hexcode, string fileName) {
+            this.category = category;
             this.itemTexture = itemTexture;
             this.borderTexture = borderTexture;
             this.highlight = Color.White;
+            this.hexcode = hexcode;
+            this.fileName = fileName;
+
 
             if(borderTexture != null) setRectangles(x, y, ratio);
         }

@@ -116,8 +116,8 @@ namespace Futhark {
             }
 
             if(mainPanel.rect.Contains(mouseState.Position)) {
-                mainPanel.Update(mouseState);
-                mainPanel.SetActiveItem(sidePanel.getActiveItem());
+                mainPanel.SetActiveItem(sidePanel.getActiveItem());             
+                mainPanel.Update(mouseState);                
             }
 
             

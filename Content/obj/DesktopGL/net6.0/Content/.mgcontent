@@ -24,103 +24,45 @@
     <File>C:/Users/16308/Futhark/Content/../assets/Overlay/Tyr_Aett.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Sprites/fireball.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Sprites/young_skald.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/Cave_1/image.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/test_ground.Bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/test_overground.Bmp</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/boundary.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/bush_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_10.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_11.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_12.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_13.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_14.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_15.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_16.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_2.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_3.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_4.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_5.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_6.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_7.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_8.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/cave_1_9.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/empty.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/grass_1.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/road_1.png</File>
     <File>C:/Users/16308/Futhark/Content/../assets/Tiles/road_2.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_1.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_10.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_11.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_12.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_13.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_14.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_15.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_16.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_2.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_3.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_4.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_5.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_6.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_7.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_8.png</File>
-    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/test_9.png</File>
   </SourceFiles>
   <DestFiles>
-    <File>border_LE.png</File>
-    <File>container_LE.png</File>
-    <File>grid_pattern.png</File>
-    <File>save_LE.png</File>
-    <File>mainMenu_LE_Button.png</File>
-    <File>mainMenu_SG_Button.png</File>
-    <File>titleImage.png</File>
-    <File>building_layer.bmp</File>
-    <File>test_back_layer.bmp</File>
-    <File>test_level.bmp</File>
-    <File>test_mid_layer.bmp</File>
-    <File>cave_1.png</File>
-    <File>door_1.png</File>
-    <File>test.png</File>
-    <File>Aetts.png</File>
-    <File>Frey_Aett.png</File>
-    <File>Hagal_Aett.png</File>
-    <File>Tyr_Aett.png</File>
-    <File>fireball.png</File>
-    <File>young_skald.png</File>
-    <File>boundary.png</File>
-    <File>bush_1.png</File>
-    <File>cave_1_1.png</File>
-    <File>cave_1_10.png</File>
-    <File>cave_1_11.png</File>
-    <File>cave_1_12.png</File>
-    <File>cave_1_13.png</File>
-    <File>cave_1_14.png</File>
-    <File>cave_1_15.png</File>
-    <File>cave_1_16.png</File>
-    <File>cave_1_2.png</File>
-    <File>cave_1_3.png</File>
-    <File>cave_1_4.png</File>
-    <File>cave_1_5.png</File>
-    <File>cave_1_6.png</File>
-    <File>cave_1_7.png</File>
-    <File>cave_1_8.png</File>
-    <File>cave_1_9.png</File>
-    <File>empty.png</File>
-    <File>grass_1.png</File>
-    <File>road_1.png</File>
-    <File>road_2.png</File>
-    <File>test_1.png</File>
-    <File>test_10.png</File>
-    <File>test_11.png</File>
-    <File>test_12.png</File>
-    <File>test_13.png</File>
-    <File>test_14.png</File>
-    <File>test_15.png</File>
-    <File>test_16.png</File>
-    <File>test_2.png</File>
-    <File>test_3.png</File>
-    <File>test_4.png</File>
-    <File>test_5.png</File>
-    <File>test_6.png</File>
-    <File>test_7.png</File>
-    <File>test_8.png</File>
-    <File>test_9.png</File>
+    <File>assets/Level Editor/border_LE.png</File>
+    <File>assets/Level Editor/container_LE.png</File>
+    <File>assets/Level Editor/grid_pattern.png</File>
+    <File>assets/Level Editor/save_LE.png</File>
+    <File>assets/Main Menu/mainMenu_LE_Button.png</File>
+    <File>assets/Main Menu/mainMenu_SG_Button.png</File>
+    <File>assets/Main Menu/titleImage.png</File>
+    <File>assets/Maps/building_layer.bmp</File>
+    <File>assets/Maps/test_back_layer.bmp</File>
+    <File>assets/Maps/test_level.bmp</File>
+    <File>assets/Maps/test_mid_layer.bmp</File>
+    <File>assets/Objects/cave_1.png</File>
+    <File>assets/Objects/door_1.png</File>
+    <File>assets/Objects/test.png</File>
+    <File>assets/Overlay/Aetts.png</File>
+    <File>assets/Overlay/Frey_Aett.png</File>
+    <File>assets/Overlay/Hagal_Aett.png</File>
+    <File>assets/Overlay/Tyr_Aett.png</File>
+    <File>assets/Sprites/fireball.png</File>
+    <File>assets/Sprites/young_skald.png</File>
+    <File>assets/Structures/Cave_1/image.png</File>
+    <File>assets/Structures/test_ground.Bmp</File>
+    <File>assets/Structures/test_overground.Bmp</File>
+    <File>assets/Tiles/boundary.png</File>
+    <File>assets/Tiles/bush_1.png</File>
+    <File>assets/Tiles/empty.png</File>
+    <File>assets/Tiles/grass_1.png</File>
+    <File>assets/Tiles/road_1.png</File>
+    <File>assets/Tiles/road_2.png</File>
   </DestFiles>
 </SourceFileCollection>

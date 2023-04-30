@@ -21,7 +21,9 @@ namespace Futhark {
 
 
 
-        public Container_LE(Dictionary<string, Texture2D> assetsDict, Dictionary<string, Texture2D> textureDict) {   
+        public Container_LE(    Dictionary<string, Texture2D> assetsDict, 
+                                Dictionary<string, Texture2D> tileTextureDict, Dictionary<string, Texture2D> structureTextureDict, 
+                                Dictionary<string, string> tileDict, Dictionary<string, string> structureDict) {   
             //See assets_LE.json for file names    
             this.texture = assetsDict["container_LE"];
             this.rect = new Rectangle(  0, 
@@ -39,11 +41,20 @@ namespace Futhark {
 
             int itemCount = 0;             
             
-            foreach((var key, var val) in textureDict) {
+            foreach((var key, var val) in tileTextureDict) {
                 var x = itemCount % 2 == 0 ? 0 : 1;
                 var y = itemCount / 2;
 
-                items.Add(new Item_LE("tile", val, borderTexture, x, y, ratio));
+                items.Add(new Item_LE("tile", val, borderTexture, x, y, ratio, key, tileDict[key]));
+                
+                itemCount += 1;
+            }
+
+            foreach((var key, var val) in structureTextureDict) {
+                var x = itemCount % 2 == 0 ? 0 : 1;
+                var y = itemCount / 2;
+
+                items.Add(new Item_LE("structure", val, borderTexture, x, y, ratio, key, structureDict[key]));
                 
                 itemCount += 1;
             }
@@ -54,7 +65,7 @@ namespace Futhark {
                 
         }
 
-        public void Update(Point mousePos) {
+        public Item_LE Update(Point mousePos) {
             saveButton.Update(mousePos);
             foreach(var i in items) {
                 if(i.Update(mousePos)) {
@@ -65,6 +76,8 @@ namespace Futhark {
 
                 items.ForEach(i => {if(i.highlight == Color.Green) activeItem = i;});
             }
+
+            return activeItem;
         }
 
         public void Draw(SpriteBatch spriteBatch) {

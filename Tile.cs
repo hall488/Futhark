@@ -8,13 +8,11 @@ namespace Futhark {
 
     public class Tile {
 
-        public Color color { get; set; }
+        public string hexcode { get; set; }
         public int x {get; set; }
         public int y {get; set; }
 
-        public int xCord {get; set;}
-
-        public int yCord {get; set;}
+        public Point pos;
 
         public bool solid {get; set; }
 
@@ -23,24 +21,14 @@ namespace Futhark {
         public int tileLength {get; set;}
         public Texture2D tileDebugTexture;
 
-        public Tile(Color _color, int _xCord, int _yCord, bool _solid, int _tileLength, Texture2D _tileDebugTexture) {
-            tileLength = _tileLength;
-            color = _color;
-            xCord = _xCord;
-            yCord = _yCord;
-            x = xCord * tileLength;
-            y= yCord * tileLength;
-            tileDebugTexture = _tileDebugTexture;
-
-            if(color != Color.White) {
-                solid = _solid;                
-            } else {
-                solid = false;
-            }
+        public Tile(string hexcode, Point pos) {
+            this.hexcode = hexcode;
+            this.pos = pos;
+            tileLength = 16;
+            x = pos.X * tileLength;
+            y= pos.Y * tileLength;
 
             tileRect = new Rectangle(x, y, tileLength, tileLength);
-            
-            tileDebugTexture.SetData(new[] {new Color(0, 0, 255, 64)});
         }
 
         public void Update() {
@@ -48,8 +36,7 @@ namespace Futhark {
         }
 
         public void Draw(SpriteBatch spriteBatch) {
-            if(solid)
-                spriteBatch.Draw(tileDebugTexture, tileRect, Color.White);
+
         }
     }
 }

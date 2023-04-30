@@ -17,6 +17,8 @@ namespace Futhark {
 
         Container_LE container;
 
+        private Item_LE activeItem;
+
         public SidePanel(RenderTarget2D renderTarget, Rectangle rect, ContentManager content) : base(renderTarget, rect, content) {
 
             string jsonFile = File.ReadAllText("text_assets/assets_LE.json");
@@ -27,22 +29,39 @@ namespace Futhark {
             }
 
             jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
-            Dictionary<string, Texture2D> textureDict = new Dictionary<string, Texture2D>();
-            foreach((var key, var val) in JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile)) {
-                textureDict.Add(key, content.Load<Texture2D>(val));           
+            Dictionary<string, string> tileDict = new Dictionary<string, string>();
+            tileDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
+
+            Dictionary<string, Texture2D> tileTextureDict = new Dictionary<string, Texture2D>();
+
+            foreach((var key, var val) in tileDict) {
+                tileTextureDict.Add(key, content.Load<Texture2D>(val));           
+            }
+            
+             var assetFolders = Directory.GetDirectories("assets/Structures");
+            
+            
+            jsonFile = File.ReadAllText("text_assets/structures_dictionary.json");
+            Dictionary<string, string> structureDict = new Dictionary<string, string>();
+            structureDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
+            Dictionary<string, Texture2D> structureTextureDict = new Dictionary<string, Texture2D>();
+            foreach((var key, var val) in structureDict) {
+                structureTextureDict.Add(key, content.Load<Texture2D>("assets/Structures/" + val + "/image"));           
             }
 
 
 
 
-            container = new Container_LE(assetsDict, textureDict);
+            container = new Container_LE(assetsDict, tileTextureDict, structureTextureDict, tileDict, structureDict);
         }
 
         public override void Update(MouseState mouseState) {
             base.Update(mouseState);
-            container.Update(mousePos);
+            activeItem = container.Update(mousePos);
             
         }
+
+        public Item_LE GetActiveItem () { return activeItem; }
 
         public void DrawSidePanel(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice) {
             graphicsDevice.SetRenderTarget(renderTarget);
