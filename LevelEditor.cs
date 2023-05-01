@@ -120,6 +120,10 @@ namespace Futhark {
                 mainPanel.Update(mouseState);                
             }
 
+            if(sidePanel.container.saveButton.Update(sidePanel.mousePos)) {
+                mainPanel.manager.SaveHexMaps();
+            }
+
             
 
 

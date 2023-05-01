@@ -9,6 +9,12 @@ namespace Futhark {
 
     public static class Util{ 
 
+        public static T[,] GetNew2DArray<T>(int x, int y, T initialValue)
+        {
+            T[,] nums = new T[x, y];
+            for (int i = 0; i < x * y; i++) nums[i % x, i / x] = initialValue;
+            return nums;
+        }
 
         public static Texture2D[] Split(Texture2D original, int partWidth, int partHeight, out int xCount, out int yCount)
         {

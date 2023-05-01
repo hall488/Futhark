@@ -15,7 +15,7 @@ namespace Futhark {
 
     public class SidePanel : Panel{ 
 
-        Container_LE container;
+        public Container_LE container;
 
         private Item_LE activeItem;
 

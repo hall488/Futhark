@@ -14,7 +14,7 @@ namespace Futhark {
         public Rectangle rect;
         public static Rectangle screenSize;
 
-        protected Point mousePos;
+        public Point mousePos;
         protected bool activePanel;
 
 

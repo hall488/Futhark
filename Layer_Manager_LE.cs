@@ -20,11 +20,18 @@ namespace Futhark {
 
         public Dictionary<string, Texture2D> tileDict;
 
+        private HexMap_LE structures;
+        private HexMap_LE tiles;
+        private HexMap_LE items;
+
         public Layer_Manager_LE(int width, int height, Dictionary<string, Texture2D> tileDict) {
              background = new Layer_LE(width, height);
              ground = new Layer_LE(width, height);
              onground = new Layer_LE(width, height);
              overground = new Layer_LE(width, height);
+
+            structures = new HexMap_LE(width, height);
+            tiles = new HexMap_LE(width, height);
 
             this.tileDict = tileDict;           
 
@@ -57,14 +64,19 @@ namespace Futhark {
                     overground.AddToLayer(sOverGround[i,j], structure.GetPos() + new Point(i,j));
                 }
             }
+
+            structures.AddHexcode(structure.hexcode, structure.GetPos());
                 
         }
 
         public void AddTile(Tile tile) {
             ground.AddToLayer(tileDict[tile.hexcode], tile.pos);
+            tiles.AddHexcode(tile.hexcode, tile.pos);
         }
 
-        public void SaveMap() {
+        public void SaveHexMaps() {
+            structures.SaveMap("testStructures");
+            tiles.SaveMap("testTiles");
 
         }
 

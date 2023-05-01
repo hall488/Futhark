@@ -16,10 +16,11 @@ namespace Futhark {
             this.texture = texture;  
         }
 
-        public virtual void Update(Point mousePos) {
+        public virtual bool Update(Point mousePos) {
             if(rect.Contains(mousePos) && InputUtil.SingleLeftClick()) {
-                    OnClick();
-                }
+                    return true;
+            }
+            return false;
         }
 
         public virtual void Draw (SpriteBatch spriteBatch) {

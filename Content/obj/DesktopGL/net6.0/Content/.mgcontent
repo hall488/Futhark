@@ -4,35 +4,35 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Level Editor/border_LE.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Level Editor/container_LE.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Level Editor/grid_pattern.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Level Editor/save_LE.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Main Menu/mainMenu_LE_Button.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Main Menu/mainMenu_SG_Button.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Main Menu/titleImage.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Maps/building_layer.bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Maps/test_back_layer.bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Maps/test_level.bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Maps/test_mid_layer.bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Objects/cave_1.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Objects/door_1.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Objects/test.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Overlay/Aetts.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Overlay/Frey_Aett.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Overlay/Hagal_Aett.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Overlay/Tyr_Aett.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Sprites/fireball.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Sprites/young_skald.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Structures/Cave_1/image.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Structures/test_ground.Bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Structures/test_overground.Bmp</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/boundary.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/bush_1.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/empty.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/grass_1.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/road_1.png</File>
-    <File>C:/Users/christopher/Projects/Futhark/Content/../assets/Tiles/road_2.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/border_LE.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/container_LE.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/grid_pattern.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Level Editor/save_LE.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_LE_Button.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/mainMenu_SG_Button.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Main Menu/titleImage.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Maps/building_layer.bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Maps/test_back_layer.bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Maps/test_level.bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Maps/test_mid_layer.bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Objects/cave_1.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Objects/door_1.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Objects/test.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Overlay/Aetts.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Overlay/Frey_Aett.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Overlay/Hagal_Aett.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Overlay/Tyr_Aett.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Sprites/fireball.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Sprites/young_skald.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/Cave_1/image.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/test_ground.Bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Structures/test_overground.Bmp</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/boundary.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/bush_1.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/empty.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/grass_1.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/road_1.png</File>
+    <File>C:/Users/16308/Futhark/Content/../assets/Tiles/road_2.png</File>
   </SourceFiles>
   <DestFiles>
     <File>assets/Level Editor/border_LE.png</File>

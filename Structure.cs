@@ -12,6 +12,7 @@ namespace Futhark {
 
     public class Structure{ 
 
+        public string hexcode;
         private Texture2D[,] onGround;
         private Texture2D[,] overGround;
 
@@ -21,8 +22,8 @@ namespace Futhark {
         public int height;
 
 
-        public Structure(Point[] onPoints, Point[] overPoints, Texture2D texture, Point pos) {
-                        
+        public Structure(string hexcode, Point[] onPoints, Point[] overPoints, Texture2D texture, Point pos) {
+            this.hexcode = hexcode;
 
             Texture2D[] textures = Util.Split(texture, 16, 16, out width, out height);
             this.onGround = new Texture2D[width, height];

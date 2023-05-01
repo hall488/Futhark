@@ -25,7 +25,7 @@ namespace Futhark {
 
         List<Item_LE> placedItems = new List<Item_LE>();
 
-        Layer_Manager_LE manager;
+        public Layer_Manager_LE manager;
 
         Dictionary<string, (Point[], Point[], Texture2D)> structureParams; 
 
@@ -98,7 +98,7 @@ namespace Futhark {
                             if(activeItem.category == "structure") {
                                 Console.WriteLine(activeItem.fileName);
                                 (var onGroundPoints, var overGroundPoints, var texture) = structureParams[activeItem.fileName];
-                                manager.AddStructure(new Structure(onGroundPoints, overGroundPoints, texture, new Point(i, j)));
+                                manager.AddStructure(new Structure(activeItem.hexcode, onGroundPoints, overGroundPoints, texture, new Point(i, j)));
                             } else if (activeItem.category == "tile") {
                                 manager.AddTile(new Tile(activeItem.hexcode, new Point(i, j)));
                             }
@@ -126,6 +126,8 @@ namespace Futhark {
             }
                 
         }
+
+        
 
         public void DrawMainPanel(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice) {
             graphicsDevice.SetRenderTarget(renderTarget);

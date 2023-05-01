@@ -14,8 +14,8 @@ namespace Futhark {
             rect =  new Rectangle(2 * ratio, 2 * ratio, 8 * ratio, 4 * ratio);
         }
 
-        public override void Update(Point mousePos) {
-            base.Update(mousePos);
+        public override bool Update(Point mousePos) {
+            return base.Update(mousePos);
         }
 
         public override void Draw (SpriteBatch spriteBatch) {

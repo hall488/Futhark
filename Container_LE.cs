@@ -15,7 +15,7 @@ namespace Futhark {
 
         List<Item_LE> items;
 
-        SaveButton_LE saveButton;
+        public SaveButton_LE saveButton;
 
         public Item_LE activeItem;
 
