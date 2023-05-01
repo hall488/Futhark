@@ -468,3 +468,8 @@ C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_2.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/testStructures.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/testTiles.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/border_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/container_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/grid_pattern.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/save_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Structures/Tree_1/image.xnb

@@ -23,19 +23,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/border_LE.png;assets/Level Editor/border_LE.png
-
-#begin ../assets/Level Editor/border_LE.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/border_LE.png;assets/Level Editor/border_LE.png
+/build:../assets/Level Editor/border_LE.png;assets/border_LE.png
 
 #begin ../assets/Level Editor/container_LE.png
 /importer:TextureImporter
@@ -47,19 +35,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/container_LE.png;assets/Level Editor/container_LE.png
-
-#begin ../assets/Level Editor/container_LE.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/container_LE.png;assets/Level Editor/container_LE.png
+/build:../assets/Level Editor/container_LE.png;assets/container_LE.png
 
 #begin ../assets/Level Editor/grid_pattern.png
 /importer:TextureImporter
@@ -71,19 +47,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/grid_pattern.png;assets/Level Editor/grid_pattern.png
-
-#begin ../assets/Level Editor/grid_pattern.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/grid_pattern.png;assets/Level Editor/grid_pattern.png
+/build:../assets/Level Editor/grid_pattern.png;assets/grid_pattern.png
 
 #begin ../assets/Level Editor/save_LE.png
 /importer:TextureImporter
@@ -95,31 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/save_LE.png;assets/Level Editor/save_LE.png
-
-#begin ../assets/Level Editor/save_LE.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Level Editor/save_LE.png;assets/Level Editor/save_LE.png
-
-#begin ../assets/Main Menu/mainMenu_LE_Button.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Main Menu/mainMenu_LE_Button.png;assets/Main Menu/mainMenu_LE_Button.png
+/build:../assets/Level Editor/save_LE.png;assets/save_LE.png
 
 #begin ../assets/Main Menu/mainMenu_LE_Button.png
 /importer:TextureImporter
@@ -145,18 +85,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Main Menu/mainMenu_SG_Button.png;assets/Main Menu/mainMenu_SG_Button.png
 
-#begin ../assets/Main Menu/mainMenu_SG_Button.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Main Menu/mainMenu_SG_Button.png;assets/Main Menu/mainMenu_SG_Button.png
-
 #begin ../assets/Main Menu/titleImage.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -168,30 +96,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Main Menu/titleImage.png;assets/Main Menu/titleImage.png
-
-#begin ../assets/Main Menu/titleImage.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Main Menu/titleImage.png;assets/Main Menu/titleImage.png
-
-#begin ../assets/Maps/building_layer.bmp
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/building_layer.bmp;assets/Maps/building_layer.bmp
 
 #begin ../assets/Maps/building_layer.bmp
 /importer:TextureImporter
@@ -217,18 +121,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Maps/test_back_layer.bmp;assets/Maps/test_back_layer.bmp
 
-#begin ../assets/Maps/test_back_layer.bmp
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/test_back_layer.bmp;assets/Maps/test_back_layer.bmp
-
 #begin ../assets/Maps/test_level.bmp
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -240,30 +132,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Maps/test_level.bmp;assets/Maps/test_level.bmp
-
-#begin ../assets/Maps/test_level.bmp
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/test_level.bmp;assets/Maps/test_level.bmp
-
-#begin ../assets/Maps/test_mid_layer.bmp
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/test_mid_layer.bmp;assets/Maps/test_mid_layer.bmp
 
 #begin ../assets/Maps/test_mid_layer.bmp
 /importer:TextureImporter
@@ -313,18 +181,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Objects/cave_1.png;assets/Objects/cave_1.png
 
-#begin ../assets/Objects/cave_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Objects/cave_1.png;assets/Objects/cave_1.png
-
 #begin ../assets/Objects/door_1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -336,30 +192,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Objects/door_1.png;assets/Objects/door_1.png
-
-#begin ../assets/Objects/door_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Objects/door_1.png;assets/Objects/door_1.png
-
-#begin ../assets/Objects/test.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Objects/test.png;assets/Objects/test.png
 
 #begin ../assets/Objects/test.png
 /importer:TextureImporter
@@ -385,18 +217,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Overlay/Aetts.png;assets/Overlay/Aetts.png
 
-#begin ../assets/Overlay/Aetts.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Overlay/Aetts.png;assets/Overlay/Aetts.png
-
 #begin ../assets/Overlay/Frey_Aett.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -408,30 +228,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Overlay/Frey_Aett.png;assets/Overlay/Frey_Aett.png
-
-#begin ../assets/Overlay/Frey_Aett.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Overlay/Frey_Aett.png;assets/Overlay/Frey_Aett.png
-
-#begin ../assets/Overlay/Hagal_Aett.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Overlay/Hagal_Aett.png;assets/Overlay/Hagal_Aett.png
 
 #begin ../assets/Overlay/Hagal_Aett.png
 /importer:TextureImporter
@@ -457,18 +253,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Overlay/Tyr_Aett.png;assets/Overlay/Tyr_Aett.png
 
-#begin ../assets/Overlay/Tyr_Aett.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Overlay/Tyr_Aett.png;assets/Overlay/Tyr_Aett.png
-
 #begin ../assets/Sprites/fireball.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -480,30 +264,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Sprites/fireball.png;assets/Sprites/fireball.png
-
-#begin ../assets/Sprites/fireball.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Sprites/fireball.png;assets/Sprites/fireball.png
-
-#begin ../assets/Sprites/young_skald.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Sprites/young_skald.png;assets/Sprites/young_skald.png
 
 #begin ../assets/Sprites/young_skald.png
 /importer:TextureImporter
@@ -589,7 +349,7 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Structures/test_overground.Bmp;assets/Structures/test_overground.Bmp
 
-#begin ../assets/Tiles/boundary.png
+#begin ../assets/Structures/Tree_1/image.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -599,7 +359,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Tiles/boundary.png;assets/Tiles/boundary.png
+/build:../assets/Structures/Tree_1/image.png;assets/Structures/Tree_1/image.png
 
 #begin ../assets/Tiles/boundary.png
 /importer:TextureImporter
@@ -625,30 +385,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Tiles/bush_1.png;assets/Tiles/bush_1.png
 
-#begin ../assets/Tiles/bush_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Tiles/bush_1.png;assets/Tiles/bush_1.png
-
-#begin ../assets/Tiles/empty.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Tiles/empty.png;assets/Tiles/empty.png
-
 #begin ../assets/Tiles/empty.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -673,18 +409,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Tiles/grass_1.png;assets/Tiles/grass_1.png
 
-#begin ../assets/Tiles/grass_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Tiles/grass_1.png;assets/Tiles/grass_1.png
-
 #begin ../assets/Tiles/road_1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -696,30 +420,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../assets/Tiles/road_1.png;assets/Tiles/road_1.png
-
-#begin ../assets/Tiles/road_1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Tiles/road_1.png;assets/Tiles/road_1.png
-
-#begin ../assets/Tiles/road_2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Tiles/road_2.png;assets/Tiles/road_2.png
 
 #begin ../assets/Tiles/road_2.png
 /importer:TextureImporter

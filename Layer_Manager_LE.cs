@@ -114,7 +114,11 @@ namespace Futhark {
         }
 
         public void AddTile(Tile tile) {
-            ground.AddToLayer(tileDict[tile.hexcode], tile.pos);
+            if(tile.hexcode == "#000000ff")
+                onground.AddToLayer(tileDict[tile.hexcode], tile.pos);
+            else
+                ground.AddToLayer(tileDict[tile.hexcode], tile.pos);
+            
             tiles.AddHexcode(tile.hexcode, tile.pos);
         }
 
