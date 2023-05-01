@@ -28,6 +28,8 @@ namespace Futhark
         ContentManager levelManagerContent;
         ContentManager levelEditorContent;
 
+        
+
         public enum gameStates {
             mainMenu,
             levelManager,
@@ -72,6 +74,8 @@ namespace Futhark
             screenHeight = graphics.PreferredBackBufferHeight;
 
             graphics.ApplyChanges();
+
+            
 
             base.Initialize();
         }

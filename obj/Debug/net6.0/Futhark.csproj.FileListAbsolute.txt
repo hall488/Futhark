@@ -139,315 +139,332 @@ C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/building_layer.xn
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/building_layer.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/door_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Futhark.exe
-C:\Users\16308\Futhark\bin\Debug\net6.0\Futhark.deps.json
-C:\Users\16308\Futhark\bin\Debug\net6.0\Futhark.runtimeconfig.json
-C:\Users\16308\Futhark\bin\Debug\net6.0\Futhark.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\Futhark.pdb
-C:\Users\16308\Futhark\bin\Debug\net6.0\MonoGame.Extended.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\SixLabors.Fonts.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\SixLabors.ImageSharp.Drawing.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\SkiaSharp.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\osx\native\libSkiaSharp.dylib
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-arm64\native\libSkiaSharp.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\libSkiaSharp.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.csproj.AssemblyReference.cache
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.AssemblyInfoInputs.cache
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.AssemblyInfo.cs
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.csproj.CoreCompileInputs.cache
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.csproj.CopyComplete
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.dll
-C:\Users\16308\Futhark\obj\Debug\net6.0\refint\Futhark.dll
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.pdb
-C:\Users\16308\Futhark\obj\Debug\net6.0\Futhark.genruntimeconfig.cache
-C:\Users\16308\Futhark\obj\Debug\net6.0\ref\Futhark.dll
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Main Menu\mainMenu_LE_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Main Menu\mainMenu_SG_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Main Menu\titleImage.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Maps\building_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Maps\test_back_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Maps\test_level.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Maps\test_mid_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Overlay\Aetts.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Overlay\Frey_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Overlay\Hagal_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Overlay\Tyr_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Sprites\cave_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Sprites\door_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Sprites\fireball.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Sprites\young_skald.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\boundary.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\bush_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\empty.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\grass_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\road_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tiles\road_2.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Aetts.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\boundary.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\building_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\bush_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\door_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\empty.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\fireball.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Frey_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\grass_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Hagal_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\mainMenu_LE_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\mainMenu_SG_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\road_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\road_2.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_back_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_level.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_mid_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\titleImage.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Tyr_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\young_skald.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\objects_container.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\object_border.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\grid_pattern.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\save_button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\border_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\container_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\save_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_10.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_11.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_12.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_13.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_14.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_15.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_16.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_2.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_3.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_4.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_5.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_6.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_7.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_8.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\cave_1_9.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_10.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_11.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_12.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_13.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_14.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_15.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_16.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_2.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_3.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_4.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_5.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_6.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_7.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_8.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\test_9.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Level Editor\border_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Level Editor\container_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Level Editor\grid_pattern.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Level Editor\save_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Objects\cave_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Objects\door_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Objects\test.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Structures\Cave_1\image.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Structures\test_ground.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\Structures\test_overground.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\border_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\container_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\grid_pattern.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\save_LE.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\mainMenu_LE_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\mainMenu_SG_Button.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\titleImage.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Maps\building_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_back_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_level.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_mid_layer.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Objects\cave_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Objects\door_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Objects\test.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Aetts.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Frey_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Hagal_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Tyr_Aett.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Sprites\fireball.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Sprites\young_skald.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Structures\Cave_1\image.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Structures\test_ground.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Structures\test_overground.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\boundary.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\bush_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\empty.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\grass_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\road_1.xnb
-C:\Users\16308\Futhark\bin\Debug\net6.0\Content\assets\Tiles\road_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Aetts.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\border_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\boundary.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\building_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\bush_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_10.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_11.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_12.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_13.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_14.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_15.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_16.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_3.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_4.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_5.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_6.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_7.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_8.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\cave_1_9.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\container_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\door_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\empty.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\fireball.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Frey_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\grass_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\grid_pattern.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Hagal_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Level Editor\border_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Level Editor\container_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Level Editor\grid_pattern.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Level Editor\save_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Main Menu\mainMenu_LE_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Main Menu\mainMenu_SG_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Main Menu\titleImage.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\mainMenu_LE_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\mainMenu_SG_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Maps\building_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Maps\test_back_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Maps\test_level.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Maps\test_mid_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Objects\cave_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Objects\door_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Objects\test.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\objects_container.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\object_border.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Overlay\Aetts.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Overlay\Frey_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Overlay\Hagal_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Overlay\Tyr_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\road_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\road_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\save_button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\save_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Sprites\cave_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Sprites\door_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Sprites\fireball.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Sprites\young_skald.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Structures\Cave_1\image.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Structures\test_ground.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Structures\test_overground.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_10.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_11.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_12.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_13.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_14.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_15.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_16.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_3.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_4.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_5.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_6.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_7.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_8.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_9.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_back_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_level.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\test_mid_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\boundary.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\bush_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\empty.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\grass_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\road_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tiles\road_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\titleImage.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\Tyr_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\young_skald.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\border_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\container_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\grid_pattern.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Level Editor\save_LE.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\mainMenu_LE_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\mainMenu_SG_Button.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Main Menu\titleImage.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Maps\building_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_back_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_level.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Maps\test_mid_layer.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Objects\cave_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Objects\door_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Objects\test.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Aetts.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Frey_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Hagal_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Overlay\Tyr_Aett.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Sprites\fireball.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Sprites\young_skald.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Structures\Cave_1\image.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Structures\test_ground.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Structures\test_overground.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\boundary.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\bush_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\empty.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\grass_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\road_1.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Content\assets\Tiles\road_2.xnb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Futhark.exe
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Futhark.deps.json
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Futhark.runtimeconfig.json
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Futhark.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Futhark.pdb
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\MonoGame.Extended.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\SixLabors.Fonts.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\SixLabors.ImageSharp.Drawing.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\SkiaSharp.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\osx\native\libSkiaSharp.dylib
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-arm64\native\libSkiaSharp.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x64\native\libSkiaSharp.dll
-C:\Users\christopher\Projects\Futhark\bin\Debug\net6.0\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.csproj.AssemblyReference.cache
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.AssemblyInfoInputs.cache
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.AssemblyInfo.cs
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.csproj.CoreCompileInputs.cache
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.csproj.CopyComplete
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.dll
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\refint\Futhark.dll
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.pdb
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\Futhark.genruntimeconfig.cache
-C:\Users\christopher\Projects\Futhark\obj\Debug\net6.0\ref\Futhark.dll
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_LE_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_SG_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Main Menu/titleImage.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Maps/building_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Maps/test_back_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Maps/test_level.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Maps/test_mid_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Overlay/Aetts.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Overlay/Frey_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Overlay/Hagal_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Overlay/Tyr_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Sprites/cave_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Sprites/door_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Sprites/fireball.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Sprites/young_skald.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/boundary.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/bush_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/empty.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/grass_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/road_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tiles/road_2.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Aetts.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/boundary.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/building_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/bush_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/door_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/empty.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/fireball.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Frey_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/grass_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Hagal_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/mainMenu_LE_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/mainMenu_SG_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/road_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/road_2.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_back_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_level.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_mid_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/titleImage.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Tyr_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/young_skald.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/objects_container.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/object_border.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/grid_pattern.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/save_button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/border_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/container_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/save_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_10.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_11.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_12.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_13.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_14.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_15.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_16.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_2.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_3.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_4.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_5.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_6.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_7.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_8.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/cave_1_9.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_10.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_11.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_12.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_13.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_14.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_15.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_16.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_2.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_3.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_4.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_5.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_6.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_7.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_8.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/test_9.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Level Editor/border_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Level Editor/container_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Level Editor/grid_pattern.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Level Editor/save_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Objects/cave_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Objects/door_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Objects/test.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Structures/Cave_1/image.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Structures/test_ground.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/Structures/test_overground.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/border_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/container_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/grid_pattern.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/save_LE.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_LE_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_SG_Button.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/titleImage.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Maps/building_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_back_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_level.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_mid_layer.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Objects/cave_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Objects/door_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Objects/test.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Aetts.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Frey_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Hagal_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Tyr_Aett.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Sprites/fireball.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Sprites/young_skald.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Structures/Cave_1/image.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_ground.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_overground.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/boundary.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/bush_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/empty.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/grass_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_1.xnb
+C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_2.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/border_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_10.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_11.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_12.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_13.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_14.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_15.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_16.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_2.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_3.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_4.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_5.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_6.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_7.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_8.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/cave_1_9.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/container_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/grid_pattern.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Level Editor/border_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Level Editor/container_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Level Editor/grid_pattern.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Level Editor/save_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_LE_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_SG_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Main Menu/titleImage.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/mainMenu_LE_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/mainMenu_SG_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Maps/building_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Maps/test_back_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Maps/test_level.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Maps/test_mid_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Objects/cave_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Objects/door_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Objects/test.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/objects_container.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/object_border.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Overlay/Aetts.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Overlay/Frey_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Overlay/Hagal_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Overlay/Tyr_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/save_button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/save_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Sprites/cave_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Sprites/door_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Sprites/fireball.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Sprites/young_skald.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Structures/Cave_1/image.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Structures/test_ground.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Structures/test_overground.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_10.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_11.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_12.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_13.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_14.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_15.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_16.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_2.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_3.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_4.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_5.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_6.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_7.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_8.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/test_9.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/boundary.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/bush_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/empty.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/grass_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/road_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/Tiles/road_2.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/titleImage.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/border_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/container_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/grid_pattern.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/save_LE.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_LE_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_SG_Button.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/titleImage.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Maps/building_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_back_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_level.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_mid_layer.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Objects/cave_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Objects/door_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Objects/test.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Aetts.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Frey_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Hagal_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Tyr_Aett.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Sprites/fireball.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Sprites/young_skald.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Structures/Cave_1/image.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_ground.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_overground.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/boundary.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/bush_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/empty.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/grass_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_1.xnb
+C:/Users/christopher/Projects/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_2.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/border_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_10.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_11.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_12.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_13.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_14.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_15.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_16.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_2.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_3.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_4.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_5.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_6.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_7.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_8.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/cave_1_9.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/container_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/grid_pattern.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Level Editor/border_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Level Editor/container_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Level Editor/grid_pattern.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Level Editor/save_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_LE_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Main Menu/mainMenu_SG_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Main Menu/titleImage.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/mainMenu_LE_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/mainMenu_SG_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Maps/building_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Maps/test_back_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Maps/test_level.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Maps/test_mid_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Objects/cave_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Objects/door_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Objects/test.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/objects_container.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/object_border.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Overlay/Aetts.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Overlay/Frey_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Overlay/Hagal_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Overlay/Tyr_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/save_button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/save_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Sprites/cave_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Sprites/door_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Sprites/fireball.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Sprites/young_skald.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Structures/Cave_1/image.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Structures/test_ground.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Structures/test_overground.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_10.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_11.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_12.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_13.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_14.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_15.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_16.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_2.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_3.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_4.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_5.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_6.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_7.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_8.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/test_9.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/boundary.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/bush_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/empty.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/grass_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/road_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/Tiles/road_2.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/titleImage.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/border_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/container_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/grid_pattern.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Level Editor/save_LE.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_LE_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/mainMenu_SG_Button.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Main Menu/titleImage.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/building_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_back_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_level.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/test_mid_layer.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Objects/cave_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Objects/door_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Objects/test.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Aetts.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Frey_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Hagal_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Overlay/Tyr_Aett.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Sprites/fireball.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Sprites/young_skald.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Structures/Cave_1/image.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_ground.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Structures/test_overground.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/boundary.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/bush_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/empty.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/grass_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_1.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tiles/road_2.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/testStructures.xnb
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Maps/testTiles.xnb

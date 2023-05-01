@@ -43,7 +43,7 @@ namespace Futhark {
              var assetFolders = Directory.GetDirectories("assets/Structures");
             
             
-            jsonFile = File.ReadAllText("text_assets/structures_dictionary.json");
+            jsonFile = File.ReadAllText("text_assets/structure_dictionary.json");
             Dictionary<string, string> structureDict = new Dictionary<string, string>();
             structureDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonFile);
             Dictionary<string, Texture2D> structureTextureDict = new Dictionary<string, Texture2D>();

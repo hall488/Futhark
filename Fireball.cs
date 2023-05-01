@@ -24,10 +24,10 @@ namespace Futhark {
 
         }
 
-        public override bool Update(Tilemap activeTiles) {
+        public override bool Update(Layer_LE collidable) {
             animation.Update();
             Console.WriteLine("{0}", animation.x);
-            return base.Update(activeTiles);
+            return base.Update(collidable);
         }
     }
     

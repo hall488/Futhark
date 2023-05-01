@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework.Content;
 using System.Diagnostics;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Futhark {
 
@@ -14,6 +16,8 @@ namespace Futhark {
 
         private Tilemap tilemap_mid;
         private Tilemap tilemap_over;
+
+        private Layer_Manager_LE layerManager;
         private Player player;
 
         private Game_Constants gConstants;
@@ -28,12 +32,16 @@ namespace Futhark {
 
         private GraphicsDevice graphicsDevice;
 
+        
+        
+
         public LevelManager(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
             this.Content = Content;
             this.spriteBatch = spriteBatch;
             this.graphics = graphics;
             this.graphicsDevice = graphicsDevice;
 
+            
         }
 
         public void LoadContent() {
@@ -57,16 +65,24 @@ namespace Futhark {
             Texture2D back_layer = Content.Load<Texture2D>("test_back_layer");
             Texture2D over_layer = Content.Load<Texture2D>("building_layer");
 
+            string currentMapName = "assets/Maps/test";
+
+            Texture2D sMap = Content.Load<Texture2D>(currentMapName + "Structures");
+            Texture2D tMap = Content.Load<Texture2D>(currentMapName + "Tiles");
+
+
+            layerManager = new Layer_Manager_LE(sMap.Width, sMap.Height, Content);
+            layerManager.LoadMap(sMap, tMap);
             
 
-            tilemap_mid = new Tilemap(Content, GetColorBMP(mid_layer), gConstants, true);
+            // tilemap_mid = new Tilemap(Content, GetColorMap(mid_layer), gConstants, true);
 
-            tilemap_back = new Tilemap(Content, GetColorBMP(back_layer), gConstants, false);      
+            // tilemap_back = new Tilemap(Content, GetColorMap(back_layer), gConstants, false);      
 
-            tilemap_over = new  Tilemap(Content, GetColorBMP(over_layer), gConstants, false);
+            // tilemap_over = new  Tilemap(Content, GetColorMap(over_layer), gConstants, false);
             
 
-            player = new Player(gConstants, playerTexture, aettsTextures, 400, 400, tilemap_mid, new Texture2D(graphicsDevice, 1, 1));
+            player = new Player(gConstants, playerTexture, aettsTextures, 800, 800, layerManager.onground, new Texture2D(graphicsDevice, 1, 1));
         }
 
         public int Update() {
@@ -82,28 +98,12 @@ namespace Futhark {
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: _camera.Transform);
 
             //back layer
-            tilemap_back.Draw(spriteBatch);
-            //mid_layer
-            tilemap_mid.Draw(spriteBatch);            
-            player.Draw(spriteBatch);
+            layerManager.DrawGame(spriteBatch, player);
             //over_layer
             //tilemap_buildings.Draw(_spriteBatch);
             spriteBatch.End();
         }
 
-        public Color[,] GetColorBMP(Texture2D a) {
-            Color[] D1 = new Color[a.Width * a.Height];
-            a.GetData<Color>(D1);
-
-            Color[,] bmp = new Color[a.Width, a.Height];
-
-            for(int i = 0; i < a.Width; i++) {
-                for(int j = 0; j < a.Height; j++) {
-                    bmp[j, i] = D1[i * a.Width + j];
-                }
-            }
-
-            return bmp;
-        }
+        
     }
 }

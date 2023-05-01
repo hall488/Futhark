@@ -43,7 +43,8 @@ namespace Futhark {
         bool[] pressedKeys = {false, false, false, false};
         bool[] previousKeys = {false, false, false, false};
 
-        Tilemap activeTiles;
+        //Tilemap activeTiles;
+        Layer_LE collidable;
 
         Runestone runestone;
 
@@ -64,13 +65,15 @@ namespace Futhark {
         }
 
 
-        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Tilemap _activeTiles, Texture2D _colRectTexture) {
+        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Layer_LE collidable, Texture2D _colRectTexture) {
             
             drawQueue = new List<IyDraw>();
 
             camera = gConstants.camera;
             
             texture = _texture;
+
+            this.collidable = collidable;
 
             spellTextures = gConstants.spellTextures;
 
@@ -79,7 +82,7 @@ namespace Futhark {
             posX = x;
             posY = y;
             rot = 0;
-            activeTiles = _activeTiles;
+            //activeTiles = _activeTiles;
 
             unitX = 0;
             unitY = 0;
@@ -128,7 +131,7 @@ namespace Futhark {
 
             foreach(var f in fireballs) {
 
-                if(f.Update(activeTiles)) {
+                if(f.Update(collidable)) {
                     fireballToRemove.Add(f);
                 }
             }
@@ -212,21 +215,21 @@ namespace Futhark {
 
             lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
             lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
-            upperCordX = upperCordX > activeTiles.tilemap.GetLength(1) ? activeTiles.tilemap.GetLength(1) : upperCordX;
-            upperCordY = upperCordY > activeTiles.tilemap.GetLength(0) ? activeTiles.tilemap.GetLength(0) : upperCordY;
+            upperCordX = upperCordX > collidable.width ? collidable.width : upperCordX;
+            upperCordY = upperCordY > collidable.height ? collidable.height : upperCordY;
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
                     
-                    Tile t = activeTiles.tilemap[i, j];
+                    var r = collidable.rects[i,j];
                     // Console.Write(lowerCordX);
                     // Console.Write(" : ");
                     // Console.WriteLine(upperCordX);
-                    if(t.solid) {                        
-                        if(colRectX.Intersects(t.tileRect)) {
+                    if(r != Rectangle.Empty) {                        
+                        if(colRectX.Intersects(r)) {
                             unitX = 0;                            
                         }
-                        if(colRectY.Intersects(t.tileRect)) {
+                        if(colRectY.Intersects(r)) {
                             unitY = 0;
                         }
                     }
@@ -252,7 +255,7 @@ namespace Futhark {
         }
 
         public void Draw(SpriteBatch spriteBatch) {
-            spriteBatch.Draw(colRectTexture, colRectY, Color.White);
+            //spriteBatch.Draw(colRectTexture, colRectY, Color.White);
 
             drawQueue.Add(this);
             foreach(var f in fireballs) {

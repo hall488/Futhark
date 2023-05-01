@@ -66,7 +66,7 @@ namespace Futhark {
 
             
 
-            Texture2D containerTexture = content.Load<Texture2D>("Container_LE");
+            Texture2D containerTexture = content.Load<Texture2D>("container_LE");
 
             int ratio = graphicsDevice.PresentationParameters.BackBufferHeight / containerTexture.Height;
 

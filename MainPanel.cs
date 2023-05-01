@@ -48,22 +48,9 @@ namespace Futhark {
                 textureDict.Add(key, content.Load<Texture2D>(val));           
             }
 
-            manager = new Layer_Manager_LE(16, 16, textureDict);
+            manager = new Layer_Manager_LE(16, 16, content);
 
-            structureParams = new Dictionary<string, (Point[], Point[], Texture2D)>();
-
-            var assetFolders = Directory.GetDirectories("assets/Structures");
-            
-            foreach(var f in assetFolders) {
-                Console.WriteLine(f);
-
-                Texture2D texture = content.Load<Texture2D>(f + "/image");
-                jsonFile = File.ReadAllText("text_" + f + "/layers.json");
-                 
-                Dictionary<string, Point[]> layerDict = JsonConvert.DeserializeObject<Dictionary<string, Point[]>>(jsonFile);
-                
-                structureParams.Add(f.Split("\\")[1], (layerDict["onGround"], layerDict["overGround"], texture));
-            }
+            structureParams = Util.GetStructureParams(content);
 
         }
 
@@ -153,7 +140,7 @@ namespace Futhark {
                 }
             }
 
-            manager.Draw(spriteBatch);
+            manager.DrawLE(spriteBatch);
 
             var gridMousePos = new Point();
             gridMousePos.X = (int)Math.Round((mousePos.X - grid.Width * 4) / 8d / grid.Width, 0) * 8 * grid.Width;

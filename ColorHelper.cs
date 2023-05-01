@@ -53,6 +53,7 @@ namespace Futhark
             var b = int.Parse(value.Substring(startIndex + 4, 2), NumberStyles.HexNumber);
             var a = value.Length > 6 + startIndex ? int.Parse(value.Substring(startIndex + 6, 2), NumberStyles.HexNumber) : 255;
 
+
             return new Color(r, g, b, a);
         }
 

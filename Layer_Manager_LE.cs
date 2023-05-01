@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
@@ -18,22 +19,37 @@ namespace Futhark {
 
         public Layer_LE overground;
 
+        public Dictionary<string, (Point[], Point[], Texture2D)> structureParams;
         public Dictionary<string, Texture2D> tileDict;
+        public Dictionary<string, string> structureDict;
+
+        
 
         private HexMap_LE structures;
         private HexMap_LE tiles;
         private HexMap_LE items;
 
-        public Layer_Manager_LE(int width, int height, Dictionary<string, Texture2D> tileDict) {
-             background = new Layer_LE(width, height);
-             ground = new Layer_LE(width, height);
-             onground = new Layer_LE(width, height);
-             overground = new Layer_LE(width, height);
+        private ContentManager content;
+
+        private int width;
+        private int height;
+
+        public Layer_Manager_LE(int width, int height, ContentManager content) {
+            this.width = width;
+            this.height = height;
+            background = new Layer_LE(width, height);
+            ground = new Layer_LE(width, height);
+            onground = new Layer_LE(width, height);
+            overground = new Layer_LE(width, height);
 
             structures = new HexMap_LE(width, height);
             tiles = new HexMap_LE(width, height);
 
-            this.tileDict = tileDict;           
+            this.content = content;     
+
+            structureParams = Util.GetStructureParams(content);
+            tileDict = Util.GetTileDict(content);
+            structureDict = Util.GetStructureDict();      
 
         }
 
@@ -41,12 +57,43 @@ namespace Futhark {
 
         }
 
-        public void Draw (SpriteBatch spriteBatch) {
+        public void DrawLE (SpriteBatch spriteBatch) {
             background.Draw(spriteBatch);
             ground.Draw(spriteBatch);
             onground.Draw(spriteBatch);
             overground.Draw(spriteBatch);            
         }
+
+        public void DrawGame (SpriteBatch spriteBatch, Player player) {
+            background.Draw(spriteBatch);
+            ground.Draw(spriteBatch);
+            onground.Draw(spriteBatch);
+            player.Draw(spriteBatch);
+            overground.Draw(spriteBatch);            
+        }
+
+        public void LoadMap (Texture2D structures, Texture2D tiles) {
+            Color[,] sMap = Util.GetColorMap(structures);
+            Color[,] tMap = Util.GetColorMap(tiles);
+
+            for (int i = 0; i < width; i++) {
+                for (int j = 0; j < height; j++) {
+                    string sHex = ColorHelper.ToHex(sMap[i,j]);
+                    if (sHex != "#00000000") {
+                        (var onGroundPoints, var overGroundPoints, var texture) = structureParams[structureDict[sHex]];
+                        AddStructure(new Structure(sHex, onGroundPoints, overGroundPoints, texture, new Point(i,j)));
+                    }
+
+                    string tHex = ColorHelper.ToHex(tMap[i,j]);
+                    if (tHex != "#00000000") {
+                        AddTile(new Tile(tHex, new Point(i,j)));
+                    }
+                }
+            }
+            
+        }
+
+
 
         public void AddStructure(Structure structure) {
             
@@ -55,13 +102,10 @@ namespace Futhark {
 
             for (int i = 0; i < structure.width; i++) {
                 for (int j = 0; j < structure.height; j++) {
-                    onground.AddToLayer(sOnGround[i,j], structure.GetPos() + new Point(i,j));
-                }
-            }
-
-            for (int i = 0; i < structure.width; i++) {
-                for (int j = 0; j < structure.height; j++) {
-                    overground.AddToLayer(sOverGround[i,j], structure.GetPos() + new Point(i,j));
+                    if(sOnGround[i,j] != null)
+                        onground.AddToLayer(sOnGround[i,j], structure.GetPos() + new Point(i,j));
+                    if(sOverGround[i,j] != null)
+                        overground.AddToLayer(sOverGround[i,j], structure.GetPos() + new Point(i,j));
                 }
             }
 

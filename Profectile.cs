@@ -42,7 +42,7 @@ namespace Futhark {
             
         }
 
-        public virtual bool Update(Tilemap activeTiles) {
+        public virtual bool Update(Layer_LE collidable) {
             //Console.WriteLine("{0},{1},{2},{3}", unitX, unitY, posX, posY);
 
             posX += (unitX*vel);
@@ -58,19 +58,20 @@ namespace Futhark {
 
             lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
             lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
-            upperCordX = upperCordX > activeTiles.tilemap.GetLength(1) ? activeTiles.tilemap.GetLength(1) : upperCordX;
-            upperCordY = upperCordY > activeTiles.tilemap.GetLength(0) ? activeTiles.tilemap.GetLength(0) : upperCordY;
+            upperCordX = upperCordX > collidable.width ? collidable.width : upperCordX;
+            upperCordY = upperCordY > collidable.height ? collidable.height : upperCordY;
             
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
                     
-                    Tile t = activeTiles.tilemap[i, j];
+                    Rectangle r = collidable.rects[i,j];
+                    
                     // Console.Write(lowerCordX);
                     // Console.Write(" : ");
                     // Console.WriteLine(upperCordX);
-                    if(t.solid) {                        
-                        if(colRect.Intersects(t.tileRect)) {
+                    if(r != Rectangle.Empty) {                        
+                        if(colRect.Intersects(r)) {
                             return true;                            
                         }
                     }
