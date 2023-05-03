@@ -27,8 +27,6 @@
     <File>/home/christopherhall/Futhark/Content/../assets/Sprites/fireball.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Sprites/young_skald.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Structures/Cave_1/image.png</File>
-    <File>/home/christopherhall/Futhark/Content/../assets/Structures/test_ground.Bmp</File>
-    <File>/home/christopherhall/Futhark/Content/../assets/Structures/test_overground.Bmp</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Structures/Tree_1/image.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Tiles/boundary.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Tiles/bush_1.png</File>
@@ -61,8 +59,6 @@
     <File>assets/Sprites/fireball.png</File>
     <File>assets/Sprites/young_skald.png</File>
     <File>assets/Structures/Cave_1/image.png</File>
-    <File>assets/Structures/test_ground.Bmp</File>
-    <File>assets/Structures/test_overground.Bmp</File>
     <File>assets/Structures/Tree_1/image.png</File>
     <File>assets/Tiles/boundary.png</File>
     <File>assets/Tiles/bush_1.png</File>
