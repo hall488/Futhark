@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
 using System.Collections.Generic;
+using TiledCS;
 
 namespace Futhark {
 
@@ -24,7 +25,7 @@ namespace Futhark {
 
         }
 
-        public override bool Update(Layer_LE collidable) {
+        public override bool Update(Rectangle[,] collidable) {
             animation.Update();
             Console.WriteLine("{0}", animation.x);
             return base.Update(collidable);

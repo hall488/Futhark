@@ -242,6 +242,19 @@
             "rid": "win-x86"
           }
         }
+      },
+      "TiledCS/3.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/TiledCS.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/TiledCS.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
@@ -528,6 +541,19 @@
         "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
         "skiasharp.nativeassets.win32.nuspec"
       ]
+    },
+    "TiledCS/3.3.3": {
+      "sha512": "YoB5tE8FoBNp9zUKCZVnnr+qKJnO54v1ke8yyx4JoIGbI4AaIrqqJwFGL93j9J/r3Po9N2YYytoUvr/rswkurA==",
+      "type": "package",
+      "path": "tiledcs/3.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/TiledCS.dll",
+        "lib/netstandard2.0/TiledCS.xml",
+        "tiledcs.3.3.3.nupkg.sha512",
+        "tiledcs.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -538,28 +564,39 @@
       "Newtonsoft.Json >= 13.0.3",
       "SixLabors.ImageSharp >= 3.0.1",
       "SixLabors.ImageSharp.Drawing >= 1.0.0-beta15",
-      "SkiaSharp >= 2.88.3"
+      "SkiaSharp >= 2.88.3",
+      "tiledcs >= 3.3.3"
     ]
   },
   "packageFolders": {
-    "/home/christopherhall/.nuget/packages/": {}
+    "C:\\Users\\16308\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/christopherhall/Futhark/Futhark.csproj",
+      "projectUniqueName": "C:\\Users\\16308\\Futhark\\Futhark.csproj",
       "projectName": "Futhark",
-      "projectPath": "/home/christopherhall/Futhark/Futhark.csproj",
-      "packagesPath": "/home/christopherhall/.nuget/packages/",
-      "outputPath": "/home/christopherhall/Futhark/obj/",
+      "projectPath": "C:\\Users\\16308\\Futhark\\Futhark.csproj",
+      "packagesPath": "C:\\Users\\16308\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\16308\\Futhark\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/home/christopherhall/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\16308\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -605,6 +642,10 @@
           "SkiaSharp": {
             "target": "Package",
             "version": "[2.88.3, )"
+          },
+          "tiledcs": {
+            "target": "Package",
+            "version": "[3.3.3, )"
           }
         },
         "imports": [
@@ -621,7 +662,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.15, 6.0.15]"
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.16, 6.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -629,7 +682,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.407/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

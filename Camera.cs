@@ -11,6 +11,13 @@ namespace Futhark
   {
     public Matrix Transform { get; private set; }
 
+    private int screenWidth;
+    private int screenHeight;
+
+    public Camera(int screenWidth, int screenHeight) {
+      this.screenWidth = screenWidth;
+      this.screenHeight = screenHeight;
+    }
     public void Follow(Player target)
     {
       var posX = (int)target.posX;
@@ -24,8 +31,8 @@ namespace Futhark
         0);
 
       var offset = Matrix.CreateTranslation(
-          Futhark_Game.screenWidth / 2,
-          Futhark_Game.screenHeight / 2,
+          screenWidth / 2,
+          screenHeight / 2,
           0);
 
       Transform = position * offset;

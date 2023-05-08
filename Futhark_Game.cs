@@ -28,7 +28,6 @@ namespace Futhark
         ContentManager levelManagerContent;
         ContentManager levelEditorContent;
 
-        
 
         public enum gameStates {
             mainMenu,

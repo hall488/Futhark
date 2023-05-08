@@ -23,7 +23,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/border_LE.png;assets/border_LE.png
+/build:../assets/Level Editor/border_LE.png;assets/Level Editor/border_LE.png
 
 #begin ../assets/Level Editor/container_LE.png
 /importer:TextureImporter
@@ -35,7 +35,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/container_LE.png;assets/container_LE.png
+/build:../assets/Level Editor/container_LE.png;assets/Level Editor/container_LE.png
 
 #begin ../assets/Level Editor/grid_pattern.png
 /importer:TextureImporter
@@ -47,7 +47,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/grid_pattern.png;assets/grid_pattern.png
+/build:../assets/Level Editor/grid_pattern.png;assets/Level Editor/grid_pattern.png
 
 #begin ../assets/Level Editor/save_LE.png
 /importer:TextureImporter
@@ -59,7 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Level Editor/save_LE.png;assets/save_LE.png
+/build:../assets/Level Editor/save_LE.png;assets/Level Editor/save_LE.png
 
 #begin ../assets/Main Menu/mainMenu_LE_Button.png
 /importer:TextureImporter
@@ -145,30 +145,6 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Maps/test_mid_layer.bmp;assets/Maps/test_mid_layer.bmp
 
-#begin ../assets/Maps/testStructures.Png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/testStructures.Png;assets/Maps/testStructures.Png
-
-#begin ../assets/Maps/testTiles.Png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:../assets/Maps/testTiles.Png;assets/Maps/testTiles.Png
-
 #begin ../assets/Objects/cave_1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -253,6 +229,18 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Overlay/Tyr_Aett.png;assets/Overlay/Tyr_Aett.png
 
+#begin ../assets/Sprites/castle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Sprites/castle.png;assets/Tile Sets/castle.png
+
 #begin ../assets/Sprites/fireball.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -289,7 +277,7 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Structures/Cave_1/image.png;assets/Structures/Cave_1/image.png
 
-#begin ../assets/Structures/Tree_1/image.png
+#begin ../assets/Tile Sets/Road.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -299,7 +287,19 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../assets/Structures/Tree_1/image.png;assets/Structures/Tree_1/image.png
+/build:../assets/Tile Sets/Road.png;assets/Tile Sets/Road.png
+
+#begin ../assets/Tile Sets/Special.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Tile Sets/Special.png;assets/Tile Sets/Special.png
 
 #begin ../assets/Tiles/boundary.png
 /importer:TextureImporter

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/christopherhall/Futhark/Content/../assets/Level Editor/border_LE.png</SourceFile>
-  <SourceTime>2023-05-01T13:23:40.1751829+00:00</SourceTime>
-  <DestFile>/home/christopherhall/Futhark/Content/bin/DesktopGL/Content/assets/border_LE.xnb</DestFile>
-  <DestTime>2023-05-01T17:20:00.3145093+00:00</DestTime>
+  <SourceFile>C:/Users/16308/Futhark/Content/../assets/Level Editor/border_LE.png</SourceFile>
+  <SourceTime>2023-04-10T10:29:15.4640206-04:00</SourceTime>
+  <DestFile>C:/Users/16308/Futhark/Content/bin/DesktopGL/Content/assets/border_LE.xnb</DestFile>
+  <DestTime>2023-05-06T12:21:29.4231284-04:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2022-07-26T11:44:56+00:00</ImporterTime>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2022-07-26T11:44:56+00:00</ProcessorTime>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

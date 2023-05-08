@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using System;
 using System.Collections.Generic;
+using TiledCS;
 
 namespace Futhark {
 
@@ -42,7 +43,7 @@ namespace Futhark {
             
         }
 
-        public virtual bool Update(Layer_LE collidable) {
+        public virtual bool Update(Rectangle[,] collidable) {
             //Console.WriteLine("{0},{1},{2},{3}", unitX, unitY, posX, posY);
 
             posX += (unitX*vel);
@@ -58,14 +59,17 @@ namespace Futhark {
 
             lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
             lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
-            upperCordX = upperCordX > collidable.width ? collidable.width : upperCordX;
-            upperCordY = upperCordY > collidable.height ? collidable.height : upperCordY;
+            upperCordX = upperCordX > collidable.GetLength(0) ? collidable.GetLength(0) : upperCordX;
+            upperCordY = upperCordY > collidable.GetLength(1) ? collidable.GetLength(1) : upperCordY;
             
 
             for(int i = lowerCordX; i < upperCordX; i++) {
                 for(int j = lowerCordY; j < upperCordY; j++) {
                     
-                    Rectangle r = collidable.rects[i,j];
+                    // Rectangle r = collidable.rects[i,j];
+
+                    var r = collidable[i,j];
+
                     
                     // Console.Write(lowerCordX);
                     // Console.Write(" : ");
