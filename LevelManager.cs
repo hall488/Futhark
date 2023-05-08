@@ -24,7 +24,7 @@ namespace Futhark {
 
         private Game_Constants gConstants;
 
-        private Camera _camera;
+        private Camera camera;
 
         private ContentManager Content;
 
@@ -51,7 +51,7 @@ namespace Futhark {
 
         private RenderTarget2D renderTarget;
 
-        private Rectangle rectRT;
+        public static Rectangle rectRT;
 
         public static Point screenOffset;
 
@@ -64,20 +64,20 @@ namespace Futhark {
             Console.WriteLine("{0},{1}", graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
 
             renderTarget = new RenderTarget2D(this.graphicsDevice,
-                                                15*16*8,
-                                                10*16*8,
+                                                graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
                                                 DepthFormat.Depth24);
 
-            var rtWidth = graphicsDevice.PresentationParameters.BackBufferHeight / 2 * 3;
-            var screenWidth = graphicsDevice.PresentationParameters.BackBufferWidth;
-            screenOffset = new Point((screenWidth - rtWidth)/2,0);
-            rectRT = new Rectangle((screenWidth - rtWidth)/2,0, rtWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
+            // var rtWidth = graphicsDevice.PresentationParameters.BackBufferHeight / 2 * 3;
+            // var screenWidth = graphicsDevice.PresentationParameters.BackBufferWidth;
+            // screenOffset = new Point((screenWidth - rtWidth)/2,0);
+            rectRT = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
         }
 
         public void LoadContent() {
-            _camera = new Camera(renderTarget.Width, renderTarget.Height);
+            camera = new Camera(renderTarget.Width, renderTarget.Height);
+            
 
             // TODO: use this.Content to load your game content here
             Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
@@ -90,7 +90,7 @@ namespace Futhark {
             aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
             aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
-            gConstants = new Game_Constants(new Texture2D(graphicsDevice, 1, 1), spellTextures, _camera);
+            gConstants = new Game_Constants(new Texture2D(graphicsDevice, 1, 1), spellTextures, camera);
 
 
             // Texture2D mid_layer = Content.Load<Texture2D>("test_mid_layer");
@@ -131,7 +131,7 @@ namespace Futhark {
             groundLayer = map.Layers.First(l => l.name == "Ground");
             collisionLayer = map.Layers.First(l => l.name == "Collisions");
             spawns = map.Layers.First(l => l.name == "Spawns");
-            playerSpawn = spawns.objects.First(o => o.name == "Player_Spawn");
+            playerSpawn = spawns.objects.First(o => o.name == "playerSpawn");
 
             Console.WriteLine("map w {0}", map.Width);
             Console.WriteLine("map height {0}", map.Height);
@@ -151,7 +151,7 @@ namespace Futhark {
             if(keyboardState.IsKeyDown(Keys.M))
                 return (int) Futhark_Game.gameStates.mainMenu;
             player.Update();
-            _camera.Follow(player);
+            camera.Follow(player);
             return (int) Futhark_Game.gameStates.levelManager;
         }
 
@@ -178,7 +178,7 @@ namespace Futhark {
 
             graphicsDevice.Clear(Color.LightGray);
 
-            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: _camera.Transform);            
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: camera.Transform);            
             
             DrawLayers(groundLayer);
             DrawLayers(buildingLayerL);

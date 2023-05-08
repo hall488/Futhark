@@ -114,14 +114,13 @@ namespace Futhark {
             var keyboardState = Keyboard.GetState();
             var mouseState = Mouse.GetState();
 
-            var vector = new Vector2(mouseState.Position.X - LevelManager.screenOffset.X, mouseState.Position.Y);
-            var mousePos = Vector2.Transform(vector, Matrix.Invert(camera.Transform));
+            var mousePos = camera.ScreenToWorldSpace(mouseState.Position.ToVector2() - new Vector2(LevelManager.rectRT.X, LevelManager.rectRT.Y));
             
-            Console.WriteLine("player:{0}, mouse: {1}",new Point((int)posX, (int)posY), mousePos);
+            
             
             mousePos = new Vector2(mousePos.X - (int)posX, mousePos.Y - (int)posY);
 
-            
+            Console.WriteLine("player:{0}, mouse: {1}",new Point((int)posX, (int)posY), mousePos);
 
             var mouseUnit = new Vector2(0,0);
 
