@@ -37,7 +37,6 @@ namespace Futhark {
         private TiledMap map;
         private Dictionary<int, TiledTileset> tilesets;
         private Dictionary<int, Texture2D> tsTextures;
-        private Texture2D tilesetTexture;
         private TiledLayer collisionLayer;
 
         private TiledLayer buildingLayerH;
@@ -46,14 +45,22 @@ namespace Futhark {
         private TiledLayer groundLayer;
 
         private TiledLayer spawns;
+        private TiledLayer doors;
 
         private TiledObject playerSpawn;
+
+        private TiledObject castleDoor;
 
         private RenderTarget2D renderTarget;
 
         public static Rectangle rectRT;
 
         public static Point screenOffset;
+        Rectangle[,] collidable;
+
+        Dictionary<Rectangle, string> doorDict;
+
+        string currentMap;
 
         public LevelManager(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
             this.Content = Content;
@@ -75,22 +82,26 @@ namespace Futhark {
             rectRT = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
         }
 
+        private void resetRT() {
+            renderTarget.Dispose();
+            renderTarget = new RenderTarget2D(this.graphicsDevice,
+                                                graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight,
+                                                false,
+                                                graphicsDevice.PresentationParameters.BackBufferFormat,
+                                                DepthFormat.Depth24);
+
+            // var rtWidth = graphicsDevice.PresentationParameters.BackBufferHeight / 2 * 3;
+            // var screenWidth = graphicsDevice.PresentationParameters.BackBufferWidth;
+            // screenOffset = new Point((screenWidth - rtWidth)/2,0);
+            rectRT = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
+        }
+
         public void LoadContent() {
             camera = new Camera(renderTarget.Width, renderTarget.Height);
             
 
             // TODO: use this.Content to load your game content here
-            Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
-
-            Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
-            spellTextures.Add("fireball", Content.Load<Texture2D>("fireball"));
-            Texture2D[] aettsTextures = new Texture2D[4];
-            aettsTextures[0] = Content.Load<Texture2D>("Aetts");
-            aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
-            aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
-            aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
-            gConstants = new Game_Constants(new Texture2D(graphicsDevice, 1, 1), spellTextures, camera);
 
 
             // Texture2D mid_layer = Content.Load<Texture2D>("test_mid_layer");
@@ -113,7 +124,30 @@ namespace Futhark {
 
             // tilemap_over = new  Tilemap(Content, GetColorMap(over_layer), gConstants, false);
 
-            map = new TiledMap("assets/Maps/test.tmx");
+            currentMap = "test";
+
+            loadLevel(currentMap);
+
+            
+        }
+
+        public void loadLevel(string name) {
+
+            currentMap = name;
+
+            Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
+
+            Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
+            spellTextures.Add("fireball", Content.Load<Texture2D>("fireball"));
+            Texture2D[] aettsTextures = new Texture2D[4];
+            aettsTextures[0] = Content.Load<Texture2D>("Aetts");
+            aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
+            aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
+            aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
+            
+            gConstants = new Game_Constants(new Texture2D(graphicsDevice, 1, 1), spellTextures, camera);
+
+            map = new TiledMap("assets/Maps/"+name+".tmx");
             // var castleTS = new TiledTileset("assets/Tile Sets/castle.tsx");
             // var roadTS = new TiledTileset("assets/Tile Sets/Road.tsx");
             // var specialTS = new TiledTileset("assets/Tile Sets/Special.tsx");
@@ -132,10 +166,12 @@ namespace Futhark {
             collisionLayer = map.Layers.First(l => l.name == "Collisions");
             spawns = map.Layers.First(l => l.name == "Spawns");
             playerSpawn = spawns.objects.First(o => o.name == "playerSpawn");
+            doors = map.Layers.First(l => l.name == "Doors");
+            castleDoor = doors.objects.First(o => o.name == "castleDoor");
 
             Console.WriteLine("map w {0}", map.Width);
             Console.WriteLine("map height {0}", map.Height);
-            Rectangle[,] collidable = new Rectangle[map.Width, map.Height];
+            collidable = new Rectangle[map.Width, map.Height];
             for (var y = 0; y < collisionLayer.height; y++) {
                 for (var x = 0; x < collisionLayer.width; x++) {
                     if(collisionLayer.data[x + y * collisionLayer.width] != 0)
@@ -143,14 +179,29 @@ namespace Futhark {
                 }
             }
 
-            player = new Player(gConstants, playerTexture, aettsTextures, (int) (playerSpawn.x + 8)*8, (int) (playerSpawn.y  - 12)*8, collidable, new Texture2D(graphicsDevice, 1, 1));
+            doorDict = new Dictionary<Rectangle, string>();
+
+            foreach(var d in doors.objects) {
+                doorDict.Add(new Rectangle((int)d.x * 8, (int)(d.y - 16) * 8, (int)d.width * 8, (int)d.height * 8), d.name);
+                Console.WriteLine(d.name + " added");
+            }
+
+            player = new Player(gConstants, playerTexture, aettsTextures, (int) (playerSpawn.x + 8)*8, (int) (playerSpawn.y  - 12)*8, collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
+            player.currentMap = currentMap;
+
+            
         }
 
         public int Update() {
             KeyboardState keyboardState = Keyboard.GetState();
             if(keyboardState.IsKeyDown(Keys.M))
                 return (int) Futhark_Game.gameStates.mainMenu;
-            player.Update();
+
+            var levelReturn = player.Update();
+            if(levelReturn != currentMap) {
+                resetRT();
+                loadLevel(levelReturn);
+            }
             camera.Follow(player);
             return (int) Futhark_Game.gameStates.levelManager;
         }

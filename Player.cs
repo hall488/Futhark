@@ -60,6 +60,10 @@ namespace Futhark {
 
         List<IyDraw> drawQueue;
 
+        Dictionary<Rectangle, string> doorDict;
+
+        public string currentMap;
+
         public int CompareTo(IyDraw other)
         {
             // implement your custom comparison here...
@@ -68,7 +72,7 @@ namespace Futhark {
         }
 
 
-        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Rectangle[,] collidable, Texture2D _colRectTexture) {
+        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Rectangle[,] collidable, Dictionary<Rectangle, string> doorDict, Texture2D _colRectTexture) {
             
             drawQueue = new List<IyDraw>();
 
@@ -77,10 +81,13 @@ namespace Futhark {
             texture = _texture;
 
             this.collidable = collidable;
+            this.doorDict = doorDict;
 
             spellTextures = gConstants.spellTextures;
 
             spellQueue = new List<string>();
+
+
 
             posX = x;
             posY = y;
@@ -109,7 +116,7 @@ namespace Futhark {
             fireballs = new List<Fireball>(); 
         }
 
-        public void Update() {
+        public string Update() {
 
             var keyboardState = Keyboard.GetState();
             var mouseState = Mouse.GetState();
@@ -119,8 +126,6 @@ namespace Futhark {
             
             
             mousePos = new Vector2(mousePos.X - (int)posX, mousePos.Y - (int)posY);
-
-            Console.WriteLine("player:{0}, mouse: {1}",new Point((int)posX, (int)posY), mousePos);
 
             var mouseUnit = new Vector2(0,0);
 
@@ -211,8 +216,8 @@ namespace Futhark {
             //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
             //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
 
-            colRectX = new Rectangle((int)testPosX - width / 2, (int)posY + height/2 - width, width, width);
-            colRectY = new Rectangle((int)posX - width / 2, (int)testPosY + height/2 - width, width, width);
+            colRectX = new Rectangle((int)testPosX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
+            colRectY = new Rectangle((int)posX - width / 2 + 8, (int)testPosY + height/2 - width/2, width - 16, width/2);
 
             
             int lowerCordX = (int)Math.Round((double)(posX - 2*width)/width, 0);
@@ -259,11 +264,18 @@ namespace Futhark {
 
 
             if(spellQueue.Count != 0 && spellQueue[0] == "Fireball") {
-                fireballs.Add(new Fireball((int)posX, (int)posY, 5, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
+                fireballs.Add(new Fireball((int)posX, (int)posY, 1, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
                 spellQueue.RemoveAt(0);
             }
 
-            
+            foreach((var r, var name) in doorDict) {
+                if(colRectX.Intersects(r)) {
+                    Console.WriteLine("enter door");
+                    return name;
+                }
+            }
+
+            return currentMap;
         }
 
         public void Draw(SpriteBatch spriteBatch) {
@@ -320,6 +332,10 @@ namespace Futhark {
                     if(collidable[i,j] != Rectangle.Empty)
                         spriteBatch.Draw(colRectTexture, collidable[i,j], Color.White);
                 }
+            }
+
+            foreach((var r, var name) in doorDict) {
+                spriteBatch.Draw(colRectTexture, r, Color.Teal);
             }
         }
     }
