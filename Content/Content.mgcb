@@ -229,6 +229,18 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Overlay/Tyr_Aett.png;assets/Overlay/Tyr_Aett.png
 
+#begin ../assets/Sprites/castle_inside.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Sprites/castle_inside.png;assets/Tile Sets/castle_inside.png
+
 #begin ../assets/Sprites/castle.png
 /importer:TextureImporter
 /processor:TextureProcessor
