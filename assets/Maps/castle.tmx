@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="7" height="7" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="3">
  <tileset firstgid="1" source="../Tile Sets/castle.tsx"/>
- <tileset firstgid="49" source="../Tile Sets/Road.tsx"/>
- <tileset firstgid="63" source="../Tile Sets/Special.tsx"/>
+ <tileset firstgid="51" source="../Tile Sets/Road.tsx"/>
+ <tileset firstgid="107" source="../Tile Sets/Special.tsx"/>
  <layer id="2" name="Ground" width="7" height="7">
   <data encoding="csv">
-62,42,62,62,62,44,62,
-62,48,48,48,48,48,62,
-62,48,48,48,48,48,62,
-62,48,48,48,48,48,62,
-62,48,48,48,48,48,62,
-62,48,48,48,48,48,62,
-62,62,62,43,62,62,62
+64,42,64,64,64,44,64,
+64,48,48,48,48,48,64,
+64,48,48,48,48,48,64,
+64,48,48,48,48,48,64,
+64,48,48,48,48,48,64,
+64,48,48,48,48,48,64,
+64,64,64,43,64,64,64
 </data>
  </layer>
  <layer id="6" name="Buildings Lower" width="7" height="7">
@@ -38,19 +38,23 @@
  </layer>
  <layer id="1" name="Collisions" width="7" height="7">
   <data encoding="csv">
-63,63,63,63,63,63,63,
-63,0,0,0,0,0,63,
-63,0,0,0,0,0,63,
-63,0,0,0,0,0,63,
-63,0,0,0,0,0,63,
-63,0,0,0,0,0,63,
-63,63,63,0,63,63,63
+107,107,107,107,107,107,107,
+107,0,0,0,0,0,107,
+107,0,0,0,0,0,107,
+107,0,0,0,0,0,107,
+107,0,0,0,0,0,107,
+107,0,0,0,0,0,107,
+107,107,107,0,107,107,107
 </data>
  </layer>
  <objectgroup id="3" name="Doors">
-  <object id="1" name="castleDoor" gid="65" x="48" y="112" width="16" height="15"/>
+  <object id="1" name="test" gid="109" x="48" y="112" width="16" height="15"/>
  </objectgroup>
  <objectgroup id="4" name="Spawns">
-  <object id="2" name="playerSpawn" gid="64" x="48" y="96" width="16" height="16"/>
+  <object id="2" name="test" gid="108" x="48" y="96" width="16" height="16">
+   <properties>
+    <property name="Direction" type="int" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

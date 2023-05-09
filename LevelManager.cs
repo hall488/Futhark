@@ -62,6 +62,13 @@ namespace Futhark {
 
         string currentMap;
 
+        enum Direction {
+            Up,
+            Right,
+            Down,
+            Left
+        }
+
         public LevelManager(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
             this.Content = Content;
             this.spriteBatch = spriteBatch;
@@ -133,6 +140,7 @@ namespace Futhark {
 
         public void loadLevel(string name) {
 
+            var playerSpawnName = currentMap;
             currentMap = name;
 
             Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
@@ -165,9 +173,8 @@ namespace Futhark {
             groundLayer = map.Layers.First(l => l.name == "Ground");
             collisionLayer = map.Layers.First(l => l.name == "Collisions");
             spawns = map.Layers.First(l => l.name == "Spawns");
-            playerSpawn = spawns.objects.First(o => o.name == "playerSpawn");
+            playerSpawn = spawns.objects.First(o => o.name == playerSpawnName);
             doors = map.Layers.First(l => l.name == "Doors");
-            castleDoor = doors.objects.First(o => o.name == "castleDoor");
 
             Console.WriteLine("map w {0}", map.Width);
             Console.WriteLine("map height {0}", map.Height);
@@ -186,7 +193,15 @@ namespace Futhark {
                 Console.WriteLine(d.name + " added");
             }
 
-            player = new Player(gConstants, playerTexture, aettsTextures, (int) (playerSpawn.x + 8)*8, (int) (playerSpawn.y  - 12)*8, collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
+            var spawnOffset = Point.Zero;
+            switch(Int32.Parse(playerSpawn.properties[0].value)) {
+                case (int)Direction.Up:
+                    spawnOffset.Y = 64-128;
+                    break;
+
+            }
+
+            player = new Player(gConstants, playerTexture, aettsTextures, (int) (playerSpawn.x + 8)*8 + spawnOffset.X, (int) (playerSpawn.y  - 12)*8 + spawnOffset.Y, collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
             player.currentMap = currentMap;
 
             

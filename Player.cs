@@ -26,6 +26,8 @@ namespace Futhark {
         public int width = 128;
         public int height = 192;
 
+        public int collisionHeight = 64;
+
         Texture2D texture;
 
         AnimatedSprite upAnimation;
