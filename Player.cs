@@ -38,6 +38,7 @@ namespace Futhark {
 
         AnimatedSprite IyDraw.animation() => currentAnimation;
 
+        Rectangle colRectB;
         Rectangle colRectX;
         Rectangle colRectY;
 
@@ -218,6 +219,7 @@ namespace Futhark {
             //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
             //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
 
+            colRectB = new Rectangle((int)posX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
             colRectX = new Rectangle((int)testPosX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
             colRectY = new Rectangle((int)posX - width / 2 + 8, (int)testPosY + height/2 - width/2, width - 16, width/2);
 
@@ -271,7 +273,7 @@ namespace Futhark {
             }
 
             foreach((var r, var name) in doorDict) {
-                if(colRectX.Intersects(r)) {
+                if(colRectB.Intersects(r)) {
                     Console.WriteLine("enter door");
                     return name;
                 }

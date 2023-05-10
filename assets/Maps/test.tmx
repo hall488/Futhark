@@ -100,7 +100,7 @@
 </data>
  </layer>
  <objectgroup id="6" name="Spawns">
-  <object id="23" name="castle" gid="108" x="304" y="208" width="16" height="16">
+  <object id="23" name="castle_floor_1" gid="108" x="304" y="208" width="16" height="16">
    <properties>
     <property name="Direction" type="int" value="0"/>
    </properties>
@@ -112,6 +112,6 @@
   </object>
  </objectgroup>
  <objectgroup id="10" name="Doors">
-  <object id="26" name="castle" gid="109" x="304" y="192" width="16" height="16"/>
+  <object id="26" name="castle_floor_1" gid="109" x="304" y="192" width="16" height="16"/>
  </objectgroup>
 </map>

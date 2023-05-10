@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MrN3yYFDGNO3ogUPu09mqbJZaM2wk+okDEvDnw8ai4dKSc2N8AIQBHG0Hr/ln6z2YGPodW80Ew7AN3n24CNOUg==",
+  "dgSpecHash": "7jz7/nnQbZgLory4SSkM4mG3BO/XzfZFX7zHkJ4BNPpNzu+gh6SuCtrRYkWIQtoiLvkdhVtITmXdzp5gojlaoQ==",
   "success": true,
   "projectFilePath": "/home/christopherhall/Futhark/Futhark.csproj",
   "expectedPackageFiles": [
@@ -14,8 +14,7 @@
     "/home/christopherhall/.nuget/packages/skiasharp/2.88.3/skiasharp.2.88.3.nupkg.sha512",
     "/home/christopherhall/.nuget/packages/skiasharp.nativeassets.macos/2.88.3/skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
     "/home/christopherhall/.nuget/packages/skiasharp.nativeassets.win32/2.88.3/skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
-    "/home/christopherhall/.nuget/packages/tiledcs/3.3.3/tiledcs.3.3.3.nupkg.sha512",
-    "/home/christopherhall/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.15/microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512"
+    "/home/christopherhall/.nuget/packages/tiledcs/3.3.3/tiledcs.3.3.3.nupkg.sha512"
   ],
   "logs": []
 }

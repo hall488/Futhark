@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/christopherhall/Futhark/Content/../assets/Overlay/Tyr_Aett.png</SourceFile>
-  <SourceTime>2023-05-01T13:23:40.1831829+00:00</SourceTime>
-  <DestFile>/home/christopherhall/Futhark/Content/bin/DesktopGL/assets/Overlay/Tyr_Aett.xnb</DestFile>
-  <DestTime>2023-05-10T17:44:03.0127676+00:00</DestTime>
+  <SourceFile>/home/christopherhall/Futhark/Content/../assets/Sprites/castle_inside.png</SourceFile>
+  <SourceTime>2023-05-09T19:24:18.0136942+00:00</SourceTime>
+  <DestFile>/home/christopherhall/Futhark/Content/bin/DesktopGL/assets/Tile Sets/castle_inside.xnb</DestFile>
+  <DestTime>2023-05-10T17:44:03.0327678+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T11:44:56+00:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

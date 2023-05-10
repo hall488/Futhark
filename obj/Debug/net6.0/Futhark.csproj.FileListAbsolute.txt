@@ -482,3 +482,4 @@ C:/Users/16308/Futhark/bin/Debug/net6.0/Content/assets/Tile Sets/Special.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tile Sets/Road.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tile Sets/Special.xnb
 /home/christopherhall/Futhark/bin/Debug/net6.0/TiledCS.dll
+/home/christopherhall/Futhark/bin/Debug/net6.0/Content/assets/Tile Sets/castle_inside.xnb
