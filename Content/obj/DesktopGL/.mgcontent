@@ -27,6 +27,8 @@
     <File>/home/christopherhall/Futhark/Content/../assets/Sprites/fireball.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Sprites/young_skald.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Structures/Cave_1/image.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/Tile Sets/castle_floor_1.png</File>
+    <File>/home/christopherhall/Futhark/Content/../assets/Tile Sets/castle_floor_2.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Tile Sets/Road.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Tile Sets/Special.png</File>
     <File>/home/christopherhall/Futhark/Content/../assets/Tiles/boundary.png</File>
@@ -60,6 +62,8 @@
     <File>assets/Sprites/fireball.png</File>
     <File>assets/Sprites/young_skald.png</File>
     <File>assets/Structures/Cave_1/image.png</File>
+    <File>assets/Tile Sets/castle_floor_1.png</File>
+    <File>assets/Tile Sets/castle_floor_2.png</File>
     <File>assets/Tile Sets/Road.png</File>
     <File>assets/Tile Sets/Special.png</File>
     <File>assets/Tiles/boundary.png</File>

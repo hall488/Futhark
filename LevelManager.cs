@@ -39,8 +39,8 @@ namespace Futhark {
         private Dictionary<int, Texture2D> tsTextures;
         private TiledLayer collisionLayer;
 
-        private TiledLayer buildingLayerH;
-        private TiledLayer buildingLayerL;
+        private TiledLayer aboveLayer;
+        private TiledLayer belowLayer;
 
         private TiledLayer groundLayer;
 
@@ -48,8 +48,6 @@ namespace Futhark {
         private TiledLayer doors;
 
         private TiledObject playerSpawn;
-
-        private TiledObject castleDoor;
 
         private RenderTarget2D renderTarget;
 
@@ -62,11 +60,11 @@ namespace Futhark {
 
         string currentMap;
 
-        enum Direction {
+        public enum Direction {
             Up,
-            Right,
+            Left,
             Down,
-            Left
+            Right
         }
 
         public LevelManager(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
@@ -168,9 +166,9 @@ namespace Futhark {
             }
             
 
-            buildingLayerH = map.Layers.First(l => l.name == "Buildings Higher");
-            buildingLayerL = map.Layers.First(l => l.name == "Buildings Lower");
+            aboveLayer = map.Layers.First(l => l.name == "Above");
             groundLayer = map.Layers.First(l => l.name == "Ground");
+            belowLayer = map.Layers.First(l => l.name == "Below");
             collisionLayer = map.Layers.First(l => l.name == "Collisions");
             spawns = map.Layers.First(l => l.name == "Spawns");
             playerSpawn = spawns.objects.First(o => o.name == playerSpawnName);
@@ -193,15 +191,11 @@ namespace Futhark {
                 Console.WriteLine(d.name + " added");
             }
 
-            var spawnOffset = Point.Zero;
-            switch(Int32.Parse(playerSpawn.properties[0].value)) {
-                case (int)Direction.Up:
-                    spawnOffset.Y = 64-128;
-                    break;
 
-            }
-
-            player = new Player(gConstants, playerTexture, aettsTextures, (int) (playerSpawn.x + 8)*8 + spawnOffset.X, (int) (playerSpawn.y  - 12)*8 + spawnOffset.Y, collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
+            player = new Player(gConstants, playerTexture, aettsTextures, 
+                                            (int) (playerSpawn.x + 8)*8, 
+                                            (int) (playerSpawn.y  - 12)*8, (Direction)Int32.Parse(playerSpawn.properties[0].value), 
+                                            collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
             player.currentMap = currentMap;
 
             
@@ -246,10 +240,10 @@ namespace Futhark {
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, transformMatrix: camera.Transform);            
             
+            DrawLayers(belowLayer);
             DrawLayers(groundLayer);
-            DrawLayers(buildingLayerL);
             player.Draw(spriteBatch);
-            DrawLayers(buildingLayerH);
+            DrawLayers(aboveLayer);
 
             spriteBatch.End();
 

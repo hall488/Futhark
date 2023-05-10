@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="7" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="6">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="7" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="6">
  <tileset firstgid="1" source="../Tile Sets/castle_floor_1.tsx"/>
  <tileset firstgid="57" source="../Tile Sets/Special.tsx"/>
  <layer id="1" name="Ground" width="7" height="8">
@@ -26,7 +26,19 @@
 0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="4" name="Collisions" width="7" height="8" visible="0">
+ <layer id="7" name="Below" width="7" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="Collisions" width="7" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,
@@ -38,7 +50,7 @@
 0,57,57,0,57,57,0
 </data>
  </layer>
- <objectgroup id="5" name="Spawns" visible="0">
+ <objectgroup id="5" name="Spawns">
   <object id="1" name="test" gid="58" x="48" y="112" width="16" height="16">
    <properties>
     <property name="Direction" type="int" value="2"/>
@@ -50,7 +62,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="Doors" visible="0">
+ <objectgroup id="6" name="Doors">
   <object id="4" name="test" gid="59" x="48" y="128" width="16" height="16"/>
   <object id="5" name="castle_floor_2" gid="59" x="64" y="64" width="16" height="16"/>
  </objectgroup>

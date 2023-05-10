@@ -289,6 +289,30 @@
 /processorParam:TextureFormat=Color
 /build:../assets/Structures/Cave_1/image.png;assets/Structures/Cave_1/image.png
 
+#begin ../assets/Tile Sets/castle_floor_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Tile Sets/castle_floor_1.png;assets/Tile Sets/castle_floor_1.png
+
+#begin ../assets/Tile Sets/castle_floor_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../assets/Tile Sets/castle_floor_2.png;assets/Tile Sets/castle_floor_2.png
+
 #begin ../assets/Tile Sets/Road.png
 /importer:TextureImporter
 /processor:TextureProcessor

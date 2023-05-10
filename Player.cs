@@ -75,8 +75,10 @@ namespace Futhark {
         }
 
 
-        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, Rectangle[,] collidable, Dictionary<Rectangle, string> doorDict, Texture2D _colRectTexture) {
+        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, LevelManager.Direction facing, Rectangle[,] collidable, Dictionary<Rectangle, string> doorDict, Texture2D _colRectTexture) {
             
+            
+
             drawQueue = new List<IyDraw>();
 
             camera = gConstants.camera;
@@ -92,27 +94,44 @@ namespace Futhark {
 
 
 
-            posX = x;
-            posY = y;
-            rot = 0;
-            //activeTiles = _activeTiles;
-
-            unitX = 0;
-            unitY = 0;
-
-            vel = 4;
+            
             
             downAnimation = new AnimatedSprite(texture, 4, 4, 0, false);
             upAnimation = new AnimatedSprite(texture, 4, 4, 1, false);
             rightAnimation = new AnimatedSprite(texture, 4, 4, 2, false);
             leftAnimation = new AnimatedSprite(texture, 4, 4, 3, false);
 
-                       
+            var spawnOffset = Point.Zero;
+            switch((int) facing) {
+                case (int) LevelManager.Direction.Up:
+                    currentAnimation = upAnimation;
+                    spawnOffset.Y = 64-128;
+                    break;
+                case (int) LevelManager.Direction.Right:
+                    currentAnimation = rightAnimation;
+                    break;
+                case (int) LevelManager.Direction.Down:
+                    currentAnimation = downAnimation;
+                    break;
+                case (int) LevelManager.Direction.Left:
+                    currentAnimation = leftAnimation;
+                    break;
+            }
+
+            posX = x + spawnOffset.X;
+            posY = y + spawnOffset.Y;
+            rot = 0;
+            //activeTiles = _activeTiles;
+
+            unitX = 0;
+            unitY = 0;
+
+            vel = 4;        
             
             colRectTexture = _colRectTexture;
             colRectTexture.SetData(new[] {new Color(255, 0, 0, 128)});
 
-            currentAnimation = downAnimation;
+            
 
             runestone = new Runestone(this, _aettsTextures, gConstants);
 
