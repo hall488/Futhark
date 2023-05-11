@@ -43,6 +43,7 @@ namespace Futhark {
         private TiledLayer belowLayer;
 
         private TiledLayer groundLayer;
+        private TiledLayer ongroundLayer;
 
         private TiledLayer spawns;
         private TiledLayer doors;
@@ -167,6 +168,7 @@ namespace Futhark {
             
 
             aboveLayer = map.Layers.First(l => l.name == "Above");
+            ongroundLayer = map.Layers.First(l => l.name == "Onground");
             groundLayer = map.Layers.First(l => l.name == "Ground");
             belowLayer = map.Layers.First(l => l.name == "Below");
             collisionLayer = map.Layers.First(l => l.name == "Collisions");
@@ -242,6 +244,7 @@ namespace Futhark {
             
             DrawLayers(belowLayer);
             DrawLayers(groundLayer);
+            DrawLayers(ongroundLayer);
             player.Draw(spriteBatch);
             DrawLayers(aboveLayer);
 

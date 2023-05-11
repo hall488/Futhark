@@ -201,7 +201,9 @@ namespace Futhark {
                 unitX += 1;
             } else {
                 pressedKeys[3] = false;
-            }            
+            }  
+
+            //if()          
 
             if(unitY < 0) {
                 currentAnimation = upAnimation;
@@ -302,8 +304,8 @@ namespace Futhark {
         }
 
         public void Draw(SpriteBatch spriteBatch) {
-            spriteBatch.Draw(colRectTexture, colRectY, Color.White);
-            spriteBatch.Draw(colRectTexture, colRectX, Color.Blue);
+            //spriteBatch.Draw(colRectTexture, colRectY, Color.White);
+            //spriteBatch.Draw(colRectTexture, colRectX, Color.Blue);
 
 
             drawQueue.Add(this);
@@ -324,7 +326,7 @@ namespace Futhark {
             
             runestone.Draw(spriteBatch, (int)posX, (int)posY);
 
-            drawCollisionBoundaries(spriteBatch);
+            //drawCollisionBoundaries(spriteBatch);
 
             
         }
