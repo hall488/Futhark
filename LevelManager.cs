@@ -22,7 +22,7 @@ namespace Futhark {
         // private Layer_Manager_LE layerManager;
         private Player player;
 
-        private Game_Constants gConstants;
+        private Game_Dicts gDicts;
 
         private Camera camera;
 
@@ -50,9 +50,12 @@ namespace Futhark {
 
         private TiledObject playerSpawn;
 
-        private RenderTarget2D renderTarget;
+        private RenderTarget2D sceneRT;
 
-        public static Rectangle rectRT;
+        public static Rectangle sceneRect;
+        private RenderTarget2D overlayRT;
+
+        public static Rectangle overlayRect;
 
         public static Point screenOffset;
         Rectangle[,] collidable;
@@ -60,6 +63,8 @@ namespace Futhark {
         Dictionary<Rectangle, string> doorDict;
 
         string currentMap;
+
+        Runestone runestone;
 
         public enum Direction {
             Up,
@@ -76,7 +81,7 @@ namespace Futhark {
 
             Console.WriteLine("{0},{1}", graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
 
-            renderTarget = new RenderTarget2D(this.graphicsDevice,
+            sceneRT = new RenderTarget2D(this.graphicsDevice,
                                                 graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
@@ -85,12 +90,20 @@ namespace Futhark {
             // var rtWidth = graphicsDevice.PresentationParameters.BackBufferHeight / 2 * 3;
             // var screenWidth = graphicsDevice.PresentationParameters.BackBufferWidth;
             // screenOffset = new Point((screenWidth - rtWidth)/2,0);
-            rectRT = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
+            sceneRect = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
+
+            overlayRT = new RenderTarget2D(this.graphicsDevice,
+                                                graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight,
+                                                false,
+                                                graphicsDevice.PresentationParameters.BackBufferFormat,
+                                                DepthFormat.Depth24);
+
+            overlayRect = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
         }
 
-        private void resetRT() {
-            renderTarget.Dispose();
-            renderTarget = new RenderTarget2D(this.graphicsDevice,
+        private void resetScene() {
+            sceneRT.Dispose();
+            sceneRT = new RenderTarget2D(this.graphicsDevice,
                                                 graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight,
                                                 false,
                                                 graphicsDevice.PresentationParameters.BackBufferFormat,
@@ -99,11 +112,11 @@ namespace Futhark {
             // var rtWidth = graphicsDevice.PresentationParameters.BackBufferHeight / 2 * 3;
             // var screenWidth = graphicsDevice.PresentationParameters.BackBufferWidth;
             // screenOffset = new Point((screenWidth - rtWidth)/2,0);
-            rectRT = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
+            sceneRect = new Rectangle(0,0, graphicsDevice.PresentationParameters.BackBufferWidth, graphicsDevice.PresentationParameters.BackBufferHeight);
         }
 
         public void LoadContent() {
-            camera = new Camera(renderTarget.Width, renderTarget.Height);
+            camera = new Camera(sceneRT.Width, sceneRT.Height);
             
 
             // TODO: use this.Content to load your game content here
@@ -142,17 +155,17 @@ namespace Futhark {
             var playerSpawnName = currentMap;
             currentMap = name;
 
-            Dictionary<string, Texture2D> spellTextures = new Dictionary<string, Texture2D>();
+            
 
             Texture2D playerTexture = Content.Load<Texture2D>("young_skald");
-            spellTextures.Add("fireball", Content.Load<Texture2D>("fireball"));
+            
             Texture2D[] aettsTextures = new Texture2D[4];
             aettsTextures[0] = Content.Load<Texture2D>("Aetts");
             aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
             aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
             aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
             
-            gConstants = new Game_Constants(new Texture2D(graphicsDevice, 1, 1), spellTextures, camera);
+            gDicts = new Game_Dicts(Content);
 
             map = new TiledMap("assets/Maps/"+name+".tmx");
             // var castleTS = new TiledTileset("assets/Tile Sets/castle.tsx");
@@ -194,11 +207,13 @@ namespace Futhark {
             }
 
 
-            player = new Player(gConstants, playerTexture, aettsTextures, 
+            player = new Player(camera, gDicts, playerTexture, aettsTextures, 
                                             (int) (playerSpawn.x + 8)*8, 
                                             (int) (playerSpawn.y  - 12)*8, (Direction)Int32.Parse(playerSpawn.properties[0].value), 
                                             collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
             player.currentMap = currentMap;
+
+            runestone = new Runestone(player, aettsTextures, gDicts);
 
             
         }
@@ -209,22 +224,28 @@ namespace Futhark {
                 return (int) Futhark_Game.gameStates.mainMenu;
 
             var levelReturn = player.Update();
+            runestone.Update(keyboardState);
+
             if(levelReturn != currentMap) {
-                resetRT();
+                resetScene();
                 loadLevel(levelReturn);
             }
             camera.Follow(player);
+
+
             return (int) Futhark_Game.gameStates.levelManager;
         }
 
         public void Draw() {
 
 
-            DrawRT();
+            DrawScene();
+            DrawOverlay();
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
 
-            spriteBatch.Draw(renderTarget, rectRT, Color.White);            
+            spriteBatch.Draw(sceneRT, sceneRect, Color.White);
+            spriteBatch.Draw(overlayRT, overlayRect, Color.Transparent);            
 
             spriteBatch.End();
             
@@ -234,8 +255,8 @@ namespace Futhark {
             //tilemap_buildings.Draw(_spriteBatch);
         }
 
-        public void DrawRT() {
-            graphicsDevice.SetRenderTarget(renderTarget);
+        public void DrawScene() {
+            graphicsDevice.SetRenderTarget(sceneRT);
             graphicsDevice.DepthStencilState = new DepthStencilState() {DepthBufferEnable = true};
 
             graphicsDevice.Clear(Color.LightGray);
@@ -247,6 +268,22 @@ namespace Futhark {
             DrawLayers(ongroundLayer);
             player.Draw(spriteBatch);
             DrawLayers(aboveLayer);
+            runestone.Draw(spriteBatch);
+
+            spriteBatch.End();
+
+            graphicsDevice.SetRenderTarget(null);
+        }
+
+        public void DrawOverlay() {
+            graphicsDevice.SetRenderTarget(overlayRT);
+            graphicsDevice.DepthStencilState = new DepthStencilState() {DepthBufferEnable = true};
+
+            graphicsDevice.Clear(Color.Transparent);
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);            
+            
+            runestone.Draw(spriteBatch);
 
             spriteBatch.End();
 

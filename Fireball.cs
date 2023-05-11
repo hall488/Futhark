@@ -11,12 +11,12 @@ namespace Futhark {
     public class Fireball : Projectile { 
 
 
-        public Fireball(int posX, int posY, int vel, double unitX, double unitY, Texture2D texture) {
-            this.posX = posX;
-            this.posY = posY;
+        public Fireball(Point pos, int vel, Vector2 direction, Texture2D texture) {
+            this.posX = pos.X;
+            this.posY = pos.Y;
             this.vel = vel;
-            this.unitX = unitX;
-            this.unitY = unitY;
+            this.unitX = direction.X;
+            this.unitY = direction.Y;
             this.animation = new AnimatedSprite(texture, 1, 3, 0, true);
             this.width = texture.Width / 3;
             this.height = texture.Height;

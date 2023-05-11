@@ -52,20 +52,19 @@ namespace Futhark {
 
         Rectangle[,] collidable;
 
-        Runestone runestone;
-
         private Dictionary<string, Texture2D> spellTextures;
 
         public List<string> spellQueue;
         List<Fireball> fireballs;
 
-        Camera camera;
+        public Camera camera;
 
         List<IyDraw> drawQueue;
 
         Dictionary<Rectangle, string> doorDict;
 
         public string currentMap;
+        
 
         public int CompareTo(IyDraw other)
         {
@@ -75,20 +74,20 @@ namespace Futhark {
         }
 
 
-        public Player(Game_Constants gConstants, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, LevelManager.Direction facing, Rectangle[,] collidable, Dictionary<Rectangle, string> doorDict, Texture2D _colRectTexture) {
+        public Player(Camera camera, Game_Dicts gDicts, Texture2D _texture, Texture2D[] _aettsTextures, int x, int y, LevelManager.Direction facing, Rectangle[,] collidable, Dictionary<Rectangle, string> doorDict, Texture2D _colRectTexture) {
             
             
 
             drawQueue = new List<IyDraw>();
 
-            camera = gConstants.camera;
+            this.camera = camera;
             
             texture = _texture;
 
             this.collidable = collidable;
             this.doorDict = doorDict;
 
-            spellTextures = gConstants.spellTextures;
+            spellTextures = gDicts.spellTextures;
 
             spellQueue = new List<string>();
 
@@ -133,7 +132,7 @@ namespace Futhark {
 
             
 
-            runestone = new Runestone(this, _aettsTextures, gConstants);
+            //runestone = new Runestone(this, _aettsTextures, gConstants);
 
             fireballs = new List<Fireball>(); 
         }
@@ -141,27 +140,8 @@ namespace Futhark {
         public string Update() {
 
             var keyboardState = Keyboard.GetState();
-            var mouseState = Mouse.GetState();
-
-            var mousePos = camera.ScreenToWorldSpace(mouseState.Position.ToVector2() - new Vector2(LevelManager.rectRT.X, LevelManager.rectRT.Y));
             
             
-            
-            mousePos = new Vector2(mousePos.X - (int)posX, mousePos.Y - (int)posY);
-
-            var mouseUnit = new Vector2(0,0);
-
-
-            if(!(mousePos.X == 0 && mousePos.Y == 0)) {
-
-                double mag = Math.Sqrt(mousePos.X*mousePos.X + mousePos.Y*mousePos.Y);
-
-                mouseUnit.X = (float)(mousePos.X / mag);
-                mouseUnit.Y = (float)(mousePos.Y / mag);
-
-            }
-
-            runestone.Update(keyboardState, mouseState);
 
             List<Fireball> fireballToRemove = new List<Fireball>();
 
@@ -287,9 +267,11 @@ namespace Futhark {
             
             currentAnimation.Update();
 
+            var mu = playerToMouse();
+
 
             if(spellQueue.Count != 0 && spellQueue[0] == "Fireball") {
-                fireballs.Add(new Fireball((int)posX, (int)posY, 1, mouseUnit.X, mouseUnit.Y, spellTextures["fireball"]));
+                fireballs.Add(new Fireball(new Point((int)posX, (int)posY), 3, mu, spellTextures["fireball"]));
                 spellQueue.RemoveAt(0);
             }
 
@@ -324,7 +306,7 @@ namespace Futhark {
             //currentAnimation.Draw(spriteBatch, posX, posY, 0f);
 
             
-            runestone.Draw(spriteBatch, (int)posX, (int)posY);
+            
 
             //drawCollisionBoundaries(spriteBatch);
 
@@ -362,6 +344,31 @@ namespace Futhark {
             foreach((var r, var name) in doorDict) {
                 spriteBatch.Draw(colRectTexture, r, Color.Teal);
             }
+        }
+
+        public Vector2 playerToMouse () {
+            var mouseState = Mouse.GetState();
+
+            var mousePos = camera.ScreenToWorldSpace(mouseState.Position.ToVector2() - new Vector2(LevelManager.sceneRect.X, LevelManager.sceneRect.Y));
+            
+            
+            
+            mousePos = new Vector2(mousePos.X - (int)posX, mousePos.Y - (int)posY);
+
+            var mouseUnit = new Vector2(0,0);
+
+
+            if(!(mousePos.X == 0 && mousePos.Y == 0)) {
+
+                double mag = Math.Sqrt(mousePos.X*mousePos.X + mousePos.Y*mousePos.Y);
+
+                mouseUnit.X = (float)(mousePos.X / mag);
+                mouseUnit.Y = (float)(mousePos.Y / mag);
+
+            }
+
+            return mouseUnit;
+
         }
     }
 }

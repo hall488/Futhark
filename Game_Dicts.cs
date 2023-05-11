@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace Futhark {
     
-    public class Game_Constants {
+    public class Game_Dicts {
 
         public Dictionary<string,string> tileDict;
 
@@ -29,21 +30,17 @@ namespace Futhark {
 
         public Dictionary<string, Texture2D> spellTextures;
 
-        public int screenWidth;
 
-        public int screenHeight;
-
-        public Camera camera;
-
-        public Game_Constants(Texture2D _tileColTexture, Dictionary<string, Texture2D> spellTextures, Camera camera) {
+        public Game_Dicts (ContentManager content) {
             
-            this.camera = camera;
-            this.spellTextures = spellTextures;
-            tileColTexture = _tileColTexture;
+            
+            spellTextures = new Dictionary<string, Texture2D>();
             keysDict = new Dictionary<string, Dictionary<string, int>>();
             runeKeys = new Dictionary<string, (Keys, bool)>();
             castKeys = new Dictionary<string, (Keys, bool)>();
             spellDict = new Dictionary<string, string>();
+
+            spellTextures.Add("fireball", content.Load<Texture2D>("fireball"));
 
             string jsonFile = File.ReadAllText("text_assets/tile_dictionary.json");
 

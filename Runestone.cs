@@ -43,16 +43,14 @@ namespace Futhark {
 
         Camera camera;
 
-        public Runestone(Player player, Texture2D[] _aettsTextures, Game_Constants gConstants) {
+        public Runestone(Player player, Texture2D[] _aettsTextures, Game_Dicts gDicts) {
 
-            this.camera = gConstants.camera;
+            this.camera = player.camera;
             this.player = player;
-            this.screenWidth = gConstants.screenWidth;
-            this.screenHeight = gConstants.screenHeight;
             aettsTextures = _aettsTextures;
-            castKeyStates = gConstants.castKeys;
-            runeKeyStates = gConstants.runeKeys;
-            spellDict = gConstants.spellDict;
+            castKeyStates = gDicts.castKeys;
+            runeKeyStates = gDicts.runeKeys;
+            spellDict = gDicts.spellDict;
             keyToRune = new Dictionary<string, string[]>();
             
             spellOrder = new List<string>();
@@ -74,7 +72,7 @@ namespace Futhark {
 
         }
 
-        public void Update(KeyboardState keyboardState, MouseState mouseState) {   
+        public void Update(KeyboardState keyboardState) {   
 
             
 
@@ -200,7 +198,7 @@ namespace Futhark {
             runesPressed.Clear();
         }
 
-        public void Draw(SpriteBatch spriteBatch, int playerX, int playerY) {
+        public void Draw(SpriteBatch spriteBatch) {
 
             int tempCol = 0;
 
@@ -210,7 +208,7 @@ namespace Futhark {
             }
 
             Rectangle sourceRectangle = new Rectangle(width * runePos, height * tempCol, width, height);
-            Rectangle destinationRectangle = new Rectangle(150 + playerX, 150 + playerY, width*4, height*4);
+            Rectangle destinationRectangle = new Rectangle(150, 150, width*4, height*4);
             
             if(castActive)
                 spriteBatch.Draw(aettsTextures[aettType], destinationRectangle, sourceRectangle, Color.White);

@@ -16,22 +16,13 @@ namespace Futhark {
     public class LevelEditor { 
 
         private ContentManager content;
-        
-        
-
         private SpriteBatch spriteBatch;
-
         private GraphicsDeviceManager graphics;
-
         private GraphicsDevice graphicsDevice;
-
-
-
 
         Point sideMousePosition;
         Point mainMousePosition;
         Item_LE activeItem;
-
         Panel activePanel;
 
         List<(Texture2D, Rectangle, string)> placedItems;
