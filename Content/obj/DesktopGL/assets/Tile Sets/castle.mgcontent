@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/home/christopherhall/Futhark/Content/../assets/Sprites/castle.png</SourceFile>
-  <SourceTime>2023-05-10T20:18:01.1241916+00:00</SourceTime>
-  <DestFile>/home/christopherhall/Futhark/Content/bin/DesktopGL/assets/Tile Sets/castle.xnb</DestFile>
-  <DestTime>2023-05-10T21:03:36.48123+00:00</DestTime>
+  <SourceFile>C:/Users/16308/Futhark/Content/../assets/Sprites/castle.png</SourceFile>
+  <SourceTime>2023-05-10T22:48:58.1159522-04:00</SourceTime>
+  <DestFile>C:/Users/16308/Futhark/Content/bin/DesktopGL/assets/Tile Sets/castle.xnb</DestFile>
+  <DestTime>2023-05-12T10:28:24.2299117-04:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2022-07-26T11:44:56+00:00</ImporterTime>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2022-07-26T11:44:56+00:00</ProcessorTime>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

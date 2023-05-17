@@ -14,12 +14,13 @@ namespace Futhark {
         public double posX;
         public double posY;
 
-        public int rot;
+        public double prevPosX;
+        public double prevPosY;
 
         double IyDraw.yPosition() => posY;
         double IyDraw.xPosition() => posX;
 
-        float IyDraw.rotation() => rot;
+        float IyDraw.rotation() => 0;
         double unitX;
         double unitY;
         public double vel;
@@ -119,7 +120,9 @@ namespace Futhark {
 
             posX = x + spawnOffset.X;
             posY = y + spawnOffset.Y;
-            rot = 0;
+            prevPosX = posX;
+            prevPosY = posY;
+
             //activeTiles = _activeTiles;
 
             unitX = 0;
@@ -258,6 +261,9 @@ namespace Futhark {
                 }
             }
 
+            prevPosX = posX;
+            prevPosY = posY;
+
             posX += (unitX*vel);
             posY += (unitY*vel);
 
@@ -370,5 +376,7 @@ namespace Futhark {
             return mouseUnit;
 
         }
+
+        
     }
 }

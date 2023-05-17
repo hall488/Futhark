@@ -76,6 +76,10 @@ namespace Futhark {
             return nums;
         }
 
+        public static int tilesTo(Point from, Point to) {
+            return (int) (Math.Round(Math.Sqrt(Math.Pow((double)(from.X - to.X), 2) + Math.Pow((double)(from.Y - to.Y), 2))) / 16 / 8);
+        }
+
         public static Texture2D[] Split(Texture2D original, int partWidth, int partHeight, out int xCount, out int yCount)
         {
             yCount = original.Height / partHeight;//The number of textures in each horizontal row

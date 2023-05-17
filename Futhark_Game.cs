@@ -21,7 +21,6 @@ namespace Futhark
         private SpriteBatch spriteBatch;
         private Menu mainMenu;
         private LevelManager levelManager;
-        private LevelEditor levelEditor;
         public static int screenWidth;
         public static int screenHeight;
         ContentManager mainMenuContent;
@@ -60,14 +59,14 @@ namespace Futhark
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            graphics.PreferredBackBufferWidth = 700;  // set this value to the desired width of your window
-            graphics.PreferredBackBufferHeight = 700;   // set this value to the desired height of your window
+            // graphics.PreferredBackBufferWidth = 700;  // set this value to the desired width of your window
+            // graphics.PreferredBackBufferHeight = 700;   // set this value to the desired height of your window
             
             
-            // graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true;
 
-            // graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
-            // graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
+            graphics.PreferredBackBufferWidth = GraphicsDevice.DisplayMode.Width;
+            graphics.PreferredBackBufferHeight = GraphicsDevice.DisplayMode.Height;
 
             screenWidth = graphics.PreferredBackBufferWidth;
             screenHeight = graphics.PreferredBackBufferHeight;
@@ -86,7 +85,6 @@ namespace Futhark
 
             mainMenu = new Menu(mainMenuContent, spriteBatch, graphics, GraphicsDevice);
             levelManager = new LevelManager(levelManagerContent, spriteBatch, graphics, GraphicsDevice);
-            levelEditor = new LevelEditor(levelEditorContent, spriteBatch, graphics, GraphicsDevice);
 
 
             switch(gameState) {
@@ -97,7 +95,6 @@ namespace Futhark
                         levelManager.LoadContent();
                         break;
                     case (int) gameStates.levelEditor:
-                        levelEditor.LoadContent();
                         break;
                         
                 }
@@ -120,10 +117,9 @@ namespace Futhark
                     gameState = mainMenu.Update();
                     break;
                 case (int) gameStates.levelManager:
-                    gameState = levelManager.Update();
+                    gameState = levelManager.Update(gameTime);
                     break;
                 case (int) gameStates.levelEditor:
-                    gameState = levelEditor.Update();
                     break;
                 
             }       
@@ -150,7 +146,6 @@ namespace Futhark
                         levelManager.LoadContent();
                         break;
                     case (int) gameStates.levelEditor:
-                        levelEditor.LoadContent();
                         break;
                         
                 }
@@ -171,10 +166,9 @@ namespace Futhark
                     mainMenu.Draw();
                     break;
                 case (int) gameStates.levelManager:
-                    levelManager.Draw();
+                    levelManager.Draw(gameTime);
                     break;
                 case (int) gameStates.levelEditor:
-                    levelEditor.Draw();
                     break;
             }            
 

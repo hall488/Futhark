@@ -50,6 +50,8 @@ namespace Futhark {
 
         private TiledObject playerSpawn;
 
+        private TiledObject enemySpawn;
+
         private RenderTarget2D sceneRT;
 
         public static Rectangle sceneRect;
@@ -66,6 +68,8 @@ namespace Futhark {
 
         Runestone runestone;
 
+        List<Entity> enetities;
+
         public enum Direction {
             Up,
             Left,
@@ -73,7 +77,9 @@ namespace Futhark {
             Right
         }
 
+
         public LevelManager(ContentManager Content, SpriteBatch spriteBatch, GraphicsDeviceManager graphics, GraphicsDevice graphicsDevice) {
+            
             this.Content = Content;
             this.spriteBatch = spriteBatch;
             this.graphics = graphics;
@@ -164,6 +170,11 @@ namespace Futhark {
             aettsTextures[1] = Content.Load<Texture2D>("Frey_Aett");
             aettsTextures[2] = Content.Load<Texture2D>("Hagal_Aett");
             aettsTextures[3] = Content.Load<Texture2D>("Tyr_Aett");
+
+            Texture2D[] runeTextures = new Texture2D[24];
+            runeTextures = Util.Split(Content.Load<Texture2D>("assets/Runes"), 7, 11, out int xCount, out int yCount);
+
+            Texture2D sayNayyerTexture = Content.Load<Texture2D>("SayNayer");
             
             gDicts = new Game_Dicts(Content);
 
@@ -188,6 +199,9 @@ namespace Futhark {
             spawns = map.Layers.First(l => l.name == "Spawns");
             playerSpawn = spawns.objects.First(o => o.name == playerSpawnName);
             doors = map.Layers.First(l => l.name == "Doors");
+            
+            var enemies = map.Layers.First(l => l.name == "Enemies");
+            enemySpawn = enemies.objects.First(o => o.name == "enemySpawn");
 
             Console.WriteLine("map w {0}", map.Width);
             Console.WriteLine("map height {0}", map.Height);
@@ -213,18 +227,26 @@ namespace Futhark {
                                             collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
             player.currentMap = currentMap;
 
+            enetities = new List<Entity>();
+            var enemyPoint = new Point((int) (enemySpawn.x + 8)*8, (int) (playerSpawn.y  - 16)*8);
+            enetities.Add(new SayNayer(0, enemyPoint, 4, player, sayNayyerTexture, runeTextures));
+
             runestone = new Runestone(player, aettsTextures, gDicts);
 
             
         }
 
-        public int Update() {
+        public int Update(GameTime gameTime) {
             KeyboardState keyboardState = Keyboard.GetState();
             if(keyboardState.IsKeyDown(Keys.M))
                 return (int) Futhark_Game.gameStates.mainMenu;
 
             var levelReturn = player.Update();
             runestone.Update(keyboardState);
+
+            foreach(var e in enetities) {
+                e.Update(gameTime);
+            }
 
             if(levelReturn != currentMap) {
                 resetScene();
@@ -236,10 +258,10 @@ namespace Futhark {
             return (int) Futhark_Game.gameStates.levelManager;
         }
 
-        public void Draw() {
+        public void Draw(GameTime gameTime) {
 
 
-            DrawScene();
+            DrawScene(gameTime);
             DrawOverlay();
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
@@ -255,7 +277,7 @@ namespace Futhark {
             //tilemap_buildings.Draw(_spriteBatch);
         }
 
-        public void DrawScene() {
+        public void DrawScene(GameTime gameTime) {
             graphicsDevice.SetRenderTarget(sceneRT);
             graphicsDevice.DepthStencilState = new DepthStencilState() {DepthBufferEnable = true};
 
@@ -267,6 +289,9 @@ namespace Futhark {
             DrawLayers(groundLayer);
             DrawLayers(ongroundLayer);
             player.Draw(spriteBatch);
+            foreach(var e in enetities) {
+                e.Draw(gameTime, spriteBatch);
+            }
             DrawLayers(aboveLayer);
             runestone.Draw(spriteBatch);
 
