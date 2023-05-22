@@ -245,7 +245,7 @@ namespace Futhark {
             runestone.Update(keyboardState);
 
             foreach(var e in enetities) {
-                e.Update(gameTime);
+                e.Update(gameTime, collidable);
             }
 
             if(levelReturn != currentMap) {

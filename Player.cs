@@ -43,7 +43,7 @@ namespace Futhark {
         Rectangle colRectX;
         Rectangle colRectY;
 
-        Texture2D colRectTexture;
+        public Texture2D colRectTexture;
 
         bool[] pressedKeys = {false, false, false, false};
         bool[] previousKeys = {false, false, false, false};

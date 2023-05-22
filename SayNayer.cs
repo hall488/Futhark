@@ -35,10 +35,10 @@ namespace Futhark {
             this.runeTextures = runeTextures;
         }
 
-        public override void Update(GameTime gameTime) {
-            base.Update(gameTime);
+        public override void Update(GameTime gameTime, Rectangle[,] collidable) {
+            base.Update(gameTime, collidable);
 
-            Console.WriteLine(currentAS);
+            //Console.WriteLine(currentAS);
         }
 
         public override void Draw (GameTime gameTime, SpriteBatch spriteBatch) {
@@ -71,12 +71,17 @@ namespace Futhark {
 
         protected override ActionState combatAS(GameTime gameTime) {
 
+            if(resetMovementTimer) {
+                movementTimerZero = gameTime.TotalGameTime;
+                resetMovementTimer = false;
+            }
+
             var movementTimer = gameTime.TotalGameTime - movementTimerZero;
             //Console.WriteLine("mt {0}", movementTimer);
 
 
             if(movementTimer > TimeSpan.FromSeconds(1)) {
-                movementTimerZero = gameTime.TotalGameTime;
+                resetMovementTimer = true;
                 ++ moveCounter;
 
                 var moveX = posX < player.posX ? Movement.left : Movement.right;
@@ -110,6 +115,11 @@ namespace Futhark {
 
             if(moveCounter == 5) {
                 moveCounter = 0;
+                castTimerZero = gameTime.TotalGameTime;
+                castAnimationTimerZero = gameTime.TotalGameTime;
+                Array values = Enum.GetValues(typeof(Rune));
+                Random random = new Random();
+                toCast = (Rune)values.GetValue(random.Next(values.Length));
                 return ActionState.attack;
             }
 
@@ -122,13 +132,10 @@ namespace Futhark {
             
             var castTimer = gameTime.TotalGameTime - castTimerZero;
 
-            if(castTimer > TimeSpan.FromSeconds(1)) {
-                currentAnimation = castAnimation;
-                castTimerZero = gameTime.TotalGameTime;
-                Array values = Enum.GetValues(typeof(Rune));
-                Random random = new Random();
-                toCast = (Rune)values.GetValue(random.Next(values.Length));
-                castAnimationTimerZero = gameTime.TotalGameTime;
+            currentAnimation = castAnimation;
+
+            if(castTimer > TimeSpan.FromSeconds(1)) {               
+                
                 return ActionState.combat;
             }
 

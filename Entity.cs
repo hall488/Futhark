@@ -64,7 +64,18 @@ namespace Futhark {
 
         protected TimeSpan movementTimerZero;
 
+        protected bool resetMovementTimer;
+
         protected Movement direction;
+
+        Rectangle colRectB;
+        Rectangle colRectX;
+        Rectangle colRectY;
+
+        int width;
+        int height;
+
+        Texture2D colRectTexture;
 
 
         public Entity(int health, Point pos, int vel, Player player, Texture2D textures) {
@@ -74,6 +85,8 @@ namespace Futhark {
             this.vel = vel;
             this.player = player;
 
+            this.colRectTexture = player.colRectTexture;
+
             downAnimation = new AnimatedSprite(textures, 5, 4, 0, false);
             upAnimation = new AnimatedSprite(textures, 5, 4, 1, false);
             rightAnimation = new AnimatedSprite(textures, 5, 4, 2, false);
@@ -82,13 +95,17 @@ namespace Futhark {
 
             currentAnimation = downAnimation;
 
+            width = downAnimation.Texture.Width * 8;
+            height = downAnimation.Texture.Height * 8;
+
             this.currentAS = ActionState.patrol;
 
             movementTimerZero = TimeSpan.Zero;
+            resetMovementTimer = true;
             
         }
 
-        public virtual void Update(GameTime gameTime) {
+        public virtual void Update(GameTime gameTime, Rectangle[,] collidable) {
             currentAS = handleAS(gameTime);
 
             if(unitY < 0) {
@@ -111,6 +128,8 @@ namespace Futhark {
 
             
 
+            
+
             if(!(unitX == 0 && unitY == 0)) {
 
                 double mag = Math.Sqrt(unitX*unitX + unitY*unitY);
@@ -119,6 +138,8 @@ namespace Futhark {
                 unitY = unitY / mag;
 
             }
+
+            handleCollision(collidable);
 
             posX += unitX * vel;
             posY += unitY * vel;
@@ -130,10 +151,58 @@ namespace Futhark {
 
         public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
             currentAnimation.Draw(spriteBatch, (int)posX, (int)posY, 0);
+            spriteBatch.Draw(colRectTexture, colRectB, Color.White)''
         }
 
         public Point GetEntityPos(){
             return new Point((int)posX, (int) posY);
+        }
+
+        public void handleCollision(Rectangle[,] collidable) {
+            double testPosX = posX + (unitX*vel);
+            double testPosY = posY + (unitY*vel);
+                                             
+                        
+            //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
+            //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
+
+            colRectB = new Rectangle((int)posX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
+            colRectX = new Rectangle((int)testPosX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
+            colRectY = new Rectangle((int)posX - width / 2 + 8, (int)testPosY + height/2 - width/2, width - 16, width/2);
+
+            
+            int lowerCordX = (int)Math.Round((double)(posX - 2*width)/width, 0);
+            int upperCordX = (int)Math.Round((double)(posX + 2*width)/width, 0);
+            //using width here because the sprite height is taller than what the bounding box should be
+            //the bounding box is one tile
+            int lowerCordY = (int)Math.Round((double)((posY+height/2-width) - 2*width)/width, 0);
+            int upperCordY = (int)Math.Round((double)((posY+height/2-width) + 2*width)/width, 0);
+
+            lowerCordX = lowerCordX < 0 ? 0 : lowerCordX;
+            lowerCordY = lowerCordY < 0 ? 0 : lowerCordY;
+            upperCordX = upperCordX > collidable.GetLength(0) ? collidable.GetLength(0) : upperCordX;
+            upperCordY = upperCordY > collidable.GetLength(1) ? collidable.GetLength(1) : upperCordY;
+
+            for(int i = lowerCordX; i < upperCordX; i++) {
+                for(int j = lowerCordY; j < upperCordY; j++) {
+                    var r = collidable[i,j];
+                    // Console.Write(posX + ",");
+                    // Console.WriteLine(posY);
+                    // Console.Write(lowerCordX);
+                    // Console.Write(" : ");
+                    // Console.WriteLine(upperCordX);
+                    if(r != Rectangle.Empty) {                        
+                        if(colRectX.Intersects(r)) {
+                            unitX = 0;
+                            Console.WriteLine("x intersect");                            
+                        }
+                        if(colRectY.Intersects(r)) {
+                            unitY = 0;
+                            Console.WriteLine("y intersect");
+                        }
+                    }
+                }
+            }
         }
 
         private ActionState handleAS(GameTime gameTime) {
@@ -194,7 +263,7 @@ namespace Futhark {
 
             if(Util.tilesTo(new Point((int)player.posX, (int)player.posY), this.GetEntityPos()) < 5) {
                 Console.WriteLine("player is within 5 tiles");
-                return ActionState.attack;
+                return ActionState.combat;
             }
 
             return ActionState.patrol;
