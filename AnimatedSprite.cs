@@ -21,6 +21,9 @@ namespace Futhark
         public int x;
 
         private bool play;
+
+        public int frameWidth;
+        public int frameHeight;
  
         public AnimatedSprite(Texture2D texture, int rows, int columns, int rowNumber, bool play)
         {
@@ -30,6 +33,10 @@ namespace Futhark
             currentFrame = 0;
             totalFrames = columns;
             RowNumber = rowNumber;
+
+            frameWidth = texture.Width / columns;
+            frameHeight = texture.Height / rows;
+            
             this.play = play;
         }
  

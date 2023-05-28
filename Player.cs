@@ -39,7 +39,7 @@ namespace Futhark {
 
         AnimatedSprite IyDraw.animation() => currentAnimation;
 
-        Rectangle colRectB;
+        public Rectangle colRectB;
         Rectangle colRectX;
         Rectangle colRectY;
 
@@ -56,7 +56,9 @@ namespace Futhark {
         private Dictionary<string, Texture2D> spellTextures;
 
         public List<string> spellQueue;
-        List<Fireball> fireballs;
+        public List<Fireball> fireballs;
+
+        public List<Fireball> fireballToRemove;
 
         public Camera camera;
 
@@ -138,6 +140,7 @@ namespace Futhark {
             //runestone = new Runestone(this, _aettsTextures, gConstants);
 
             fireballs = new List<Fireball>(); 
+            fireballToRemove = new List<Fireball>();
         }
 
         public string Update() {
@@ -146,7 +149,7 @@ namespace Futhark {
             
             
 
-            List<Fireball> fireballToRemove = new List<Fireball>();
+            
 
             foreach(var f in fireballs) {
 
@@ -318,6 +321,7 @@ namespace Futhark {
 
             
         }
+
 
         public void drawCollisionBoundaries(SpriteBatch spriteBatch){
             int lowerCordX = (int)Math.Round((double)(posX - 2*width)/width, 0);

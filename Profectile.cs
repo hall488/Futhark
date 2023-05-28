@@ -20,7 +20,7 @@ namespace Futhark {
 
         protected AnimatedSprite animation;
 
-        protected Rectangle colRect;
+        public Rectangle colRect;
 
         protected int width;
         protected int height;

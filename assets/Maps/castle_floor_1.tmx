@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="7" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="6">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="7" height="8" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="6">
  <tileset firstgid="1" source="../Tile Sets/castle_floor_1.tsx"/>
  <tileset firstgid="57" source="../Tile Sets/Special.tsx"/>
  <layer id="1" name="Ground" width="7" height="8">
@@ -14,6 +14,7 @@
 50,51,52,53,54,55,56
 </data>
  </layer>
+ <objectgroup id="9" name="Enemies"/>
  <layer id="8" name="Onground" width="7" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,

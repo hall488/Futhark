@@ -10,6 +10,7 @@ namespace Futhark {
 
     public class Fireball : Projectile { 
 
+        public int damage = 5;
 
         public Fireball(Point pos, int vel, Vector2 direction, Texture2D texture) {
             this.posX = pos.X;
@@ -27,7 +28,7 @@ namespace Futhark {
 
         public override bool Update(Rectangle[,] collidable) {
             animation.Update();
-            Console.WriteLine("{0}", animation.x);
+            //Console.WriteLine("{0}", animation.x);
             return base.Update(collidable);
         }
     }

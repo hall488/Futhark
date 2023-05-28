@@ -95,8 +95,8 @@ namespace Futhark {
 
             currentAnimation = downAnimation;
 
-            width = downAnimation.Texture.Width * 8;
-            height = downAnimation.Texture.Height * 8;
+            width = downAnimation.frameWidth * 8;
+            height = downAnimation.frameHeight * 8;
 
             this.currentAS = ActionState.patrol;
 
@@ -105,7 +105,7 @@ namespace Futhark {
             
         }
 
-        public virtual void Update(GameTime gameTime, Rectangle[,] collidable) {
+        public virtual bool Update(GameTime gameTime, Rectangle[,] collidable) {
             currentAS = handleAS(gameTime);
 
             if(unitY < 0) {
@@ -147,11 +147,27 @@ namespace Futhark {
             unitX = 0;
             unitY = 0;
             currentAnimation.Update();
+
+            foreach(var f in player.fireballs) {
+                if(f.colRect.Intersects(colRectB)) {
+                    player.fireballToRemove.Add(f);
+                    health -= f.damage;
+                }
+            }
+
+            if(health <= 0) {
+                Console.WriteLine("0 health");
+                return true;
+            }
+
+            Console.WriteLine("health: {0}", health);
+
+            return false;
         }
 
         public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch) {
             currentAnimation.Draw(spriteBatch, (int)posX, (int)posY, 0);
-            spriteBatch.Draw(colRectTexture, colRectB, Color.White)''
+            spriteBatch.Draw(colRectTexture, colRectB, Color.White);
         }
 
         public Point GetEntityPos(){
@@ -166,9 +182,9 @@ namespace Futhark {
             //colRectX = new Rectangle(testPosX+10, posY+height-width+20, width-20, width-20);
             //colRectY = new Rectangle(posX+10, testPosY+20, width-20, width-20);
 
-            colRectB = new Rectangle((int)posX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
-            colRectX = new Rectangle((int)testPosX - width / 2 + 8, (int)posY + height/2 - width/2, width - 16, width/2);
-            colRectY = new Rectangle((int)posX - width / 2 + 8, (int)testPosY + height/2 - width/2, width - 16, width/2);
+            colRectB = new Rectangle((int)posX - width / 2 + 8, (int)posY, width - 16, height/2);
+            colRectX = new Rectangle((int)testPosX - width / 2 + 8, (int)posY, width - 16, height/2);
+            colRectY = new Rectangle((int)posX - width / 2 + 8, (int)testPosY, width - 16, height/2);
 
             
             int lowerCordX = (int)Math.Round((double)(posX - 2*width)/width, 0);
@@ -194,11 +210,11 @@ namespace Futhark {
                     if(r != Rectangle.Empty) {                        
                         if(colRectX.Intersects(r)) {
                             unitX = 0;
-                            Console.WriteLine("x intersect");                            
+                            //Console.WriteLine("entity x intersect");                            
                         }
                         if(colRectY.Intersects(r)) {
                             unitY = 0;
-                            Console.WriteLine("y intersect");
+                            //Console.WriteLine(" entity y intersect");
                         }
                     }
                 }

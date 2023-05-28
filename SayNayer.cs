@@ -9,19 +9,11 @@ namespace Futhark {
 
     public class SayNayer : Entity{ 
 
-        enum Rune {
-            Fehu, Hagalaz, Tiwaz,
-            Uruz, Nauthiz, Berkana,
-            Thurisaz, Isa, Ehwaz,
-            Ansuz, Jera, Mannaz,
-            Raido, Eihwaz, Laguz,
-            Kenaz, Perthro, Ingwaz,
-            Gebo, Algiz, Dagaz,
-            Wunjo, Sowilo, Othala,
-            None
-        }
+        
 
-        Rune toCast;
+        public Runestone.Rune toCast;
+
+        public Runestone.Rune disabledRune;
         Texture2D[] runeTextures;
 
         protected TimeSpan castTimerZero;
@@ -31,24 +23,33 @@ namespace Futhark {
 
 
         public SayNayer(int health, Point pos, int velocity, Player player, Texture2D textures, Texture2D[] runeTextures)  : base(health, pos, velocity, player, textures){
-            toCast = Rune.None;
+            toCast = Runestone.Rune.None;
+            disabledRune = Runestone.Rune.None;
             this.runeTextures = runeTextures;
         }
 
-        public override void Update(GameTime gameTime, Rectangle[,] collidable) {
-            base.Update(gameTime, collidable);
+        public override bool Update(GameTime gameTime, Rectangle[,] collidable) {
+
+            
+
+            return base.Update(gameTime, collidable);            
 
             //Console.WriteLine(currentAS);
+        }
+
+        public Runestone.Rune getDisabledRune() {
+            return disabledRune;
         }
 
         public override void Draw (GameTime gameTime, SpriteBatch spriteBatch) {
             base.Draw(gameTime, spriteBatch);
             
-            if(toCast != Rune.None) {
+            if(toCast != Runestone.Rune.None) {
                 var castAnimationTimer = gameTime.TotalGameTime - castAnimationTimerZero;
 
                 if(castAnimationTimer > TimeSpan.FromSeconds(1)) {
-                    toCast = Rune.None;
+                    disabledRune = toCast;
+                    toCast = Runestone.Rune.None;
                     castAnimationTimerZero = gameTime.TotalGameTime;
                 } else {
                     
@@ -117,9 +118,9 @@ namespace Futhark {
                 moveCounter = 0;
                 castTimerZero = gameTime.TotalGameTime;
                 castAnimationTimerZero = gameTime.TotalGameTime;
-                Array values = Enum.GetValues(typeof(Rune));
+                Array values = Enum.GetValues(typeof(Runestone.Rune));
                 Random random = new Random();
-                toCast = (Rune)values.GetValue(random.Next(values.Length));
+                toCast = (Runestone.Rune)values.GetValue(random.Next(values.Length));
                 return ActionState.attack;
             }
 

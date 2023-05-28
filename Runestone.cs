@@ -10,6 +10,18 @@ namespace Futhark {
 
     public class Runestone {
 
+        public enum Rune {
+            Fehu, Hagalaz, Tiwaz,
+            Uruz, Nauthiz, Berkana,
+            Thurisaz, Isa, Ehwaz,
+            Ansuz, Jera, Mannaz,
+            Raido, Eihwaz, Laguz,
+            Kenaz, Perthro, Ingwaz,
+            Gebo, Algiz, Dagaz,
+            Wunjo, Sowilo, Othala,
+            None
+        }
+
         Texture2D[] aettsTextures;
         int aettType = 0;
         int runePos = 0;
@@ -17,7 +29,7 @@ namespace Futhark {
         private Dictionary<string, (Keys, bool)> runeKeyStates;
         private Dictionary<string, string> spellDict;
 
-        private Dictionary<string, string[]> keyToRune;
+        private Dictionary<string, Rune[]> keyToRune;
 
         
 
@@ -27,7 +39,7 @@ namespace Futhark {
         List<Keys> runesPressed;
         List<Keys> castsPressed;
 
-        List<string> spellOrder;
+        List<Rune> spellOrder;
 
         bool castActive = false;
 
@@ -43,6 +55,8 @@ namespace Futhark {
 
         Camera camera;
 
+        public List<Rune> disabledRunes;
+
         public Runestone(Player player, Texture2D[] _aettsTextures, Game_Dicts gDicts) {
 
             this.camera = player.camera;
@@ -51,24 +65,24 @@ namespace Futhark {
             castKeyStates = gDicts.castKeys;
             runeKeyStates = gDicts.runeKeys;
             spellDict = gDicts.spellDict;
-            keyToRune = new Dictionary<string, string[]>();
+            keyToRune = new Dictionary<string, Rune[]>();
             
-            spellOrder = new List<string>();
+            spellOrder = new List<Rune>();
             runesPressed = new List<Keys>();
             castsPressed = new List<Keys>();
             runesPrev = new List<Keys>();
             castsPrev = new List<Keys>();
             
-            
+            disabledRunes = new List<Rune>();
 
-            keyToRune.Add("Rune 1", new String[] {"Fehu", "Hagalaz", "Tiwaz"});
-            keyToRune.Add("Rune 2", new String[] {"Uruz", "Nauthiz", "Berkana"});
-            keyToRune.Add("Rune 3", new String[] {"Thurisaz", "Isa", "Ehwaz"});
-            keyToRune.Add("Rune 4", new String[] {"Ansuz", "Jera", "Mannaz"});
-            keyToRune.Add("Rune 5", new String[] {"Raido", "Eihwaz", "Laguz"});
-            keyToRune.Add("Rune 6", new String[] {"Kenaz", "Perthro", "Ingwaz"});
-            keyToRune.Add("Rune 7", new String[] {"Gebo", "Algiz", "Dagaz"});
-            keyToRune.Add("Rune 8", new String[] {"Wunjo", "Sowilo", "Othala"});
+            keyToRune.Add("Rune 1", new Rune[] {Rune.Fehu, Rune.Hagalaz, Rune.Tiwaz});
+            keyToRune.Add("Rune 2", new Rune[] {Rune.Uruz, Rune.Nauthiz, Rune.Berkana});
+            keyToRune.Add("Rune 3", new Rune[] {Rune.Thurisaz, Rune.Isa, Rune.Ehwaz});
+            keyToRune.Add("Rune 4", new Rune[] {Rune.Ansuz, Rune.Jera, Rune.Mannaz});
+            keyToRune.Add("Rune 5", new Rune[] {Rune.Raido, Rune.Eihwaz, Rune.Laguz});
+            keyToRune.Add("Rune 6", new Rune[] {Rune.Kenaz, Rune.Perthro, Rune.Ingwaz});
+            keyToRune.Add("Rune 7", new Rune[] {Rune.Gebo, Rune.Algiz, Rune.Dagaz});
+            keyToRune.Add("Rune 8", new Rune[] {Rune.Wunjo, Rune.Sowilo, Rune.Othala});
 
         }
 
@@ -155,11 +169,11 @@ namespace Futhark {
                             runePos = 0;
                         }
                         break;
-                    } else if(val.Item2) {
-                        
+                    } else if(val.Item2 && !disabledRunes.Contains(keyToRune[key][aettType-1])) {
                         spellOrder.Add(keyToRune[key][aettType-1]);
                         aettType = 0;
-                    }                    
+                    } 
+
                 }                    
                 
             }
@@ -196,6 +210,7 @@ namespace Futhark {
             }
             if(castActive) Console.WriteLine();
             runesPressed.Clear();
+            disabledRunes.Clear();
         }
 
         public void Draw(SpriteBatch spriteBatch) {
@@ -208,7 +223,7 @@ namespace Futhark {
             }
 
             Rectangle sourceRectangle = new Rectangle(width * runePos, height * tempCol, width, height);
-            Rectangle destinationRectangle = new Rectangle(150, 150, width*4, height*4);
+            Rectangle destinationRectangle = new Rectangle(Futhark_Game.screenWidth - width*4, Futhark_Game.screenHeight - height*4, width*4, height*4);
             
             if(castActive)
                 spriteBatch.Draw(aettsTextures[aettType], destinationRectangle, sourceRectangle, Color.White);

@@ -50,7 +50,7 @@ namespace Futhark {
 
         private TiledObject playerSpawn;
 
-        private TiledObject enemySpawn;
+        private TiledObject[] enemySpawns;
 
         private RenderTarget2D sceneRT;
 
@@ -68,7 +68,7 @@ namespace Futhark {
 
         Runestone runestone;
 
-        List<Entity> enetities;
+        List<Entity> entities;
 
         public enum Direction {
             Up,
@@ -201,7 +201,6 @@ namespace Futhark {
             doors = map.Layers.First(l => l.name == "Doors");
             
             var enemies = map.Layers.First(l => l.name == "Enemies");
-            enemySpawn = enemies.objects.First(o => o.name == "enemySpawn");
 
             Console.WriteLine("map w {0}", map.Width);
             Console.WriteLine("map height {0}", map.Height);
@@ -227,9 +226,11 @@ namespace Futhark {
                                             collidable, doorDict, new Texture2D(graphicsDevice, 1, 1));
             player.currentMap = currentMap;
 
-            enetities = new List<Entity>();
-            var enemyPoint = new Point((int) (enemySpawn.x + 8)*8, (int) (playerSpawn.y  - 16)*8);
-            enetities.Add(new SayNayer(0, enemyPoint, 4, player, sayNayyerTexture, runeTextures));
+            entities = new List<Entity>();
+            foreach(var e in enemies.objects) {
+                var enemyPoint = new Point((int) (e.x + 8)*8, (int) (e.y  - 16)*8);
+                entities.Add(new SayNayer(10, enemyPoint, 4, player, sayNayyerTexture, runeTextures));
+            }
 
             runestone = new Runestone(player, aettsTextures, gDicts);
 
@@ -244,9 +245,27 @@ namespace Futhark {
             var levelReturn = player.Update();
             runestone.Update(keyboardState);
 
-            foreach(var e in enetities) {
-                e.Update(gameTime, collidable);
+            var entitiesToRemove = new List<Entity>();
+
+            foreach(var e in entities) {
+
+                if(e is SayNayer s) {
+                    runestone.disabledRunes.Add(s.getDisabledRune());
+                }
+
+                if(e.Update(gameTime, collidable)) {
+                    entitiesToRemove.Add(e);
+                    Console.WriteLine("Entity to be removed");
+                }
             }
+
+
+            foreach(var e in entitiesToRemove) {
+                entities.Remove(e);
+                Console.WriteLine("Entity removed");
+            }
+
+            entitiesToRemove.Clear();
 
             if(levelReturn != currentMap) {
                 resetScene();
@@ -267,7 +286,7 @@ namespace Futhark {
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
 
             spriteBatch.Draw(sceneRT, sceneRect, Color.White);
-            spriteBatch.Draw(overlayRT, overlayRect, Color.Transparent);            
+            spriteBatch.Draw(overlayRT, overlayRect, Color.White);            
 
             spriteBatch.End();
             
@@ -289,11 +308,11 @@ namespace Futhark {
             DrawLayers(groundLayer);
             DrawLayers(ongroundLayer);
             player.Draw(spriteBatch);
-            foreach(var e in enetities) {
+            foreach(var e in entities) {
                 e.Draw(gameTime, spriteBatch);
             }
             DrawLayers(aboveLayer);
-            runestone.Draw(spriteBatch);
+            //runestone.Draw(spriteBatch);
 
             spriteBatch.End();
 
